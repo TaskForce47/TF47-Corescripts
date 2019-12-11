@@ -1,0 +1,13 @@
+class Header
+{
+	gameType =  Test;	// Game type
+	minPlayers =  1;	// minimum number of players the mission supports
+	maxPlayers = 10;	// maximum number of players the mission supports
+};
+
+respawn = 2;
+
+class CfgFunctions
+{
+	#include "TF47Core\CfgFunctions.hpp"
+};
