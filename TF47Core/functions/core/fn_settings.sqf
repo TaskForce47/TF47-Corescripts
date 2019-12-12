@@ -147,7 +147,7 @@
 	"EDITBOX",
 	["Mission name", "e.g. liberation tanoa"],
 	["TF47 Corescripts", "Tech"],
-  	"unkown mission",
+  	"unknown mission",
 	nil,
 	true
 ] call CBA_fnc_addSetting;

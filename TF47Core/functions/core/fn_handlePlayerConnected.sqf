@@ -52,6 +52,10 @@ if(_playerId == -1) then { //if user doesn't exist we need to create a new playe
 	_playerId = [_name, _uid] call EFUNC(database, createPlayer); 
 };
 
+if(GVAR(useWhitelist)) then {
+	[_playerId] call EFUNC(whitelist, reloadWhitelist);
+};
+
 //save player database id, we need to reference this on each database call
 _namespace setVariable [QGVAR(playerId), _playerId, true];
 

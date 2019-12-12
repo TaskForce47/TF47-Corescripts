@@ -15,6 +15,5 @@ GVAR(hcList) = [];
 
 [GVAR(maxConnections), GVAR(missionName)] call EFUNC(database, init);
 
-addMissionEventHandler ["PlayerConnected", _this call FUNC(onPlayerConnected)];
-addMissionEventHandler ["PlayerDisconnected", _this call FUNC(onPlayerDisconnected)];
-
+addMissionEventHandler ["PlayerConnected", _this call FUNC(handlePlayerConnected)];
+addMissionEventHandler ["PlayerDisconnected", _this call FUNC(handlePlayerDisconnected)];
