@@ -175,3 +175,14 @@
 	nil,
 	true
 ] call CBA_fnc_addSetting;
+
+[
+	QGVAR(markerRestrictionWhitelist),
+	"CHECKBOX",
+	["Allow side and global for TF users", "Use the whitelist to determine TF47 members and allow those people to draw on the map"],
+	["TF47 Corescripts", "Markersystem"],
+	false,
+	1,
+	nil,
+	true
+] call CBA_fnc_addSetting;
