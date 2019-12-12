@@ -128,3 +128,26 @@
 	nil,
 	true
 ] call CBA_fnc_addSetting;
+
+
+//technical setup
+[
+	QGVAR(maxConnections),
+	"LIST",
+	["Maximum Database connections", "Maximum database connections that will be created"],
+	["TF47 Corescripts", "Tech"],
+	[[1,2,3,4,5,6,7,8], [], 2],
+	1,
+	nil,
+	true
+] call CBA_fnc_addSetting;
+
+[
+	QGVAR(missionName),
+	"EDITBOX",
+	["Mission name", "e.g. liberation tanoa"],
+	["TF47 Corescripts", "Tech"],
+  	"unkown mission",
+	nil,
+	true
+] call CBA_fnc_addSetting;
