@@ -9,7 +9,7 @@
  * Public: NO
  */
 
-
+if(!isServer) exitWith {};
 GVAR(playerList) = []; //initialize list where player namespaces will be saved
 GVAR(hcList) = [];
 
