@@ -12,6 +12,5 @@ class TF47_database
 
 		
 		class settings {preInit = 1;};
-		class setupDatabase {};
 	};
 };

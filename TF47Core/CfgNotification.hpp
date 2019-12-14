@@ -21,8 +21,20 @@ class TF47_core_notification_ticketGain : TF47_core_notification {
 	description = "%1";
 };
 
+class TF47_core_notification_outOfTickets : TF47_core_notification {
+	title = "No tickets remaining";
+	iconPicture = "TF47Core\data\icons\fail.paa";
+	description = "%1";
+};
+
 class TF47_core_notification_notWhitelisted : TF47_core_notification {
 	title = "Not whitelisted";
 	iconPicture = "TF47Core\data\icons\not_allowed.paa";
+	description = "%1";
+};
+
+class TF47_core_notification_badWeapon : TF47_core_notification {
+	title = "You are not allowed to carry that weapon";
+	iconPicture = "TF47Core\data\icons\not_allowed_weapon.paa";
 	description = "%1";
 };

@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 /*
 * Author: TF47 Dragon
 *
@@ -21,6 +22,10 @@
 	_channel = _name select (count _name -1);
 	if(_channel != "0" && { _channel != "1" } && { _channel != "2" }) exitWith {};
 
+	if( EGVAR(core, markerRestrictionWhitelist) && 
+		{ ([[WHITELIST_USER_TF, WHITELIST_USER_ADMIN, WHITELIST_USER_MODERATOR]] call EFUNC(whitelist, checkWhitelist))}
+	) exitWith {};
+	
 	_type = getMarkerType _newMarker;
 	_pos = getMarkerPos _newMarker;
 	_color = getMarkerColor _newMarker;
