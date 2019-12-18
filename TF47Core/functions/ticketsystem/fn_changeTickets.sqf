@@ -10,7 +10,7 @@
  *  Default: "Ticket change"
  * 1: amount of tickets to be changed 			<SCALAR>  
  *	Default: 0
- * 2: negative or positive ticket change 		<BOOLEAN>
+ * 2: negative(true) or positive(false) ticket change 		<BOOLEAN>
  *	Default: true
  *
  * Return Value:
