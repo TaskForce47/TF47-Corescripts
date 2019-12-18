@@ -4,8 +4,10 @@ class TF47_ticket
 	{
 		file = "TF47Core\functions\ticketsystem";
 		class addVehicle {};
+		class addVehicleClassEventhandler{};
 		class changeTickets {};
-		class handleDestroyed {};
+		class clientTicketChangedRecived{};
+		class handleVehicleDestroyed {};
 		class init {};
 	};
 };
