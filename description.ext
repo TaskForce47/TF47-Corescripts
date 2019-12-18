@@ -7,7 +7,13 @@ class Header
 
 respawn = 2;
 
+//you will need to copy everything below this command to get the core scripts to work correctly
 class CfgFunctions
 {
 	#include "TF47Core\CfgFunctions.hpp"
+};
+
+class Extended_PreInit_Eventhandlers
+{
+	TF47_settings_config = call compile preprocessFileLineNumbers "TF47\data\settings\init.sqf";
 };
