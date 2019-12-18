@@ -28,5 +28,34 @@ _worth = abs _worth; //make sure to only allow positive values
 if(!isNil "_vehicle getVariable QGVAR(cost)") exitWith {};
 
 _vehicle setVariable [QGVAR(cost), _worth];
+//save last commander as array of [player object, player name, player uid]
+_vehicle setVariable [QGVAR(lastCommander), []];
+
+_vehicle addEventHandler ["Killed", {
+	params ["_unit", "_killer", "_instigator", "_useEffects"];
+	[_unit] remoteExec [QFUNC(handleVehicleDestroyed), 2];
+}];
+
+_vehicle addEventHandler ["GetIn", {
+	params ["_vehicle", "_role", "_unit", ""];
+	if(_role isEqualTo "cargo" || {!isPlayer _unit}) exitWith {};
+	if(_role isEqualTo "gunner" && {isNull commander _vehicle}) exitWith {
+		_vehicle setVariable [QGVAR(lastCommander), [_unit, name _unit, getPlayerUID _unit]];
+	};
+	if(isNull commander _vehicle && {isNull gunner _vehicle}) exitWith {
+		_vehicle setVariable [QGVAR(lastCommander), [_unit, name _unit, getPlayerUID _unit]];
+	};
+}];
+
+_vehicle addEventHandler ["GetOut", {
+	params ["_vehicle", "_role", "_unit", ""];
+	if(_role isEqualTo "cargo" || {!isPlayer _unit}) exitWith {};
+	if(_role isEqualTo "gunner" && {isNull commander _vehicle}) exitWith {
+		_vehicle setVariable [QGVAR(lastCommander), [_unit, name _unit, getPlayerUID _unit]];
+	};
+	if(isNull commander _vehicle && {isNull gunner _vehicle}) exitWith {
+		_vehicle setVariable [QGVAR(lastCommander), [_unit, name _unit, getPlayerUID _unit]];
+	};
+}];
 
 true
