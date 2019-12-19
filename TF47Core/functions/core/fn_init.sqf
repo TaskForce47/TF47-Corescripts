@@ -9,11 +9,27 @@
  * Public: NO
  */
 
-if(!isServer) exitWith {};
-GVAR(playerList) = []; //initialize list where player namespaces will be saved
-GVAR(hcList) = [];
+if(isServer && hasInterface && !isDedicated) exitWith {
+	ERROR("YOU CANNOT USE THE CORESCRIPTS WHILE IN EDITOR! DISABLED FOR YOUR TESTING!");
+};
 
-[GVAR(maxConnections), GVAR(missionName)] call EFUNC(database, init);
+if(isServer) then {
+	GVAR(playerList) = []; //initialize list where player namespaces will be saved
+	GVAR(hcList) = [];
 
-addMissionEventHandler ["PlayerConnected", _this call FUNC(handlePlayerConnected)];
-addMissionEventHandler ["PlayerDisconnected", _this call FUNC(handlePlayerDisconnected)];
+	[GVAR(maxConnections), GVAR(missionName)] call EFUNC(database,init);
+
+	call FUNC(handlePlayerConnected);
+	call FUNC(handlePlayerDisconnected);
+};
+
+//do client init stuff below to ensure player init is done by the server
+[{! (isNil QGVAR(playerNamespace))}, {
+	if(GVAR(useTicketsystem)) then {
+		call EFUNC(ticket,init);
+	};
+
+	if(GVAR(useWhitelist)) then {
+		call EFUNC(whitelist,init);
+	};
+}] call CBA_fnc_waitUntilAndExecute;
