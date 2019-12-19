@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 if(hasInterface && !isDedicated) exitWith {
-	_namespace = EGVAR(core, playerNamespace);
+	_namespace = EGVAR(core,playerNamespace);
 	_namespace setVariable [QGVAR(killsInf), 0];
 	_namespace setVariable [QGVAR(killsVehSmall), 0];
 	_namespace setVariable [QGVAR(killsVehTracked), 0];

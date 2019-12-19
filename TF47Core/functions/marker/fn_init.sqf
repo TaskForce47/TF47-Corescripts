@@ -2,6 +2,6 @@
 
 if(isDedicated && !hasInterface) exitWith {};
 
-if(EGVAR(core, markerRestriction)) then {
+if(EGVAR(core,markerRestriction)) then {
 	call FUNC(addMapmarkerRestriction);
 };
