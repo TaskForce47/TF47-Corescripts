@@ -8,7 +8,7 @@
 	};
 }] call CBA_fnc_addEventHandler;
 
-if(EGVAR(core, loseOnZeroTickets)) then {
+if(EGVAR(core,loseOnZeroTickets)) then {
 	["outOfTickets", {
 		params ["", "_message"];
 		0 spawn {

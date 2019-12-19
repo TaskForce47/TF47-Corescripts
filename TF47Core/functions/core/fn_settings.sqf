@@ -27,6 +27,17 @@
 	true
 ] call CBA_fnc_addSetting;
 
+[
+	QGVAR(useWhitelistAttack),
+	"CHECKBOX",
+	["Whitelist check for attackcrafts", "Checks for planes if the plane is attack craft"],
+	["TF47 Corescripts", "Whitelist"],
+	false,
+	1,
+	nil,
+	true
+] call CBA_fnc_addSetting;
+
 //logging
 [
 	QGVAR(useLogging),
@@ -42,7 +53,7 @@
 [
 	QGVAR(usePerformanceTracking),
 	"CHECKBOX",
-	["Enable ", "Enable or disable the performance tracking for server and clients"],
+	["Enable performance tracking", "Enable or disable the performance tracking for server and clients"],
 	["TF47 Corescripts", "Logging"],
 	false,
 	1,
@@ -64,7 +75,7 @@
 [
 	QGVAR(useChatTracker),
 	"CHECKBOX",
-	["Enable ", "Enable or disable the chat tracker"],
+	["Enable chat tracker ", "Enable or disable the chat tracker"],
 	["TF47 Corescripts", "Logging"],
 	false,
 	1,
@@ -75,7 +86,7 @@
 [
 	QGVAR(useKillTracker),
 	"CHECKBOX",
-	["Enable ", "Enable or disable the kill tracker"],
+	["Enable kill tracker ", "Enable or disable the kill tracker"],
 	["TF47 Corescripts", "Logging"],
 	false,
 	1,
@@ -148,6 +159,7 @@
 	["Mission name", "e.g. liberation tanoa"],
 	["TF47 Corescripts", "Tech"],
   	"unknown mission",
+	1,
 	nil,
 	true
 ] call CBA_fnc_addSetting;

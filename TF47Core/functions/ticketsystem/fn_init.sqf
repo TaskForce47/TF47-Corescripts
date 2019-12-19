@@ -1,14 +1,22 @@
 #include "script_component.hpp"
 
-GVAR(tickets) = QEGVAR(core, startingTickets);
-GVAR(ticketCap) = QEGVAR(core, maxTickets);
+if(isServer) then {
+
+	GVAR(tickets) = EGVAR(core,startingTickets);
+	GVAR(ticketCap) = EGVAR(core,maxTickets);
 
 
-if(EGVAR(core, loseOnZeroTickets) && isServer) then {
-	["outOfTickets", {
-		0 spawn {
-			sleep 40;
-			["EveryoneLost"] call BIS_fnc_endMissionServer;
-		};
-	}] call CBA_fnc_addEventHandler
+	if(EGVAR(core,loseOnZeroTickets) && isServer) then {
+		["outOfTickets", {
+			0 spawn {
+				sleep 40;
+				["EveryoneLost"] call BIS_fnc_endMissionServer;
+			};
+		}] call CBA_fnc_addEventHandler
+	};
+
+};
+
+if(hasInterface && {!isDedicated}) then {
+	call FUNC(clientTicketChangeReceived);
 };

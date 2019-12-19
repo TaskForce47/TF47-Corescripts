@@ -1,2 +1,3 @@
-#include "tickets_vehicle"
-#include "weapon_blacklist"
+#include "vehicle_whitelist.sqf"
+#include "vehicle_tickets.sqf"
+#include "weapon_blacklist.sqf"

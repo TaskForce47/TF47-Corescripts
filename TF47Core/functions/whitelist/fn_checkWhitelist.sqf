@@ -24,12 +24,12 @@ params [
 ];
 
 if(_whitelistId isEqualType []) then {
-	_whitelist = EGVAR(core, playerNamespace) getVariable [QGVAR(whitelist), []];
+	_whitelist = EGVAR(core,playerNamespace) getVariable [QGVAR(whitelist), []];
 	{
 		if(_x in _whitelist) exitWith { true };
 	} forEach _whitelistId;
 } else {
-	_whitelist = EGVAR(core, playerNamespace) getVariable [QGVAR(whitelist), []];
+	_whitelist = EGVAR(core,playerNamespace) getVariable [QGVAR(whitelist), []];
 	if(_whitelistId in _whitelist) exitWith { true };
 };
 

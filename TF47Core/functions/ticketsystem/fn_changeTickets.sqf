@@ -17,7 +17,7 @@
  * 		none
  *
  * Example:
- * ["Pixxel hat die MH-6 versenkt! -25 Tickets", 25, true] call TF47_tickets_changeTickets; 
+ * ["Pixxel hat die MH-6 versenkt! -25 Tickets", 25, true] call TF47_ticket_fnc_changeTickets; 
  *
  * Public: Yes
  */
@@ -37,6 +37,6 @@ if(GVAR(tickets) > GVAR(ticketCap)) then { GVAR(tickets) = GVAR(ticketCap)};
 
 ["ticketChange", [_message, GVAR(tickets), _ticketChange]] call CBA_fnc_globalEvent;
 
-[_message, _ticketChange, GVAR(tickets)] call EFUNC(database, insertTicketLog);
+[_message, _ticketChange, GVAR(tickets)] call EFUNC(database,insertTicketLog);
 
 true
