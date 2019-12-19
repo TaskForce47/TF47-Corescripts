@@ -24,17 +24,18 @@ params [
 
 _worth = abs _worth; //make sure to only allow positive values
 
+if(isNull _vehicle) exitWith { ERROR("Unable to add vehicle to ticketsystem, vehicle is objNull"); };
 //if already defined with a cost variable
-if(!isNil "_vehicle getVariable QGVAR(cost)") exitWith {};
+if(!isNil {_vehicle getVariable QGVAR(cost)}) exitWith {};
 
 _vehicle setVariable [QGVAR(cost), _worth];
 //save last commander as array of [player object, player name, player uid]
 _vehicle setVariable [QGVAR(lastCommander), []];
 
-_vehicle addEventHandler ["Killed", {
-	params ["_unit", "_killer", "_instigator", "_useEffects"];
-	[_unit] remoteExec [QFUNC(handleVehicleDestroyed), 2];
-}];
+[_vehicle, "Killed", {	
+	params ["_unit", "", "", ""];
+	[_unit] remoteExecCall [QFUNC(handleVehicleDestroyed), 2];
+}, nil] remoteExecCall ["CBA_fnc_addBISEventHandler", 0, true];
 
 _vehicle addEventHandler ["GetIn", {
 	params ["_vehicle", "_role", "_unit", ""];
@@ -57,5 +58,9 @@ _vehicle addEventHandler ["GetOut", {
 		_vehicle setVariable [QGVAR(lastCommander), [_unit, name _unit, getPlayerUID _unit]];
 	};
 }];
+
+//TODO: We need to check for switched seats!
+
+TRACE_1("Vehicle added to ticketsystem", _vehicle);
 
 true
