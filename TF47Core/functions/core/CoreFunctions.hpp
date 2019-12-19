@@ -1,6 +1,6 @@
-class TF47_database
+class TF47_core
 {
-	class database
+	class core
 	{
 		file = "TF47Core\functions\core";
 
