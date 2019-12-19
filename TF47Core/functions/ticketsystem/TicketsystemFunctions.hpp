@@ -6,7 +6,7 @@ class TF47_ticket
 		class addVehicle {};
 		class addVehicleClassEventhandler{};
 		class changeTickets {};
-		class clientTicketChangedRecived{};
+		class clientTicketChangeReceived{};
 		class handleVehicleDestroyed {};
 		class init {};
 	};
