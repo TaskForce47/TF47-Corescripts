@@ -4,7 +4,7 @@ params [["_vehicle", objNull, [objNull]]];
 if(isNull _vehicle) exitWith {};
 if(_vehicle isKindOf "Man" ||
 	{ _vehicle getVariable [QGVAR(disableVehCheck), false]} ||
-	{ (player getCargoIndex _vehicle) > -1} ||
+	{ ((assignedVehicleRole player) select 0) isEqualTo "Cargo"} ||
 	{ !isTouchingGround _vehicle}
 ) exitWith {};
 
