@@ -35,8 +35,10 @@ GVAR(tickets) = GVAR(tickets) + _ticketChange;
 if(GVAR(tickets) < 1) then { ["outOfTickets", [GVAR(tickets), _message]] call CBA_fnc_GlobalEvent;};
 if(GVAR(tickets) > GVAR(ticketCap)) then { GVAR(tickets) = GVAR(ticketCap)};
 
+
 ["ticketChange", [_message, GVAR(tickets), _ticketChange]] call CBA_fnc_globalEvent;
 
 [_message, _ticketChange, GVAR(tickets)] call EFUNC(database,insertTicketLog);
+[GVAR(tickets), false] call EFUNC(database,updateTicket);
 
 true
