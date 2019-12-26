@@ -63,15 +63,15 @@ _vehicle addEventHandler ["SeatSwitched", {
 	params ["_vehicle", "", ""];
 
 	_commander = commander _vehicle;
-	if(! (objNull _commander) && {isPlayer _commander}) exitWith {
+	if(isPlayer _commander) exitWith {
 		_vehicle setVariable [QGVAR(lastCommander), [_commander, name _commander, getPlayerUID _commander]];
 	};
 	_gunner = gunner _vehicle;
-	if(! (objNull _gunner) && {isPlayer _gunner}) then {
+	if(isPlayer _gunner) then {
 		_vehicle setVariable [QGVAR(lastCommander), [_gunner, name _gunner, getPlayerUID _gunner]];
 	};
 	_driver = commander _vehicle;
-	if(! (objNull _driver) && {isPlayer _driver}) exitWith {
+	if(isPlayer _driver) exitWith {
 		_vehicle setVariable [QGVAR(lastCommander), [_driver, name _driver, getPlayerUID _driver]];
 	};	
 }];
