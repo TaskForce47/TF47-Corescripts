@@ -19,7 +19,7 @@
 ["AllVehicles", "InitPost", {
 	params ["_vehicle"];
 	if(!isServer) exitWith {};
-	_id = tf47_tickets_vehicles findIf { _x == _vehicle };
+	_id = tf47_tickets_vehicles findIf { _x#0 == _vehicle };
 	if(_id == -1) exitWith {};
 	TRACE_2("Adding cost to vehicle", _vehicle, tf47_tickets_vehicles#_id#1);
 	[_vehicle, tf47_tickets_vehicles#_id#1] call EFUNC(ticket,registerVehicle);
