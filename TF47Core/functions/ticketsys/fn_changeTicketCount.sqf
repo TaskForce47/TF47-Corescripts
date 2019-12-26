@@ -45,5 +45,6 @@ if(GVAR(tickets) > GVAR(ticketCap)) then {
 [_message, _ticketChange, GVAR(tickets)] call EFUNC(database,insertTicketLog);
 //this one is for tracking in case the last mission goes dark or restarts
 [GVAR(tickets), false] call EFUNC(database,updateTicket);
+publicVariable QGVAR(tickets);
 
 true
