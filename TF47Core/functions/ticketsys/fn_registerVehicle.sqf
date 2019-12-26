@@ -13,7 +13,7 @@
  * 		none
  *
  * Example:
- * [vehicle player, 25] call TF47_tickets_addVehicle;
+ * [vehicle player, 25] call TF47_tickets_fnc_registerVehicle;
  *
  * Public: Yes
  */
