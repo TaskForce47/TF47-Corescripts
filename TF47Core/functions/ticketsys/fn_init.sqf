@@ -23,7 +23,7 @@ if(isServer) then {
 		[_lastRound] call FUNC(checkLastRound);
 		[GVAR(tickets)] call FUNC(startNewRound);
 	};
-	
+	publicVariable QGVAR(tickets);	
 
 	//write current session id to data to check next round 
 	profileNamespace setVariable [QGVAR(sesionId), EGVAR(database,sessionId)];
@@ -41,6 +41,7 @@ if(isServer) then {
 
 	addMissionEventHandler ["EntityKilled", {
 		params ["_killed", "", ""];
+		if(! (isPlayer _killed)) exitWith {};
 		_cost = _killed getVariable [QGVAR(unitCost), 0];
 		_message = format ["Player died! -%1 tickets", _cost];
 		[_message, _cost, true] call FUNC(changeTicketCount);
