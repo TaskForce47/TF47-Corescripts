@@ -2,7 +2,7 @@ class TF47_ticket
 {
 	class ticketsystem
 	{
-		file = "TF47Core\functions\ticketsystem";
+		file = "TF47Core\functions\ticketsys";
 		class addTicketDisplayLoop {};
 		class addVehicleClassEventhandler{};
 		class changeTicketCount {};
