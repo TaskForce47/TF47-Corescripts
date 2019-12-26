@@ -140,6 +140,18 @@
 	true
 ] call CBA_fnc_addSetting;
 
+[
+	QGVAR(defaultCost),
+	"LIST",
+	["Default slot ticket cost", "Default cost for a slot if no value is found"],
+	["TF47 Corescripts", "Ticketsystem"],
+	[[0, 2, 5, 10, 15], [], 1],
+	1,
+	nil,
+	true
+] call CBA_fnc_addSetting;
+
+
 
 //technical setup
 [
