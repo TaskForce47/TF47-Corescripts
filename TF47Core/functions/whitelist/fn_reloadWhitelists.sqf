@@ -4,7 +4,7 @@ params [
 ];
 
 private _namespaces = EGVAR(core,playerList);
-private  _index = _namespaces findIf { _x getVariable [QEGVAR(core,playerId), ""] == _playerId };
+private  _index = _namespaces findIf { (_x getVariable [QEGVAR(core,playerId), -1]) == _playerId };
 if(_index < 0) exitWith {
 	ERROR_2("player disconnect or is not present, player namespace seems not to exist", _uid, _name);
 };
