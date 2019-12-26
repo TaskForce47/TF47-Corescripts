@@ -141,6 +141,17 @@
 ] call CBA_fnc_addSetting;
 
 [
+	QGVAR(autoSetTicketsOnVehicles),
+	"CHECKBOX",
+	["Enable automaticly setting ticket cost on vehicles", "If enabled this will automaticly add ticket cost to all present vehicles and those that are spawned later"],
+	["TF47 Corescripts", "Ticketsystem"],
+	true,
+	1,
+	nil,
+	true
+] call CBA_fnc_addSetting;
+
+[
 	QGVAR(defaultCost),
 	"LIST",
 	["Default slot ticket cost", "Default cost for a slot if no value is found"],

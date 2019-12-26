@@ -46,6 +46,10 @@ if(isServer) then {
 		_message = format ["Player died! -%1 tickets", _cost];
 		[_message, _cost, true] call FUNC(changeTicketCount);
 	}];
+
+	if(EGVAR(core,autoSetTicketsOnVehicles)) then {
+		[] call FUNC(ddVehicleClassEventhandler); 
+	};
 };
 
 if(hasInterface && {!isDedicated}) then {
