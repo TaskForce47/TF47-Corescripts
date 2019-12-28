@@ -18,8 +18,10 @@ if(isServer) then {
 
 	_lastRound = profileNamespace getVariable [QGVAR(sesionId), -1];
 	if(_lastRound == -1) then { 
+		TRACE_1("no privious round! Starting fresh!", _lastRound);
 		[GVAR(tickets)] call FUNC(startNewRound);
 	} else {
+		TRACE_1("last round detected trying to reset tickets", _lastRound);
 		[_lastRound] call FUNC(checkLastRound);
 		[GVAR(tickets)] call FUNC(startNewRound);
 	};
@@ -38,13 +40,17 @@ if(isServer) then {
 		}] call CBA_fnc_addEventHandler
 	};
 
-
-	addMissionEventHandler ["EntityKilled", {
+	//TODO: move to own file
+	handleUnitKilled = compileFinal {
 		params ["_killed", "", ""];
 		if(! (isPlayer _killed)) exitWith {};
 		_cost = _killed getVariable [QGVAR(unitCost), 0];
 		_message = format ["Player died! -%1 tickets", _cost];
 		[_message, _cost, true] call FUNC(changeTicketCount);
+	};
+
+	addMissionEventHandler ["EntityKilled", {
+	 	_this call handleUnitKilled;
 	}];
 
 	if(EGVAR(core,autoSetTicketsOnVehicles)) then {
