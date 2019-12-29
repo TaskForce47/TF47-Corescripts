@@ -45,7 +45,7 @@ if(isServer) then {
 	}];
 
 	if(EGVAR(core,autoSetTicketsOnVehicles)) then {
-		[] call FUNC(ddVehicleClassEventhandler); 
+		[] call FUNC(addVehicleClassEventhandler); 
 	};
 };
 
