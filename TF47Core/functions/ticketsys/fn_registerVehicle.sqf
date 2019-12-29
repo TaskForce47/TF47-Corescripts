@@ -35,7 +35,7 @@ _vehicle setVariable [QGVAR(lastCommander), []];
 [_vehicle, "MPKilled", {	
 	params ["_unit", "", "", ""];
 	[_unit] remoteExecCall [QFUNC(handleVehicleDestroyed), 2];
-}, nil] remoteExecCall ["addMPEventHandler", 0, true];
+}] remoteExecCall ["addMPEventHandler", 0];
 
 _vehicle addEventHandler ["GetIn", {
 	params ["_vehicle", "_role", "_unit", ""];
