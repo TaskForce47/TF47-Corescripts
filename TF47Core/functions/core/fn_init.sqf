@@ -36,6 +36,10 @@ if(hasInterface && {!isDedicated}) then {
 		if(GVAR(useWhitelist)) then {
 			call EFUNC(whitelist,init);
 		};
+
+		if(GAVR(markerSystem)) then {
+			call EFUNC(marker,init);
+		};
 	}] call CBA_fnc_waitUntilAndExecute;
 
 };
