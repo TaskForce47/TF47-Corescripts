@@ -1,6 +1,8 @@
 #include "script_component.hpp"
 
-params ["_vehicle", objNull, [objNull]];
+params [
+	["_vehicle", objNull, [objNull]]
+];
 
 if(isNull _vehicle) exitWith {ERROR_1("Vehicle is not defined in destroyed eventhandler");};
 TRACE_2("Vehicle with ticketsystem attached destroyed!", _vehicle, _lastDriver);
