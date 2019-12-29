@@ -16,7 +16,7 @@
  *
  * Public: No
  */
-["AllVehicles", "InitPost", {
+["AllVehicles", "init", {
 	params ["_vehicle"];
 	if(!isServer) exitWith {};
 	_id = tf47_tickets_vehicles findIf { _x#0 == _vehicle };
