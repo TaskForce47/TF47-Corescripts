@@ -24,7 +24,7 @@ params [
 	["_requiredPermission", 0, [0, ""]]
 ];
 
-if(isNull objNull) exitWith {};
+if(isNull _object) exitWith {};
 if(_requiredPermission == 0) exitWith {};
 
 if(_requiredPermission isEqualType "") then {
