@@ -28,7 +28,7 @@ if(isServer) then {
 
 
 if(hasInterface && {!isDedicated}) then {
-	[{! (isNil QGVAR(playerNamespace))}, {
+	[{ (! (isNil QGVAR(playerNamespace))) && (!isnull (finddisplay 46))}, {
 		if(GVAR(useTicketsystem)) then {
 			call EFUNC(ticket,init);
 		};
