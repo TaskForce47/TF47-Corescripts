@@ -21,15 +21,21 @@ if(isServer) then {
 
 	call FUNC(handlePlayerConnected);
 	call FUNC(handlePlayerDisconnected);
-};
-
-//do client init stuff below to ensure player init is done by the server
-[{! (isNil QGVAR(playerNamespace))}, {
 	if(GVAR(useTicketsystem)) then {
 		call EFUNC(ticket,init);
 	};
+};
 
-	if(GVAR(useWhitelist)) then {
-		call EFUNC(whitelist,init);
-	};
-}] call CBA_fnc_waitUntilAndExecute;
+
+if(hasInterface && {!isDedicated}) then {
+	[{! (isNil QGVAR(playerNamespace))}, {
+		if(GVAR(useTicketsystem)) then {
+			call EFUNC(ticket,init);
+		};
+
+		if(GVAR(useWhitelist)) then {
+			call EFUNC(whitelist,init);
+		};
+	}] call CBA_fnc_waitUntilAndExecute;
+
+};
