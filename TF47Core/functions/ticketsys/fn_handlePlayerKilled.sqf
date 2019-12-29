@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 params ["_killed", "", ""];
 if(! (isPlayer _killed)) exitWith {};
 _cost = _killed getVariable [QGVAR(unitCost), 0];
