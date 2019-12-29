@@ -16,9 +16,11 @@
  *
  * Public: No
  */
-
+LOG_1("Checking if player is allowed for this slot", player);
 _requiredWhitelist = player getVariable [QGVAR(requiredWhitelist), objNull];
-if(isNull _requiredWhitelist) exitwith {};
+if(isNull _requiredWhitelist) exitwith {
+	ERROR_MSG("Cannot verify slotwhitelist");
+};
 
 if(!([_requiredWhitelist] call FUNC(checkWhitelist))) then {
 	["WhitelistedSlot", false] call BIS_fnc_endMission;
