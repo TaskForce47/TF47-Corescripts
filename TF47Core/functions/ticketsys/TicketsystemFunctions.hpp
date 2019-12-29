@@ -9,6 +9,7 @@ class TF47_ticket
 		class checkLastRound {};
 		class clientTicketChangeReceived{};
 		class endRound {};
+		class handlePlayerKilled {};
 		class handleVehicleDestroyed {};
 		class init {};
 		class registerSlot {};

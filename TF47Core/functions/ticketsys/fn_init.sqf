@@ -40,17 +40,8 @@ if(isServer) then {
 		}] call CBA_fnc_addEventHandler
 	};
 
-	//TODO: move to own file
-	handleUnitKilled = compileFinal {
-		params ["_killed", "", ""];
-		if(! (isPlayer _killed)) exitWith {};
-		_cost = _killed getVariable [QGVAR(unitCost), 0];
-		_message = format ["Player died! -%1 tickets", _cost];
-		[_message, _cost, true] call FUNC(changeTicketCount);
-	};
-
 	addMissionEventHandler ["EntityKilled", {
-	 	_this call handleUnitKilled;
+	 	_this call FUNC(handlePlayerKilled);
 	}];
 
 	if(EGVAR(core,autoSetTicketsOnVehicles)) then {
