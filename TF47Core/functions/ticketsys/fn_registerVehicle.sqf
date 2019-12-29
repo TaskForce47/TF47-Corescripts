@@ -32,10 +32,14 @@ _vehicle setVariable [QGVAR(cost), _worth];
 //save last commander as array of [player object, player name, player uid]
 _vehicle setVariable [QGVAR(lastCommander), []];
 
-[_vehicle, "MPKilled", {	
-	params ["_unit", "", "", ""];
-	[_unit] remoteExecCall [QFUNC(handleVehicleDestroyed), 2];
-}] remoteExecCall ["addMPEventHandler", 0];
+
+tf47_vehicle_killed = {
+	_this addMPEventHandler ["MPKilled", {
+		params ["_unit", "", "", ""];
+		[_unit] remoteExecCall [QFUNC(handleVehicleDestroyed), 2];
+	}];
+};
+[_vehicle] remoteExecCall ["tf47_vehicle_killed", 0];
 
 _vehicle addEventHandler ["GetIn", {
 	params ["_vehicle", "_role", "_unit", ""];
