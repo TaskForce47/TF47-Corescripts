@@ -50,7 +50,7 @@ addMissionEventHandler ["PlayerConnected", {
 		_playerId = [_name, _uid] call EFUNC(database,createPlayer); 
 	} else {
 		[_playerId, _name] call EFUNC(database,updatePlayerName);
-		[_playerId] call EFUNC(database,updatePlayerConnection);
+		[_playerId] call EFUNC(database,updateNumberConnections);
 	};
 
 	//save player database id, we need to reference this on each database call
