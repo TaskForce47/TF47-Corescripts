@@ -25,7 +25,6 @@ params [
 ];
 
 if(isNull _object) exitWith {};
-if(_requiredPermission == 0) exitWith {};
 
 if(_requiredPermission isEqualType "") then {
 	switch (_requiredPermission) do {
