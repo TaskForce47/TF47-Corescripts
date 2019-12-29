@@ -22,7 +22,7 @@ params [
 ];
 
 private _sessionStats = [_sessionId] call EFUNC(database,getLastSessionTicket);
-
+LOG_1("Old session data as returned from the database", _sessionStats)
 //in case there is no last session stored we will check against an empty array
 if((count _sessionStats > 0) && {!(_sessionStats#2)}) then {
 	GVAR(tickets) = _sessionStats#1;
