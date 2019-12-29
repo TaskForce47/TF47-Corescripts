@@ -34,7 +34,7 @@ _vehicle setVariable [QGVAR(lastCommander), []];
 
 
 tf47_vehicle_killed = {
-	_this addMPEventHandler ["MPKilled", {
+	_this#0 addMPEventHandler ["MPKilled", {
 		params ["_unit", "", "", ""];
 		[_unit] remoteExecCall [QFUNC(handleVehicleDestroyed), 2];
 	}];
