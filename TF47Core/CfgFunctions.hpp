@@ -1,3 +1,4 @@
+#include "functions\ace\AceFunctions.hpp"
 #include "functions\core\CoreFunctions.hpp"
 #include "functions\logging\LoggingFunctions.hpp"
 #include "functions\ticketsys\TicketsystemFunctions.hpp"
