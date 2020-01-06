@@ -24,6 +24,7 @@ if(isServer) then {
 	if(GVAR(useTicketsystem)) then {
 		call EFUNC(ticket,init);
 	};
+	call EFUNC(ace,init);
 };
 
 
@@ -37,9 +38,13 @@ if(hasInterface && {!isDedicated}) then {
 			call EFUNC(whitelist,init);
 		};
 
-		if(GAVR(markerSystem)) then {
+		if(GVAR(markerSystem)) then {
 			call EFUNC(marker,init);
 		};
+		
+		//disable in case ace fixed their shitzzle
+		call EFUNC(ace,preventPlayerBleedout);
+
 	}] call CBA_fnc_waitUntilAndExecute;
 
 };
