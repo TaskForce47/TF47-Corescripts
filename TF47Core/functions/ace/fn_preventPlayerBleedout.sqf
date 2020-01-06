@@ -4,7 +4,7 @@
     params ["_newUnit", "_oldUnit"];
   	
 	_id = missionNamespace getVariable [QGVAR(bleedOutHandler), -1];
-	if(_id > -1) then { call CBA_fnc_removePerFrameHandler; };
+	if(_id > -1) then { [_id] call CBA_fnc_removePerFrameHandler; };
 	if(isNull _newUnit) exitWith {};
 
 	_handle = [{
