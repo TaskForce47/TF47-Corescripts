@@ -20,3 +20,4 @@
 	}, 0, _newUnit] call CBA_fnc_addPerFrameHandler;
 	missionNamespace setVariable [QGVAR(bleedOutHandler), _handle];
 }, true] call CBA_fnc_addPlayerEventHandler;
+

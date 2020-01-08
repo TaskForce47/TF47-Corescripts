@@ -1,4 +1,5 @@
 #include "script_component.hpp"
+
 ["ace_unconscious", {
 	params ["_unit", "_state"];
 
@@ -8,3 +9,5 @@
 		_unit setUnitTrait ["audibleCoef", 1];
 	};
 }] call CBA_fnc_addEventHandler;
+
+FUNC(preventPlayerBleedout);
