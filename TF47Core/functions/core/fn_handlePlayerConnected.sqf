@@ -59,6 +59,10 @@ addMissionEventHandler ["PlayerConnected", {
 	GVAR(playerNamespace) = _namespace; //user will recvive TF47_core_playerNamespace as variable name
 	//send player his own namespace
 	_owner publicVariableClient QGVAR(playerNamespace);
+
+	[_playerId] remoteExec [QFUNC(setPlayerIdLocal), _owner];
+	
+	_owner publicVariableClient QGVAR(playerId);
 	PUSH(GVAR(playerList),_namespace);
 
 	if(GVAR(useWhitelist)) then {
