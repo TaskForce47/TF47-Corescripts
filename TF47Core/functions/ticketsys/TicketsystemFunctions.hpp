@@ -11,7 +11,8 @@ class TF47_ticket
 		class endRound {};
 		class handlePlayerKilled {};
 		class handleVehicleDestroyed {};
-		class init {};
+		class initPlayer {};
+		class initServer {};
 		class registerSlot {};
 		class registerVehicle {};
 		class startNewRound {};

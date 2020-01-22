@@ -7,7 +7,8 @@ class TF47_whitelist
 		class checkSlotWhitelist {};
 		class checkVehicleWhitelist {};
 		class checkWhitelist {};
-		class init {};
+		class initServer {};
+		class initPlayer {};
 		class reloadWhitelists {};
 	};
 };

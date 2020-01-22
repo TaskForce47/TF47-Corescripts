@@ -4,7 +4,7 @@ class TF47_marker
 	{
 		file = "TF47Core\functions\marker";
 		class addMapmarkerRestriction {};
-		class init {};
-		
+		class initPlayer {};
+		class initServer {};
 	};
 };

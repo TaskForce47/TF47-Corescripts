@@ -1,5 +1,4 @@
 #include "script_component.hpp"
-
 ["ace_unconscious", {
 	params ["_unit", "_state"];
 

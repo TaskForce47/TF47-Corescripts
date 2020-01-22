@@ -4,7 +4,8 @@ class TF47_ace
 	{
 		file = "TF47Core\functions\ace";
 
-		class init {};
+		class initPlayer {};
+		class initServer {};
 		class preventPlayerBleedout {};
 	};
 };
