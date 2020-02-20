@@ -17,3 +17,4 @@
 params ["_owner"];
 
 GVAR(hcList) - _owner;
+[QGVAR(hcDisconnected), _owner] call CBA_fnc_serverEvent;

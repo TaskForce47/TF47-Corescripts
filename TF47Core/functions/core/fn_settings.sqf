@@ -177,11 +177,11 @@
 ] call CBA_fnc_addSetting;
 
 [
-	QGVAR(missionName),
-	"EDITBOX",
+	QGVAR(missionId),
+	"LIST",
 	["Mission name", "e.g. liberation tanoa"],
 	["TF47 Corescripts", "Tech"],
-  	"unknown mission",
+	[[1,50], [], 1],
 	1,
 	nil,
 	true

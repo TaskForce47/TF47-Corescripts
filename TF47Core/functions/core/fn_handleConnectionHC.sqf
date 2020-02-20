@@ -18,3 +18,4 @@
 params ["_owner"];
 
 GVAR(hcList) pushBackUnique _owner;
+[QGVAR(hcConnected), _owner] call CBA_fnc_serverEvent;

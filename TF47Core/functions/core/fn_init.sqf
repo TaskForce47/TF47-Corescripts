@@ -17,7 +17,7 @@ if(isServer) then {
 	GVAR(playerList) = []; //initialize list where player namespaces will be saved
 	GVAR(hcList) = [];
 
-	[GVAR(maxConnections), GVAR(missionName)] call EFUNC(database,init);
+	[GVAR(maxConnections), GVAR(missionId)] call EFUNC(database,init);
 
 	call FUNC(handlePlayerConnected);
 	call FUNC(handlePlayerDisconnected);
