@@ -178,10 +178,10 @@
 
 [
 	QGVAR(missionId),
-	"LIST",
-	["Mission name", "e.g. liberation tanoa"],
+	"SLIDER",
+	["Gadget Mission ID", "e.g. 1 for tf47 liberation"],
 	["TF47 Corescripts", "Tech"],
-	[[1,50], [], 1],
+	[0, 100, 1, 0],
 	1,
 	nil,
 	true
