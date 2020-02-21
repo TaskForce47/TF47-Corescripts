@@ -17,6 +17,8 @@
 
 ["created", {
 	params["_newMarker"];
+
+	if(!local _newMarker) exitWith {};
 	_name = format ["%1", _newMarker];
 	_name = _name splitString "/";
 	_channel = _name select (count _name -1);
