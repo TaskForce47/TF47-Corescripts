@@ -17,56 +17,53 @@ addMissionEventHandler ["PlayerConnected", {
 		[_owner] call FUNC(handleConnectionHC);
 	};
 
-	_namespace = true call CBA_fnc_createNamespace;
-	_namespace setVariable [QGVAR(playerUid), _uid];
-	_namespace setVariable [QGVAR(playerName), _name];
-	_namespace setVariable [QGVAR(clientId), _owner, true];
+	private _namespace = true call CBA_fnc_createNamespace;
+	_namespace setVariable [QEGVAR(db,playerUid), _uid];
+	_namespace setVariable [QEGVAR(db,playerName), _name];
+	_namespace setVariable [QEGVAR(db,clientId), _owner, true];
 
 	if(GVAR(useLogging)) then {
 		//setup time logging stuff
-		_namespace setVariable [QGVAR(timePlayedInf), 0];
-		_namespace setVariable [QGVAR(timePlayedVehSmall), 0];
-		_namespace setVariable [QGVAR(timePlayedVehTracked), 0];
-		_namespace setVariable [QGVAR(timePlayedVehPlane), 0];
-		_namespace setVariable [QGVAR(timePlayedVehHelo), 0];
-		_namespace setVariable [QGVAR(timePlayedBase), 0]; //lol time "played"
-		_namespace setVariable [QGVAR(timePlayedObjective), 0];
+		_namespace setVariable [QEGVAR(db,timePlayedInf), 0];
+		_namespace setVariable [QEGVAR(db,timePlayedVehSmall), 0];
+		_namespace setVariable [QEGVAR(db,timePlayedVehTracked), 0];
+		_namespace setVariable [QEGVAR(db,timePlayedVehPlane), 0];
+		_namespace setVariable [QEGVAR(db,timePlayedVehHelo), 0];
+		_namespace setVariable [QEGVAR(db,timePlayedBase), 0]; //lol time "played"
+		_namespace setVariable [QEGVAR(db,timePlayedObjective), 0];
 
 		//setup kill tracking
-		_namespace setVariable [QGVAR(killsInf), 0];
-		_namespace setVariable [QGVAR(killsVehSmall), 0];
-		_namespace setVariable [QGVAR(killsVehTracked), 0];
-		_namespace setVariable [QGVAR(killsVehPlane), 0];
-		_namespace setVariable [QGVAR(killsVehHelo), 0];
-		_namespace setVariable [QGVAR(deathsInf), 0];
-		_namespace setVariable [QGVAR(deathsVehSmall), 0];
-		_namespace setVariable [QGVAR(deathsVehTracked), 0];
-		_namespace setVariable [QGVAR(deathsVehHelo), 0];
-		_namespace setVariable [QGVAR(deathsVehPlane), 0];
+		_namespace setVariable [QEGVAR(db,killsInf), 0];
+		_namespace setVariable [QEGVAR(db,killsVehSmall), 0];
+		_namespace setVariable [QEGVAR(db,killsVehTracked), 0];
+		_namespace setVariable [QEGVAR(db,killsVehPlane), 0];
+		_namespace setVariable [QEGVAR(db,killsVehHelo), 0];
+		_namespace setVariable [QEGVAR(db,deathsInf), 0];
+		_namespace setVariable [QEGVAR(db,deathsVehSmall), 0];
+		_namespace setVariable [QEGVAR(db,deathsVehTracked), 0];
+		_namespace setVariable [QEGVAR(db,deathsVehHelo), 0];
+		_namespace setVariable [QEGVAR(db,deathsVehPlane), 0];
 	};
 
 	private _playerId = [_uid] call EFUNC(database,getPlayerId);
-	if(_playerId == -1) then { //if user doesn't exist we need to create a new player
-		_playerId = [_name, _uid] call EFUNC(database,createPlayer); 
-	} else {
-		[_playerId, _name] call EFUNC(database,updatePlayerName);
-		[_playerId] call EFUNC(database,updateNumberConnections);
+	if(_playerId < 1) then { //if user doesn't exist we need to create a new player
+		_playerId = [_uid, _name] call EFUNC(database,createNewPlayer);
 	};
 
 	//save player database id, we need to reference this on each database call
 	_namespace setVariable [QGVAR(playerId),_playerId, true];
 
-	GVAR(playerNamespace) = _namespace; //user will recvive TF47_core_playerNamespace as variable name
+	//update player connections and name
+	[QEGVAR(database,updatePlayerConnections),_namespace] call CBA_fnc_serverEvent;
+
+	//user will recvive TF47_core_playerNamespace as variable name
+	GVAR(playerNamespace) = _namespace;
 	//send player his own namespace
 	_owner publicVariableClient QGVAR(playerNamespace);
 
-	[_playerId] remoteExec [QFUNC(setPlayerIdLocal), _owner];
-	
-	_owner publicVariableClient QGVAR(playerId);
 	PUSH(GVAR(playerList),_namespace);
 
 	if(GVAR(useWhitelist)) then {
 		[_playerId] call EFUNC(whitelist,reloadWhitelists);
 	};
 }];
-true
