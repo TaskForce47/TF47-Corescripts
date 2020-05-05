@@ -1,5 +1,10 @@
 #define PREFIX TF47
 
+#define NOTIFICATION_TICKET_LOSS "TF47_core_notification_ticketLoss"
+#define NOTIFICATION_TICKET_GAIN "TF47_core_notification_ticketGain"
+#define NOTIFICATION_TICKET_NOTICKETS "TF47_core_notification_outOfTickets"
+#define NOTIFICATION_WHITELIST_VEHICLE "TF47_core_notification_notWhitelisted"
+
 #define WHITELIST_USER_ADMIN 1
 #define WHITELIST_USER_MODERATOR 2
 #define WHITELIST_USER_TF 3
@@ -27,3 +32,5 @@
 #define EVENT_OBJECTIVE_STARTED 20
 #define EVENT_OBJECTIVE_FAILED 21
 #define EVENT_OBJECTIVE_COMPLETED 22
+
+#include "..\script_macros_common.hpp"
