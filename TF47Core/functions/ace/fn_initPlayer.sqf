@@ -10,3 +10,5 @@
 }] call CBA_fnc_addEventHandler;
 
 call FUNC(preventPlayerBleedout);
+
+LOG("ACE CLIENT INIT DONE!");
