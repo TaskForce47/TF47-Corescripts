@@ -1,8 +1,7 @@
 #include "script_component.hpp"
 
-
 [
-	QGVAR(refreshWhitelist),
+	QGVAR(reloadWhitelist),
 	{
 		params [
 			["_playerId", 0, [0]]
@@ -24,7 +23,5 @@
 		_playerNamespace setVariable [QGVAR(whitelist), _whitelist, true];
 	}
 ] call CBA_fnc_addEventHandlerArgs;
-
-
 
 true
