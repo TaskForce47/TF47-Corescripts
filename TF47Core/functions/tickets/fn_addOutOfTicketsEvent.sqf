@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if(! GVAR(loseOnZeroTickets)) exitwith {};
+if(! EGVAR(core,loseOnZeroTickets)) exitwith {};
 
 [
   QGVAR(outOfTickets),

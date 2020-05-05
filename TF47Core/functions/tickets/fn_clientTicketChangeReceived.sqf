@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 #define TIMEOUT_BEFORE_LOSE 60
 [QGVAR(ticketChange), {
-	params ["_message", "_ticketChange"];
+	params ["_message", "","_ticketChange"];
 	if(_ticketChange > -1) then {
 		[
 			QEGVAR(util,showNotification),

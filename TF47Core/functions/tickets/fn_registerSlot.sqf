@@ -1,4 +1,7 @@
 #include "script_component.hpp"
+
+//[this, 15] call TF47_ticket_fnc_registerSlot
+
 params [
 	["_unit", objNull, [objNull]],
 	["_cost", 0, [0]],
