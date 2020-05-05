@@ -9,4 +9,4 @@
       [_message]
     ] call BIS_fnc_showNotification;
   }
-] call CBA_fnc_addEventHandlerArgs;
+] call CBA_fnc_addEventHandler;
