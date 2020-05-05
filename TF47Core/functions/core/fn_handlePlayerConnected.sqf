@@ -11,7 +11,7 @@
  * Public: No
  */
 addMissionEventHandler ["PlayerConnected", {
-	params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
+	params ["", "_uid", "_name", "", "_owner", ""];
 	if(_name isEqualTo "__SERVER__") exitWith {};
 	if(["HC", _uid] call BIS_fnc_inString) exitWith {
 		[_owner] call FUNC(handleConnectionHC);
@@ -20,7 +20,6 @@ addMissionEventHandler ["PlayerConnected", {
 	private _namespace = true call CBA_fnc_createNamespace;
 	_namespace setVariable [QEGVAR(db,playerUid), _uid];
 	_namespace setVariable [QEGVAR(db,playerName), _name];
-	_namespace setVariable [QEGVAR(db,clientId), _owner, true];
 
 	if(GVAR(useLogging)) then {
 		//setup time logging stuff
@@ -49,6 +48,10 @@ addMissionEventHandler ["PlayerConnected", {
 	if(_playerId < 1) then { //if user doesn't exist we need to create a new player
 		_playerId = [_uid, _name] call EFUNC(database,createNewPlayer);
 	};
+	_namespace setVariable [QEGVAR(db,playerId), _playerId, true];
+
+	[QEGVAR(database,updatePlayerConnections), _namespace] call CBA_fnc_serverEvent;
+	[QEGVAR(database,updatePlayerName), _namespace] call CBA_fnc_serverEvent;
 
 	//save player database id, we need to reference this on each database call
 	_namespace setVariable [QGVAR(playerId),_playerId, true];
@@ -58,12 +61,24 @@ addMissionEventHandler ["PlayerConnected", {
 
 	//user will recvive TF47_core_playerNamespace as variable name
 	GVAR(playerNamespace) = _namespace;
+	GVAR(playerId) = _playerId;
 	//send player his own namespace
 	_owner publicVariableClient QGVAR(playerNamespace);
+	_owner publicVariableClient QGVAR(playerId);
+
+
+	/*
+	[_playerId,
+		{
+			params ["_playerId"];
+			player setVariable [QGVAR(playerId), _playerId, true];
+			QGVAR(playerId) = _playerId;
+			TRACE_1("PLAYER: GOT NEW PLAYER ID!", _playerId);
+		}
+	] remoteExec ["call", _owner];*/
+
+
+	TRACE_2("PLAYER JOINED! CREATE NEW PROFILE:", _namespace, _name);
 
 	PUSH(GVAR(playerList),_namespace);
-
-	if(GVAR(useWhitelist)) then {
-		[_playerId] call EFUNC(whitelist,reloadWhitelists);
-	};
 }];

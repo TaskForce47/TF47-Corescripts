@@ -3,7 +3,7 @@
 /*
  * Author: TF47 Dragon
  *
- * This function adds cba settings to the addon menu and will be 
+ * This function adds cba settings to the addon menu and will be
  * automaticly called by the core scripts upon mission start
  *
  * Arguments:
