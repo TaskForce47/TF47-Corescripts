@@ -9,7 +9,7 @@ class TF47_core
 		class handlePlayerConnected {};
 		class handlePlayerDisconnected {};
 		class init {postInit = 1;};
-		class setPlayerIdLocal {};
+		class initPlayer {};
 		class settings {preInit = 1;};
 	};
 };

@@ -1,14 +1,13 @@
-class TF47_whitelist 
+class TF47_whitelist
 {
-	class whitelist 
+	class whitelist
 	{
 		file = "TF47Core\functions\whitelist";
+		class addReloadWhitelistEvent {};
 		class addSlotWhitelist {};
-		class checkSlotWhitelist {};
-		class checkVehicleWhitelist {};
+		class addWhitelistEventhandler {};
 		class checkWhitelist {};
 		class initServer {};
 		class initPlayer {};
-		class reloadWhitelists {};
 	};
 };
