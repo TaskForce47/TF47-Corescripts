@@ -8,7 +8,6 @@
 		];
 
 		TRACE_2("CHECKING WHITELIST FOR PLAYER", _vehicle, player);
-
 		if(isNull _vehicle) exitWith {};
 		if(_vehicle isKindOf "Man" ||
 			{ _vehicle getVariable [QGVAR(disableWhitelistCheck), false]} ||
@@ -25,7 +24,7 @@
 		};
 
 		switch true do {
-			case (_vehicle isKindOf "Tank" || {_vehicle isKindOf "Wheeled_APC"}): {
+			case (_vehicle isKindOf "Tank" || {_vehicle isKindOf "Wheeled_APC"} || {_vehicle isKindOf "Wheeled_APC_F"}): {
 				if(! (WHITELIST_TANK call FUNC(checkWhitelist))) exitWith {
 					"Tanks" call _fnc_kickOutVehicle;
 				};
@@ -61,16 +60,17 @@
 [
 	QGVAR(doSlotWhitelistCheck),
 	{
-		LOG_1("Checking if player is allowed for this slot", player);
+		TRACE_1("Checking if player is allowed for this slot", player);
+		//get the whitelist id reference for the check
 		private _requiredWhitelist = player getVariable [QGVAR(requiredWhitelist), -1];
 		if(_requiredWhitelist == -1) exitwith {
-			LOG_1("No whitelist found!", _requiredWhitelist);
+			TRACE_1("No whitelist found!", _requiredWhitelist);
 		};
 
-		if(!([_requiredWhitelist] call FUNC(checkWhitelist))) then {
+		if(! ([_requiredWhitelist] call FUNC(checkWhitelist))) then {
 			["WhitelistedSlot", false] call BIS_fnc_endMission;
 		};
 	}
-] call CBA_fnc_addEventHandlerArgs;
+] call CBA_fnc_addEventHandler;
 
 true
