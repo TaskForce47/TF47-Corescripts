@@ -5,6 +5,6 @@
 [
   QGVAR(endSession),
   {
-    [QEGVAR(database,finishSession), nil] call CBA_fnc_serverEvent;
+    [QEGVAR(database,finishSession), []] call CBA_fnc_serverEvent;
   }
 ] call CBA_fnc_addEventHandlerArgs;
