@@ -8,8 +8,10 @@ class TF47_ticket
 		class addTicketChangeEvent {};
 		class addVehicleClassEventhandler {};
 		class clientTicketChangeReceived {};
+		class handlePlayerDisconnect {};
 		class handlePlayerKilled {};
 		class handleVehicleDestroyed {};
+		class initCustomEvents {};
 		class initPlayer {};
 		class initServer {};
 		class registerSlot {};

@@ -3,13 +3,10 @@
 LOG("STARTING TICKET SERVER INIT!");
 
 GVAR(vehicleList) = [];
-//register server events
-call FUNC(addEndSessionEvent);
-call FUNC(addOutOfTicketsEvent);
-call FUNC(addTicketChangeEvent);
-call FUNC(addVehicleClassEventhandler);
-
 GVAR(tickets) = 0;
+
+call FUNC(addVehicleClassEventhandler);
+call FUNC(handlePlayerDisconnect);
 
 private _fnc_startNewRound = {
 	GVAR(tickets) = EGVAR(core,startingTickets);

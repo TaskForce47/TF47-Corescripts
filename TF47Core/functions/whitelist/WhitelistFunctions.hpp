@@ -7,6 +7,7 @@ class TF47_whitelist
 		class addSlotWhitelist {};
 		class addWhitelistEventhandler {};
 		class checkWhitelist {};
+		class initCustomEvents {};
 		class initServer {};
 		class initPlayer {};
 	};
