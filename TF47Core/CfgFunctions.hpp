@@ -1,6 +1,7 @@
 #include "functions\ace\AceFunctions.hpp"
 #include "functions\core\CoreFunctions.hpp"
 #include "functions\logging\LoggingFunctions.hpp"
-#include "functions\ticketsys\TicketsystemFunctions.hpp"
+#include "functions\tickets\TicketsystemFunctions.hpp"
 #include "functions\marker\MarkerFunctions.hpp"
 #include "functions\whitelist\WhitelistFunctions.hpp"
+#include "functions\util\UtilFunctions.hpp"

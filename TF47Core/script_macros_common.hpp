@@ -1,3 +1,5 @@
+#define PREFIX TF47
+
 /*
     Header: script_macros_common.hpp
     Description:
@@ -136,6 +138,7 @@ Author:
 ------------------------------------------- */
 
 // If DEBUG_MODE_FULL, then also enable DEBUG_MODE_NORMAL.
+#define DEBUG_MODE_FULL
 #ifdef DEBUG_MODE_FULL
 #define DEBUG_MODE_NORMAL
 #endif
@@ -176,7 +179,7 @@ Author:
 ------------------------------------------- */
 #ifdef DEBUG_MODE_FULL
 
-#define LOG(MESSAGE) LOG_SYS_FILELINENUMBERS('LOG',MESSAGE)
+#define LOG(MESSAGE) LOG_SYS('LOG',MESSAGE)
 #define LOG_1(MESSAGE,ARG1) LOG(FORMAT_1(MESSAGE,ARG1))
 #define LOG_2(MESSAGE,ARG1,ARG2) LOG(FORMAT_2(MESSAGE,ARG1,ARG2))
 #define LOG_3(MESSAGE,ARG1,ARG2,ARG3) LOG(FORMAT_3(MESSAGE,ARG1,ARG2,ARG3))
@@ -237,7 +240,7 @@ Author:
 ------------------------------------------- */
 #ifdef DEBUG_MODE_NORMAL
 
-#define WARNING(MESSAGE) LOG_SYS_FILELINENUMBERS('WARNING',MESSAGE)
+#define WARNING(MESSAGE) LOG_SYS('WARNING',MESSAGE)
 #define WARNING_1(MESSAGE,ARG1) WARNING(FORMAT_1(MESSAGE,ARG1))
 #define WARNING_2(MESSAGE,ARG1,ARG2) WARNING(FORMAT_2(MESSAGE,ARG1,ARG2))
 #define WARNING_3(MESSAGE,ARG1,ARG2,ARG3) WARNING(FORMAT_3(MESSAGE,ARG1,ARG2,ARG3))
@@ -273,7 +276,7 @@ Example:
 Author:
     Spooner
 ------------------------------------------- */
-#define ERROR(MESSAGE) LOG_SYS_FILELINENUMBERS('ERROR',MESSAGE)
+#define ERROR(MESSAGE) LOG_SYS('ERROR',MESSAGE)
 #define ERROR_1(MESSAGE,ARG1) ERROR(FORMAT_1(MESSAGE,ARG1))
 #define ERROR_2(MESSAGE,ARG1,ARG2) ERROR(FORMAT_2(MESSAGE,ARG1,ARG2))
 #define ERROR_3(MESSAGE,ARG1,ARG2,ARG3) ERROR(FORMAT_3(MESSAGE,ARG1,ARG2,ARG3))
@@ -1648,3 +1651,5 @@ Author:
     };\
     _return\
 })
+
+#define EVENT(arg) QUOTE(EGVAR(database,arg))

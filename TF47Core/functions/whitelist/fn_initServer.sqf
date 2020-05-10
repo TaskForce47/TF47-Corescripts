@@ -1,1 +1,3 @@
 #include "script_component.hpp"
+LOG("STARTING WHITELIST SERVER INIT!");
+LOG("WHITELIST SERVER INIT COMPLETED!");
