@@ -11,13 +11,6 @@ params [
 _unit setVariable [QGVAR(unitCost), _cost];
 _unit setVariable [QGVAR(slotType), _slotType];
 
-[
-	_unit,
-	"killed",
-	{
-		params ["_unit"];
-		[_unit] call FUNC(handlePlayerKilled);
-	}
-] call CBA_fnc_addBISEventHandler;
-
 TRACE_2("ADDED TICKET COST TO SLOT", _unit, _cost);
+
+true
