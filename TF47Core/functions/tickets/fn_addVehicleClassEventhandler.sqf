@@ -26,7 +26,7 @@
 		if(_id < 0) exitWith {
 
 			ERROR_1("CANNOT FIND VEHICLE IN TICKETCOST LIST! FALLING BACK TO CLASS COST!", typeOf _vehicle);
-			
+
 			switch true do {
 			    case (_vehicle isKindOf "Tank" || {_vehicle isKindOf "Wheeled_APC"}): {
 						private _cost = (EGVAR(core,vehicleTicketCostFallback)) select 3;

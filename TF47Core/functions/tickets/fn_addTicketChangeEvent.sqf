@@ -19,7 +19,7 @@
 
     //check if we are out of tickets
     if(GVAR(tickets) < 1) then {
-    	[QGVAR(outOfTickets), [GVAR(tickets), _message]] call CBA_fnc_GlobalEvent;
+    	[QGVAR(outOfTickets), [GVAR(tickets), _message]] call CBA_fnc_serverEvent;
     };
 
     //check if we exceed the ticket cap
