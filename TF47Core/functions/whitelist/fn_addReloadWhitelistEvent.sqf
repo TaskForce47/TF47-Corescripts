@@ -18,9 +18,10 @@
 		};
 
 		private _playerNamespace = _namespaces select _index;
-		private _whitelist = [_playerId] call EFUNC(database,Whitelist);
+		private _whitelist = [_playerId] call EFUNC(database,getPlayerWhitelist);
 
 		_playerNamespace setVariable [QGVAR(whitelist), _whitelist, true];
+		TRACE_2("UPDATED WHITELIST FOR PLAYER:", _playerId, _whitelist);
 	}
 ] call CBA_fnc_addEventHandlerArgs;
 
