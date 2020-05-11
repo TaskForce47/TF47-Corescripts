@@ -10,7 +10,7 @@ if(isNull _vehicle) exitWith {
 
 private _cost = _vehicle getVariable [QGVAR(cost), 0];
 //private _lastCommander = _vehicle getVariable [QGVAR(lastCommander), objNull];
-private _displayName = _vehicle getVariable [QGVAR(displayName), "unknown vehicle"];
+private _displayName = [_vehicle] call EFUNC(util,getVehicleName);
 private _message = format ["%1 was destroyed! %2 tickets.", _displayName, _cost];
 
 [QGVAR(changeTicketCount),[_message, _cost]] call CBA_fnc_serverEvent;

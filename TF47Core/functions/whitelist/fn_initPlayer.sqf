@@ -11,7 +11,7 @@ LOG("STARTING PLAYER WHITELIST INIT!");
 //TODO: wait until TF47_whitelist_whitelist is defined!
 [{
   private _namespace = EGVAR(core,playerNamespace);
-  (_namespace getVariable [QGVAR(whitelist), 0]) != 0
+  (_namespace getVariable [QGVAR(whitelist), 0]) isEqualType []
 },
 {
   ["vehicle", {

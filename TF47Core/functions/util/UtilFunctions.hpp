@@ -5,6 +5,7 @@ class TF47_util
       file = "TF47Core\functions\util";
       class addNotificationEventhandler {}
       class getPlayerTransportType {};
+      class getVehicleName {};
       class initCustomEvents {};
       class initPlayer {};
       class initServer {};

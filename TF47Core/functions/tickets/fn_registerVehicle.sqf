@@ -9,8 +9,6 @@ _cost = -1 * (abs _cost);
 
 _vehicle setVariable [QGVAR(lastCommander), objNull];
 _vehicle setVariable [QGVAR(cost), _cost];
-private _displayName = [_vehicle] call EFUNC(util,getVehicleName);
-_vehicle setVariable [QGVAR(displayName), _displayName];
 
 //_vehicle setVariable [QGVAR(lastUsed), CBA_missionTime];
 
@@ -75,7 +73,7 @@ private _fnc_findNewCommander = {
   }
 ] call CBA_fnc_addBISEventHandler;*/
 
-TRACE_2("ADDED TICKET COST TO VEHICLE", _vehicle, _cost);
+TRACE_2("ADDED TICKET COST TO VEHICLE", typeOf _vehicle, _cost);
 
 GVAR(vehicleList) pushBack _vehicle;
 
