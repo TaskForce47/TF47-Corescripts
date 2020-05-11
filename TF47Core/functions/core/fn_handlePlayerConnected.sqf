@@ -19,7 +19,7 @@ addMissionEventHandler ["PlayerConnected", {
 
 	private _namespace = true call CBA_fnc_createNamespace;
 	_namespace setVariable [QGVAR(playerUid), _uid];
-	_namespace setVariable [QGVAR(playerName), _name];
+	_namespace setVariable [QEGVAR(db,playerName), _name];
 
 	if(GVAR(useLogging)) then {
 		//setup time logging stuff
