@@ -2,6 +2,7 @@
 #define TIMEOUT_BEFORE_LOSE 10
 [QGVAR(ticketChange), {
 	params ["_message", "","_ticketChange"];
+
 	if(_ticketChange > -1) then {
 		[
 			QEGVAR(util,showNotification),
@@ -13,6 +14,14 @@
 			[NOTIFICATION_TICKET_LOSS,_message]
 		] call CBA_fnc_localEvent;
 	};
+
+	[{
+		hint format ["Tickets: %1", GVAR(tickets)];
+	},
+	nil,
+	5
+	] call CBA_fnc_waitAndExecute;
+	
 }] call CBA_fnc_addEventHandler;
 
 if(EGVAR(core,loseOnZeroTickets)) then {

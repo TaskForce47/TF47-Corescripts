@@ -6,6 +6,7 @@ class TF47_ticket
 		class addEndSessionEvent {};
 		class addOutOfTicketsEvent {};
 		class addTicketChangeEvent {};
+		class addTicketDisplayLoop {};
 		class addVehicleClassEventhandler {};
 		class clientTicketChangeReceived {};
 		class handlePlayerDisconnect {};
