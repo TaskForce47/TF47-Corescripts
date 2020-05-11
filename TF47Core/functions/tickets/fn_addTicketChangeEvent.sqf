@@ -17,10 +17,12 @@
     //private _oldTicketCount = GVAR(tickets);
     GVAR(tickets) = GVAR(tickets) + _ticketChange;
 
-    //check if we are out of tickets
-    if(GVAR(tickets) < 1) then {
-    	[QGVAR(outOfTickets), [GVAR(tickets), _message]] call CBA_fnc_serverEvent;
+    //check if we are out of tickets and if we fired that event already
+    if(GVAR(tickets) < 1 && {! GVAR(roundFinished)}) then {
+      [QGVAR(outOfTickets), [GVAR(tickets), _message]] call CBA_fnc_serverEvent;
+      GVAR(roundFinished) = true;
     };
+
 
     //check if we exceed the ticket cap
     if(GVAR(tickets) > EGVAR(core,maxTickets)) then {
