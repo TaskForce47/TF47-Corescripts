@@ -3,6 +3,7 @@ class TF47_ticket
 	class ticketsystem
 	{
 		file = "TF47Core\functions\tickets";
+		class addDesertionHandler {};
 		class addEndSessionEvent {};
 		class addOutOfTicketsEvent {};
 		class addTicketChangeEvent {};
