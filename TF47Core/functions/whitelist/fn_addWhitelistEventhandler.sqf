@@ -1,5 +1,6 @@
 #include "script_component.hpp"
 
+//handle whitelist stuff
 [
 	QGVAR(doVehicleWhitelistCheck),
 	{
@@ -50,6 +51,71 @@
 					"attack planes" call _fnc_kickOutVehicle;
 				};
 				if(! ([WHITELIST_PLANE] call FUNC(checkWhitelist))) exitWith {
+					"planes" call _fnc_kickOutVehicle;
+				};
+			};
+		};
+	}
+] call CBA_fnc_addEventHandler;
+
+//handle slot restriction for vehicles
+[
+	QGVAR(doVehicleWhitelistCheck),
+	{
+		params [
+			["_vehicle", objNull, [objNull]]
+		];
+		if(isNull _vehicle) exitWith {};
+		if(_vehicle isKindOf "Man" ||
+			{ _vehicle getVariable [QGVAR(disableWhitelistCheck), false]} ||
+			{ ((assignedVehicleRole player) select 0) isEqualTo "cargo"} ||
+			{ !isTouchingGround _vehicle}
+		) exitWith {};
+
+		TRACE_2("Checking if unit is on a slot allowed for this vehicle", _vehicle, player);
+
+		private _fnc_kickOutVehicle = {
+			player action ["GetOut", vehicle player];
+			[
+				QEGVAR(util,showNotification),
+				[NOTIFICATION_WHITELIST_VEHICLE, format ["You need to be on a slot for %1 vehicle", _this]]
+			] call CBA_fnc_localEvent;
+		};
+
+		private _allowedVehicles = player getVariable [QGVAR(slotRestrictions), []];
+		switch true do
+		{
+			case (_vehicle isKindOf "Tank" || {_vehicle isKindOf "Wheeled_APC"} || {_vehicle isKindOf "Wheeled_APC_F"}):
+			{
+				if(! (WHITELIST_TANK in _allowedVehicles)) exitWith
+				{
+					"Tanks" call _fnc_kickOutVehicle;
+				};
+			};
+			case (_vehicle isKindOf "Helicopter"):
+			{
+				//Do the check if the used vehicle is an attack helicopter
+				if(_vehicle in EGVAR(core,attackHelicopter) && 		//is the vehicle in the list?
+					{! (WHITELIST_ATTACK_AIR in _allowedVehicles)}	//do final player whitelist check
+				) exitWith {
+					"attack helicopters" call _fnc_kickOutVehicle;
+				};
+				//do the normal helicopter check
+				if(! (WHITELIST_HELO in _allowedVehicles)) exitWith
+				{
+					"helicopters" call _fnc_kickOutVehicle;
+				};
+			};
+			case (_vehicle isKindOf "Plane"):
+			{
+				if(_vehicle in EGVAR(core,attackPlanes) &&
+					{! (WHITELIST_ATTACK_AIR in _allowedVehicles)}
+				) exitWith
+				{
+					"attack planes" call _fnc_kickOutVehicle;
+				};
+				if(! (WHITELIST_PLANE in _allowedVehicles)) exitWith
+				{
 					"planes" call _fnc_kickOutVehicle;
 				};
 			};

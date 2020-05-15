@@ -5,6 +5,7 @@ class TF47_whitelist
 		file = "TF47Core\functions\whitelist";
 		class addReloadWhitelistEvent {};
 		class addSlotWhitelist {};
+		class addSlotRestriction {};
 		class addWhitelistEventhandler {};
 		class checkWhitelist {};
 		class initCustomEvents {};

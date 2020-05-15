@@ -152,11 +152,33 @@
 ] call CBA_fnc_addSetting;
 
 [
-	QGVAR(defaultCost),
+	QGVAR(defaultSlotCost),
 	"LIST",
 	["Default slot ticket cost", "Default cost for a slot if no value is found"],
 	["TF47 Corescripts", "Ticketsystem"],
 	[[0, 2, 5, 10, 15], [], 1],
+	1,
+	nil,
+	true
+] call CBA_fnc_addSetting;
+
+[
+	QGVAR(enableVehicleDeserting),
+	"CHECKBOX",
+	["Enable vehicle deserting", "If a vehicle is neither used in a while nor in a base area it will be counted as a loss and will be removed from the game"],
+	["TF47 Corescripts", "Ticketsystem"],
+	true,
+	[[1,2,3,4,5,6,7,8], [], 2],
+	nil,
+	true
+] call CBA_fnc_addSetting;
+
+[
+	QGVAR(vehicleDisertingTimeout),
+	"LIST",
+	["Time in min before a vehicle will count as deserted", "Will be reseted on each time the vehicle is either in a base area or a unit enters the vehicle"],
+	["TF47 Corescripts", "Ticketsystem"],
+	true,
 	1,
 	nil,
 	true

@@ -9,5 +9,6 @@ class TF47_util
       class initCustomEvents {};
       class initPlayer {};
       class initServer {};
+      class isInCircle {};
     };
 };

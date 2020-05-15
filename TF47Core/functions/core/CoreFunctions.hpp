@@ -11,6 +11,7 @@ class TF47_core
 		class init {postInit = 1;};
 		class initCustomEvents {preInit = 1;};
 		class initPlayer {};
+		class initServer {};
 		class settings {preInit = 1;};
 	};
 };
