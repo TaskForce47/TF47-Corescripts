@@ -65,6 +65,12 @@
 		params [
 			["_vehicle", objNull, [objNull]]
 		];
+		if(isNull _vehicle) exitWith {};
+		if(_vehicle isKindOf "Man" ||
+			{ _vehicle getVariable [QGVAR(disableWhitelistCheck), false]} ||
+			{ ((assignedVehicleRole player) select 0) isEqualTo "cargo"} ||
+			{ !isTouchingGround _vehicle}
+		) exitWith {};
 
 		TRACE_2("Checking if unit is on a slot allowed for this vehicle", _vehicle, player);
 
