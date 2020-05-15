@@ -82,5 +82,4 @@ if (isClass(configFile >> "CfgPatches" >> "ace_main")) then {
 		["Boxloader_Pallet_base"],
 		true
 	] call CBA_fnc_addClassEventHandler;
-};
-*/
+};*/

@@ -9,6 +9,7 @@ _cost = -1 * (abs _cost);
 
 _vehicle setVariable [QGVAR(lastCommander), objNull];
 _vehicle setVariable [QGVAR(cost), _cost];
+_vehicle setVariable [QGVAR(lasttimeUsed), CBA_missionTime];
 
 //_vehicle setVariable [QGVAR(lastUsed), CBA_missionTime];
 
@@ -17,16 +18,6 @@ _vehicle addMPEventHandler ["MPKilled", {
   if(!isServer) exitWith {};
   [_unit] call FUNC(handleVehicleDestroyed);
 }];
-/*
-[
-  _vehicle,
-  "Killed",
-  {
-    params ["_unit"];
-    systemchat "vehicle destroyed!";
-    [_unit] call FUNC(handleVehicleDestroyed);
-  }
-] call CBA_fnc_addBISEventHandler;*/
 
 //now we need to keep track of the last commanding user
 /*
@@ -51,27 +42,22 @@ private _fnc_findNewCommander = {
     TRACE_2("NEW COMMANDER FOR VEHICLE (driver)", _vehilce, _commander);
   };
 };
-
+*/
 [
   _vehicle,
-  "GetIn", {
-    _this call _fnc_findNewCommander;
+  "GetIn",
+  {
+    _vehicle setVariable [QGVAR(lastTimeUsed), CBA_missionTime]
   }
 ] call CBA_fnc_addBISEventHandler;
 
 [
   _vehicle,
-  "GetOut", {
-    _this call _fnc_findNewCommander;
+  "GetOut",
+  {
+    _vehicle setVariable [QGVAR(lastTimeUsed), CBA_missionTime]
   }
 ] call CBA_fnc_addBISEventHandler;
-
-[
-  _vehicle,
-  "SeatSwitched", {
-    _this call _fnc_findNewCommander;
-  }
-] call CBA_fnc_addBISEventHandler;*/
 
 TRACE_2("ADDED TICKET COST TO VEHICLE", typeOf _vehicle, _cost);
 
