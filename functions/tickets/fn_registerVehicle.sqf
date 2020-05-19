@@ -1,12 +1,14 @@
 #include "script_component.hpp"
 
+//[this, 10] call TF47_ticket_fnc_registerVehicle;
 params [
   ["_vehicle", objNull, [objNull]],
   ["_cost", 0, [0]]
 ];
 
-_cost = -1 * (abs _cost);
+if(_vehicle getVariable [QGVAR(enabled), true]) exitWith {};
 
+_cost = -1 * (abs _cost);
 _vehicle setVariable [QGVAR(lastCommander), objNull];
 _vehicle setVariable [QGVAR(cost), _cost];
 _vehicle setVariable [QGVAR(lasttimeUsed), CBA_missionTime];

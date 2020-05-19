@@ -34,7 +34,7 @@
 				//Do the check if the used vehicle is an attack helicopter
 				if((EGVAR(core,useWhitelistAttack)) && 											//is the check enabled?
 					{_vehicle in EGVAR(core,attackHelicopter)} && 						//is the vehicle in the list?
-					{! ([WHITELIST_ATTACK_AIR] call FUNC(checkWhitelist))}	//do final player whitelist check
+					{! (WHITELIST_ATTACK_AIR call FUNC(checkWhitelist))}	//do final player whitelist check
 				) exitWith {
 					"attack helicopters" call _fnc_kickOutVehicle;
 				};
@@ -46,17 +46,20 @@
 			case (_vehicle isKindOf "Plane"): {
 				if((EGVAR(core,useWhitelistAttack)) &&
 				 	{_vehicle in EGVAR(core,attackPlanes)} &&
-					{! ([WHITELIST_ATTACK_AIR] call FUNC(checkWhitelist))}
+					{! (WHITELIST_ATTACK_AIR call FUNC(checkWhitelist))}
 				) exitWith {
 					"attack planes" call _fnc_kickOutVehicle;
 				};
-				if(! ([WHITELIST_PLANE] call FUNC(checkWhitelist))) exitWith {
+				if(! (WHITELIST_PLANE call FUNC(checkWhitelist))) exitWith {
 					"planes" call _fnc_kickOutVehicle;
 				};
 			};
 		};
 	}
 ] call CBA_fnc_addEventHandler;
+
+
+if(! EGVAR(core,useSlotRestriction)) exitWith {true};
 
 //handle slot restriction for vehicles
 [
