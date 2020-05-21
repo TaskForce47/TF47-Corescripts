@@ -9,19 +9,28 @@ GVAR(attackPlanes) = [
 	"FIR_F15E",
 	"JS_JC_FA18E",
 	"JS_JC_FA18F",
-	"TF47_a10a",
+	"TF47_A10A",
+	"FIR_A10A",
+	"TF47_A10C",
+	"FIR_A10C",
 	"RHS_A10",
+	"TF47_F15C",
+	"TF47_F15E",
+	"CUP_B_AV8B_DYN_USMC",
 	"rhsusf_f22"
 ];
 
 GVAR(attackHelicopter) = [
-	"RHS_MELB_AH6M",
+	"CUP_B_MH60L_DAP_4x_US",
+	"CUP_B_MH60L_DAP_4x_USN",
 	"RHS_UH1Y_d_GS",
-	"BWA3_Tiger_RMK_Heavy",
+	"RHS_MELB_AH6M",
 	"RHS_AH1Z",
+	"RHS_AH64D_noradar_wd",
 	"RHS_AH64D_d",
 	"RHS_AH64D_wd",
-	"UK3CB_BAF_Apache_AH1",
-	"UK3CB_BAF_Wildcat_AH1_CAS_6C",
-	"UK3CB_BAF_Wildcat_AH1_CAS_8C"
+	"UK3CB_BAF_Apache_AH1_JS",
+	"UK3CB_BAF_Wildcat_AH1_CAS_6A",
+	"UK3CB_BAF_Wildcat_AH1_CAS_6B",
+	"UK3CB_BAF_Wildcat_AH1_HEL_6A"
 ];
