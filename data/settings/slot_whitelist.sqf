@@ -10,7 +10,7 @@ _whitelistSlots = [
 
 _restrictedSlots = [
 	
-	["TOC01", ["Tank","Helo","Plane","AttackAir"]],	["TOC02", ["CCT","Admin","Moderator"]]
+	["TOC01", ["Tank","Helo","Plane","AttackAir"]],	["TOC02", ["Tank","Helo","Plane","AttackAir"]]
 
 	["HP01", ["Helo"]],	["HP02", ["Helo"]],	["HP03", ["Helo"]],	["HP04", ["Helo"]],
 	["CC01", ["Helo"]],	["CC02", ["Helo"]],	["CC03", ["Helo"]],	["CC04", ["Helo"]],

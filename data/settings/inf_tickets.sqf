@@ -18,25 +18,25 @@
 _infantryTicketsDefault = 4;
 _infantryTicketsData = [
 
-["TOC01", 10],	["TOC02", 10],
+["TOC01", 10, "TOC Officer"],		["TOC02", 10, "TOC Officer"],
 
-["MED01", 6],	["MED02", 6],	["MED03", 6],	["MED04", 6],
-["MED05", 6],	["MED06", 6],	["MED07", 6],	["MED08", 6],
-["MED09", 6],	["MED10", 6],
+["MED01", 6, "Medic"],				["MED02", 6, "Medic"],				["MED03", 6, "Medic"],				["MED04", 6, "Medic"],
+["MED05", 6, "Medic"],				["MED06", 6, "Medic"],				["MED07", 6, "Medic"],				["MED08", 6, "Medic"],
+["MED09", 6, "Medic"],				["MED10", 6, "Medic"],				
+	
+["ENG01", 6, "Engineer"],			["ENG02", 6, "Engineer"],			["ENG03", 6, "Engineer"],			["ENG04", 6, "Engineer"],
+["ENG05", 6, "Engineer"],			["ENG06", 6, "Engineer"],			["ENG07", 6, "Engineer"],			["ENG08", 6, "Engineer"],
 
-["ENG01", 6],	["ENG02", 6],	["ENG03", 6],	["ENG04", 6],
-["ENG05", 6],	["ENG06", 6],	["ENG07", 6],	["ENG08", 6],
+["HP01", 10, "Helicopter Pilot"],	["HP02", 10, "Helicopter Pilot"],	["HP03", 10, "Helicopter Pilot"],	["HP04", 10, "Helicopter Pilot"],
+["CC01", 8, "Crew Chief"],			["CC02", 8, "Crew Chief"],			["CC03", 8, "Crew Chief"],			["CC04", 8, "Crew Chief"],
 
-["HP01", 10],	["HP02", 10],	["HP03", 10],	["HP04", 10],
-["CC01", 10],	["CC02", 10],	["CC03", 10],	["CC04", 10],
+["AH11", 15, "Attack Helicopter Pilot"],								["AH12", 15, "Attack Helicopter Gunner"],
+["AH21", 15, "Attack Helicopter Pilot"],								["AH22", 15, "Attack Helicopter Gunner"],
 
-["AH11", 15],	["AH12", 15],
-["AH21", 15],	["AH22", 15],
+["JP1",  15, "Jet Pilot"],			["JP2",  15, "Jet Pilot"],			["JP3",  15, "Jet Pilot"],
 
-["JP1",  15],	["JP2",  15],	["JP3",  15],
-
-["T11",  8],	["T12",  8],	["T13",  8], ["T14",  8],
-["T21",  8],	["T22",  8],	["T23",  8], ["T24",  8]
+["T11",  8, "Tank Crew"],			["T12",  8, "Tank Crew"],			["T13",  8, "Tank Crew"], 			["T14",  8, "Tank Crew"],
+["T21",  8, "Tank Crew"],			["T22",  8, "Tank Crew"],			["T23",  8, "Tank Crew"], 			["T24",  8, "Tank Crew"]
 
 ];
 
