@@ -48,9 +48,10 @@ _infantryTicketsData = [
 
 _infantryTickets = [_infantryTicketsData, _infantryTicketsDefault] call CBA_fnc_hashCreate;
 
+
 // Init Slots
 {
-	_x call TF47_tickets_fnc_registerSlot;
+	_x call TF47_ticket_fnc_registerSlot;
 } forEach _infantryTickets;
 
 
