@@ -120,7 +120,7 @@ GVAR(vehicleTicketcost) = [
 	//13
 	["rhsusf_stryker_m1126_m2_d",13],
 	["rhsusf_stryker_m1126_mk19_d",13],
-	["rhsusf_stryker_m1127_m2_d",,13],
+	["rhsusf_stryker_m1127_m2_d",13],
 	["rhsusf_stryker_m1132_m2_d",13],
 	["CUP_B_M1133_MEV_Desert",13],
 	["CUP_B_T810_Reammo_CZ_DES",13],
@@ -134,8 +134,7 @@ GVAR(vehicleTicketcost) = [
 	["rhsusf_M977A4_AMMO_BKIT_usarmy_d",13],
 	["rhsusf_M977A4_BKIT_M2_usarmy_d",13],
 	["rhsusf_M977A4_BKIT_usarmy_d",13],
-	["rhsusf_M977A4_REPAIR_BKIT_M2_usarmy_d",13],
-	["rhsusf_stryker_m1126_m2_d",13],		
+	["rhsusf_M977A4_REPAIR_BKIT_M2_usarmy_d",13],		
 	["RHS_MELB_AH6M",13],
 	//15
 	["I_LT_01_AA_F",15],
