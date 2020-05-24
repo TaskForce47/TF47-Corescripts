@@ -177,19 +177,19 @@
 	"CHECKBOX",
 	["Enable vehicle deserting", "If a vehicle is neither used in a while nor in a base area it will be counted as a loss and will be removed from the game"],
 	["TF47 Corescripts", "Ticketsystem"],
-	true,
+	false,
 	[[1,2,3,4,5,6,7,8], [], 2],
 	nil,
 	true
 ] call CBA_fnc_addSetting;
 
 [
-	QGVAR(vehicleDisertingTimeout),
+	QGVAR(vehicleDesertingTimeout),
 	"LIST",
 	["Time in min before a vehicle will count as deserted", "Will be reseted on each time the vehicle is either in a base area or a unit enters the vehicle"],
 	["TF47 Corescripts", "Ticketsystem"],
 	true,
-	1,
+	[[10,30,60,90,120,150,180,210,240], [], 3],
 	nil,
 	true
 ] call CBA_fnc_addSetting;
@@ -200,7 +200,7 @@
 [
 	QGVAR(maxConnections),
 	"LIST",
-	["Maximum Database connections", "Maximum database connections that will be created"],
+	["Maximal Database connections", "Maximum database connections that will be created"],
 	["TF47 Corescripts", "Tech"],
 	[[1,2,3,4,5,6,7,8], [], 2],
 	1,
