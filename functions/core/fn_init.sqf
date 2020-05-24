@@ -8,10 +8,10 @@
  *
  * Public: NO
  */
-/*
+
 if(isServer && hasInterface && !isDedicated) exitWith {
 	ERROR("YOU CANNOT USE THE CORESCRIPTS WHILE IN EDITOR! DISABLED FOR YOUR TESTING!");
-};*/
+};
 
 if(isServer) then {
 	call FUNC(initServer);
