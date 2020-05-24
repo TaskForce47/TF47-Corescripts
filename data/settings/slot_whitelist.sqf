@@ -1,6 +1,6 @@
 #include "..\script_component.hpp"
 private _whitelistSlots = [
-	[TOC01, "CCT"],	[TOC02, "CCT"]
+	[TOC01, ["CCT"]],	[TOC02, ["CCT"]]
 ];
 
 {
