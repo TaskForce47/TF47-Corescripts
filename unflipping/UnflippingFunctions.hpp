@@ -13,7 +13,7 @@ class vet_unflipping
     class unflipRequiredAmount {};
     class unflipVehicle {};
     class initAction {};
-    class initSettings {preInit=1};
+    class initSettings {preInit=1;};
   };
 
   class debug

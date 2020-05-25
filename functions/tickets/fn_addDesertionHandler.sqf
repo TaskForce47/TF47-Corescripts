@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if(! EGVAR(enableVehicleDeserting)) exitWith {};
+if(! EGVAR(core,enableVehicleDeserting)) exitWith {};
 
 [
   {
