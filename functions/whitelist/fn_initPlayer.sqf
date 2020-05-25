@@ -14,11 +14,16 @@ LOG("STARTING PLAYER WHITELIST INIT!");
   (_namespace getVariable [QGVAR(whitelist), 0]) isEqualType []
 },
 {
+  /*
   ["vehicle", {
     params ["_unit", "_newVehicle"];
-  	[QGVAR(doVehicleWhitelistCheck), _newVehicle] call CBA_fnc_localEvent;
-  },true] call CBA_fnc_addPlayerEventHandler;
 
+  	[QGVAR(doVehicleWhitelistCheck), _newVehicle] call CBA_fnc_localEvent;
+  },true] call CBA_fnc_addPlayerEventHandler;*/
+  player addEventHandler ["GetInMan", {
+  	params ["", "", "_vehicle"];
+    [QGVAR(doVehicleWhitelistCheck), _vehicle] call CBA_fnc_localEvent;
+  }];
   ["turret", {
   	params ["_unit", ""];
   	[QGVAR(doVehicleWhitelistCheck), vehicle _unit] call CBA_fnc_localEvent;
