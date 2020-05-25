@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if(! EGVAR(ticket,useTicketsystem)) exitWith {};
+if(! EGVAR(core,useTicketsystem)) exitWith {};
 
 LOG("STARTING TICKET SERVER INIT!");
 
