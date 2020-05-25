@@ -178,7 +178,7 @@
 	["Enable vehicle deserting", "If a vehicle is neither used in a while nor in a base area it will be counted as a loss and will be removed from the game"],
 	["TF47 Corescripts", "Ticketsystem"],
 	false,
-	[[1,2,3,4,5,6,7,8], [], 2],
+	1,
 	nil,
 	true
 ] call CBA_fnc_addSetting;
