@@ -24,10 +24,15 @@ LOG("STARTING PLAYER WHITELIST INIT!");
   	params ["", "", "_vehicle"];
     [QGVAR(doVehicleWhitelistCheck), _vehicle] call CBA_fnc_localEvent;
   }];
+  player addEventHandler ["SeatSwitchedMan", {
+    params ["", "", "_vehicle"];
+	  [QGVAR(doVehicleWhitelistCheck), _vehicle] call CBA_fnc_localEvent;
+  }];
+  /*
   ["turret", {
   	params ["_unit", ""];
   	[QGVAR(doVehicleWhitelistCheck), vehicle _unit] call CBA_fnc_localEvent;
-  },true] call CBA_fnc_addPlayerEventHandler;
+  },true] call CBA_fnc_addPlayerEventHandler;*/
 
   [QGVAR(doSlotWhitelistCheck),nil] call CBA_fnc_localEvent;
 }] call CBA_fnc_waitUntilAndExecute;
