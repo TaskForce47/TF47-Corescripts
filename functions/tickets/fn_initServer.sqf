@@ -1,5 +1,7 @@
 #include "script_component.hpp"
 
+if(! EGVAR(ticket,useTicketsystem)) exitWith {};
+
 LOG("STARTING TICKET SERVER INIT!");
 
 GVAR(vehicleList) = [];
