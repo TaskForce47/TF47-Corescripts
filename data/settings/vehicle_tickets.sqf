@@ -134,7 +134,7 @@ GVAR(vehicleTicketcost) = [
 	["rhsusf_M977A4_AMMO_BKIT_usarmy_d",13],
 	["rhsusf_M977A4_BKIT_M2_usarmy_d",13],
 	["rhsusf_M977A4_BKIT_usarmy_d",13],
-	["rhsusf_M977A4_REPAIR_BKIT_M2_usarmy_d",13],		
+	["rhsusf_M977A4_REPAIR_BKIT_M2_usarmy_d",13],
 	["RHS_MELB_AH6M",13],
 	//15
 	["I_LT_01_AA_F",15],
@@ -157,7 +157,7 @@ GVAR(vehicleTicketcost) = [
 	["UK3CB_BAF_Wildcat_AH1_HEL_8A",15],
 	["UK3CB_BAF_Wildcat_AH1_TRN_8A",15],
 	["UK3CB_BAF_Wildcat_HMA2_TRN_8A",15],
-	//18	
+	//18
 	["B_AFV_Wheeled_01_cannon_F",18],
 	["B_AFV_Wheeled_01_up_cannon_F",18],
 	["B_APC_Tracked_01_AA_F",18],
@@ -206,8 +206,8 @@ GVAR(vehicleTicketcost) = [
 	["rhsusf_m1a2sep1d_usarmy",25],
 	["B_MBT_01_TUSK_F",25],
 	["B_MBT_01_cannon_F",25],
-	["FIR_A10A",25]
-	["TF47_A10A",25]
+	["FIR_A10A",25],
+	["TF47_A10A",25],
 	//28
 	["rhsusf_m1a2sep1tuskiid_usarmy",28],
 	["CUP_B_MV22_USMC",28],
@@ -218,12 +218,12 @@ GVAR(vehicleTicketcost) = [
 	["UK3CB_CW_US_B_LATE_A10",30],
 	["TF47_F15E",30],
 	["I_Plane_Fighter_04_F",30],
-	["FIR_A10C",30]
+	["FIR_A10C",30],
 	["TF47_A10C",30]
 	/*["B_T_VTOL_01_armed_F",30],
 	["B_T_VTOL_01_infantry_F",30],
 	["B_T_VTOL_01_vehicle_F",30]
-	*/									
+	*/
 ];
 
 GVAR(vehicleTicketCostFallback) = [
