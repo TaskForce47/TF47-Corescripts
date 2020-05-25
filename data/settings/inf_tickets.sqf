@@ -42,7 +42,7 @@ private _infantryTicketsData = [
 
 private _variableCheck = false;
 {
-    if(isNil (x select 0)) exitWith {_variableCheck = true;};
+    if(isNil {x select 0}) exitWith {_variableCheck = true;};
 } forEach _infantryTicketsData;
 if(_variableCheck) exitWith { LOG("Cannot add tickets to Infantry. One or more slots does not exist") };
 
