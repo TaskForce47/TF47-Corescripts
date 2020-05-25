@@ -142,9 +142,20 @@
 [
 	QGVAR(loseOnZeroTickets),
 	"CHECKBOX",
-	["bleedout", "The game is lost as soon the ticket count reaches zero"],
+	["Lose on zero tickets", "The game is lost as soon the ticket count reaches zero"],
 	["TF47 Corescripts", "Ticketsystem"],
 	false,
+	1,
+	nil,
+	true
+] call CBA_fnc_addSetting;
+
+[
+	QGVAR(timeoutBeforeLose),
+	"LIST",
+	["Timeout before lose", "Allows you to control timeout after reaching zero tickets the mission will terminate"],
+	["TF47 Corescripts", "Ticketsystem"],
+	[[10,30,60,90,120,150,180,210,240], [], 1],
 	1,
 	nil,
 	true
