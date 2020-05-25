@@ -188,7 +188,6 @@
 	"LIST",
 	["Time in min before a vehicle will count as deserted", "Will be reseted on each time the vehicle is either in a base area or a unit enters the vehicle"],
 	["TF47 Corescripts", "Ticketsystem"],
-	true,
 	[[10,30,60,90,120,150,180,210,240], [], 3],
 	nil,
 	true
