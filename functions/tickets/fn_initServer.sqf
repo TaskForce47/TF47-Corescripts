@@ -16,7 +16,7 @@ private _fnc_startNewRound = {
 	[QEGVAR(database,insertTicketSession), GVAR(tickets)] call CBA_fnc_serverEvent;
 };
 
-private _lastRoundData = [EGVAR(core,missionId)] call EGVAR(database,getLastSessionTickets);
+private _lastRoundData = [EGVAR(core,missionId)] call EFUNC(database,getLastSessionTickets);
 TRACE_1("LAST ROUND DATA", _lastRoundData);
 
 if(_lastRoundData isEqualTo []) exitWith {
