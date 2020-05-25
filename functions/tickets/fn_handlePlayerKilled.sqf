@@ -4,7 +4,7 @@ params [
   ["_unit", objNull, [objNull]]
 ];
 
-if(isNil "_unit") exitWith {};
+if(isNull _unit) exitWith { ERROR("UNIT IS NOT DEFINED!")};
 
 private _cost = _unit getVariable [QGVAR(unitCost), EGVAR(core,defaultSlotCost)];
 private _slotType = _unit getVariable [QGVAR(slotType), "Rifleman"];

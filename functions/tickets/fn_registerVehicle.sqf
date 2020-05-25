@@ -6,7 +6,7 @@ params [
   ["_cost", 0, [0]]
 ];
 
-if(_vehicle getVariable [QGVAR(enabled), true]) exitWith {};
+if(! (_vehicle getVariable [QGVAR(enabled), true])) exitWith {};
 
 _cost = -1 * (abs _cost);
 _vehicle setVariable [QGVAR(lastCommander), objNull];
