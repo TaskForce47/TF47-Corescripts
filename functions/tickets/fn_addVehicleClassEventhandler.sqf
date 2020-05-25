@@ -35,9 +35,10 @@
 				private _vehicleList = EGVAR(core,vehicleTicketcost);
 				private _id = _vehicleList findif {typeOf _vehicle == _x select 0};
 
+				
 				if(_id < 0) exitWith {
 					ERROR_1("CANNOT FIND VEHICLE IN TICKETCOST LIST! FALLING BACK TO CLASS COST!", typeOf _vehicle);
-
+				}; /*
 					switch true do {
 							case (_vehicle isKindOf "Tank" || {_vehicle isKindOf "Wheeled_APC"} || {_vehicle isKindOf "Wheeled_APC_F"}): {
 								private _cost = (EGVAR(core,vehicleTicketCostFallback)) select 3;
@@ -61,7 +62,7 @@
 								[_vehicle, _cost] call FUNC(registerVehicle);
 							};
 					};
-				};
+				};*/
 				private _cost = _vehicleList select _id select 1;
 				[_vehicle, _cost] call FUNC(registerVehicle);
 			},
