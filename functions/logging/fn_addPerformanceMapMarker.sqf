@@ -56,13 +56,13 @@ private _fnc_applyMarkerText = {
         private _performance = _x;
         private _id = _mapMarker findif {
           private _markerName = format["performanceMarker_%1", _x select 0];
-          _x == QGVAR(_markerName);
+          _x == format ["%1", GVAR(_markerName)];
         };
         if(_id == -1) then {
           private _markerName = format["performanceMarker_%1", _x select 0];
           private _marker = createMarker
                             [
-                              QGVAR(_markerName),
+                              format ["%1", GVAR(_markerName)],
                               [worldSize + 350, worldSize - 900 - (100 * _forEachIndex), 0]
                             ];
           _marker setMarkerType "mil_triangle";
