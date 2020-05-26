@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 params ["_time"];
 
 private _fps = diag_fps;
