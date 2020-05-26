@@ -7,7 +7,7 @@ private _active = diag_activeScripts;
 _active params ["_spawned", "_execVm", "", "_execFSM"];
 
 [
-  QGVAR(database,insertPlayerPerformance),
+  QEGVAR(database,insertPlayerPerformance),
   [
     EGVAR(core,playerId),
     _time,

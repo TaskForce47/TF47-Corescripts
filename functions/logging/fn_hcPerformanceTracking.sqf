@@ -7,7 +7,7 @@ private _objectCount = count allMissionObjects "";
 private _unitCount = count (allUnits select {local _x});
 
 [
-  QGVAR(database,insertHcPerformance),
+  QEGVAR(database,insertHcPerformance),
   [
     clientOwner,
     _time,
@@ -17,5 +17,15 @@ private _unitCount = count (allUnits select {local _x});
     _execFSM,
     _objectCount,
     _unitCount
+  ]
+] call CBA_fnc_serverEvent;
+
+[
+  QGVAR(updatePerformanceMapMarker),
+  [
+    clientOwner,
+    _fps,
+    _unitCount,
+    _time
   ]
 ] call CBA_fnc_serverEvent;
