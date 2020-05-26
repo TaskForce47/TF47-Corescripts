@@ -9,7 +9,7 @@ private _objectCount = count allMissionObjects "";
 private _unitCount = count (allUnits select {local _x});
 
 [
-  QEGVAR(database,hcPerformance),
+  QEGVAR(database,serverPerformance),
   [
     _time,
     _fps,

@@ -33,7 +33,7 @@ private _fnc_applyMarkerText = {
       "Server: %1-FPS %2-units, last update %3 seconds ago",
       _performance select 1,
       _performance select 2,
-      (CBA_missionTime - _performance select 2)
+      (CBA_missionTime - (_performance select 3))
     ];
   } else {
     _marker setMarkerText format [
@@ -41,7 +41,7 @@ private _fnc_applyMarkerText = {
       _performance select 0,
       _performance select 1,
       _performance select 2,
-      (CBA_missionTime - _performance select 2)
+      (CBA_missionTime - (_performance select 3))
     ];
   };
 };
