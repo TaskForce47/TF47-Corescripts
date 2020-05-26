@@ -15,6 +15,30 @@
  * Public: no
  */
 
+//core
+//whitelist
+[
+	QGVAR(useSafezone),
+	"CHECKBOX",
+	["Enable Safezone", "Players inside a safezone will not take any damage"],
+	["TF47 Corescripts", "Core"],
+	false,
+	1,
+	nil,
+	true
+] call CBA_fnc_addSetting;
+
+[
+	QGVAR(useBaseShootingProtection),
+	"CHECKBOX",
+	["Enable Safezone shooting protection", "Players will not be able to fire inside the base"],
+	["TF47 Corescripts", "Core"],
+	false,
+	1,
+	nil,
+	true
+] call CBA_fnc_addSetting;
+
 //whitelist
 [
 	QGVAR(useWhitelist),
@@ -64,6 +88,17 @@
 	QGVAR(usePerformanceTracking),
 	"CHECKBOX",
 	["Enable performance tracking", "Enable or disable the performance tracking for server and clients"],
+	["TF47 Corescripts", "Logging"],
+	false,
+	1,
+	nil,
+	true
+] call CBA_fnc_addSetting;
+
+[
+	QGVAR(usePerformanceMapMarker),
+	"CHECKBOX",
+	["Enable HC/Server performance mapmarker", "Shows current server and hc performance on the map"],
 	["TF47 Corescripts", "Logging"],
 	false,
 	1,
