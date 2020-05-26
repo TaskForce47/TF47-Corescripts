@@ -2,7 +2,7 @@
 
 if(! EGVAR(core,usePerformanceMapMarker)) exitWith {};
 
-private _initalMarkerPos = [worldSize + 200, worldSize - 800, 0];
+private _initalMarkerPos = [worldSize + 300, worldSize - 800, 0];
 private _initalMarker = createMarker [QGVAR(initalMarker), _initalMarkerPos];
 _initalMarker setMarkerText "Server and headless client performance:";
 _initalMarker setMarkerType "mil_box";
@@ -54,16 +54,12 @@ private _fnc_applyMarkerText = {
     private _currentPerformance = GVAR(currentPerformance);
     {
         private _performance = _x;
-        private _id = _mapMarker findif {
-          private _markerName = format["performanceMarker_%1", _x select 0];
-          _x == format ["%1", GVAR(_markerName)];
-        };
+        private _id = _mapMarker findif { _x == format ["TF47_logging_performanceMarker_%1", _x select 0]; };
         if(_id == -1) then {
-          private _markerName = format["performanceMarker_%1", _x select 0];
           private _marker = createMarker
                             [
-                              format ["%1", GVAR(_markerName)],
-                              [worldSize + 350, worldSize - 900 - (100 * _forEachIndex), 0]
+                              format ["TF47_logging_performanceMarker_%1", _x select 0],
+                              [worldSize + 450, worldSize - 900 - (100 * _forEachIndex), 0]
                             ];
           _marker setMarkerType "mil_triangle";
           _marker setMarkerDir 90;
