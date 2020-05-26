@@ -49,9 +49,9 @@ private _fnc_applyMarkerText = {
 //iterate over all performance data and add or update the map marker
 [
   {
+    params ["_fnc_applyMarkerText"];
     private _mapMarker = GVAR(performanceMapMarker);
     private _currentPerformance = GVAR(currentPerformance);
-    private _fnc_applyMarkerText = _args select 0;
     {
         private _performance = _x;
         private _id = _mapMarker findif {
@@ -63,7 +63,7 @@ private _fnc_applyMarkerText = {
           private _marker = createMarker
                             [
                               QGVAR(_markerName),
-                              [worldSize + 250, worldSize - 900 - (100 * _forEachIndex), 0]
+                              [worldSize + 350, worldSize - 900 - (100 * _forEachIndex), 0]
                             ];
           _marker setMarkerType "mil_triangle";
           _marker setMarkerDir 90;
