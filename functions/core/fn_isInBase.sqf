@@ -1,5 +1,5 @@
 params [
-  ["_pos", [objNull], [[], objNull]]
+  ["_pos", objNull, [[], objNull]]
 ];
 
 if(_pos isEqualType objNull) then {

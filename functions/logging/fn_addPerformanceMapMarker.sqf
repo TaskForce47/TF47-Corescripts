@@ -59,10 +59,11 @@ private _fnc_applyMarkerText = {
           _x == QGVAR(_markerName);
         };
         if(_id == -1) then {
+          private _markerName = format["performanceMarker_%1", _x select 0];
           private _marker = createMarker
                             [
-                              QGVAR(format["performanceMarker_%1", _x select 0]),
-                              [worldSize + 250, worldSize - 900 - 100 * _forEachIndex, 0]
+                              QGVAR(_markerName),
+                              [worldSize + 250, worldSize - 900 - (100 * _forEachIndex), 0]
                             ];
           _marker setMarkerType "mil_triangle";
           _marker setMarkerDir 90;
