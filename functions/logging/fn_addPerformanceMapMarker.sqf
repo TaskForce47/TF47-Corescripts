@@ -28,16 +28,16 @@ GVAR(performanceMapMarker) = [];
 //quick function to set the data to the map marker
 private _fnc_applyMarkerText = {
   params ["_marker", "_performance"];
-  if(_performance select 0 == 0) then {
+  if(_performance select 0 == 2) then {
     _marker setMarkerText format [
-      "Server: %1-FPS %2-units, last update %3 seconds ago",
+      "Server: %1 FPS, %2 units, last update %3 seconds ago",
       _performance select 1,
       _performance select 2,
       (CBA_missionTime - (_performance select 3))
     ];
   } else {
     _marker setMarkerText format [
-      "HC%1: %2-FPS %3-units, last update %4 seconds ago",
+      "HC%1: %2 FPS, %3 units, last update %4 seconds ago",
       _performance select 0,
       _performance select 1,
       _performance select 2,
@@ -73,6 +73,6 @@ private _fnc_applyMarkerText = {
         };
     } forEach _currentPerformance;
   },
-  60,
+  20,
   _fnc_applyMarkerText
 ] call CBA_fnc_addPerFrameHandler;
