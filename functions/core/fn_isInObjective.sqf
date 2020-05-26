@@ -1,0 +1,16 @@
+params [
+  ["_pos", [objNull], [[], objNull]]
+];
+
+if(_pos isEqualType objNull) then {
+  if(isNull _pos) exitWith {false};
+  _pos = getPos _pos;
+};
+private _objectiveList = GVAR(objectiveList);
+
+private _id = _objectiveList findIf {
+                      (_x select 2 distance2d _pos) < _x select 3
+                     };
+if(_id != -1) exitWith {true};
+
+false

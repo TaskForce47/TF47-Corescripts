@@ -15,5 +15,5 @@ if(count _baseList == 0) exitWith {
 private _lastIndex = count _baseList -1;
 private _id = (_baseList select _lastIndex select 0)+1; //this is the last base id
 GVAR(baseList) pushBack [_id, _pos, _radius];
-
+publicVariable QGVAR(baseList);
 _id

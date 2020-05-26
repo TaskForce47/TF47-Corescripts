@@ -8,5 +8,5 @@ private _index = GVAR(baseList) findIf { _x select 0 == _id};
 if(_index == -1) exitWith {false};
 
 GVAR(baseList) deleteAt _index;
-
+publicVariable QGVAR(baseList);
 true

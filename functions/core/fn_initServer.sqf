@@ -3,6 +3,9 @@
 GVAR(playerList) = []; //initialize list where player namespaces will be saved
 GVAR(hcList) = [];
 GVAR(baseList) = [];
+GVAR(objectiveList) = [];
+publicVariable QGVAR(baseList);
+publicVariable QGVAR(objectiveList);
 
 [GVAR(maxConnections), GVAR(missionId)] call EFUNC(database,init);
 

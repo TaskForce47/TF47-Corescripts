@@ -5,3 +5,6 @@ call EFUNC(util,initPlayer);
 call EFUNC(whitelist,initPlayer);
 call EFUNC(marker,initPlayer);
 call EFUNC(logging,initPlayer);
+
+call FUNC(handlePlayerMovement);
+call FUNC(safezone);
