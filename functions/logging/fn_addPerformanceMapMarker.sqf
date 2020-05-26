@@ -64,10 +64,12 @@ private _fnc_applyMarkerText = {
           _marker setMarkerType "mil_triangle";
           _marker setMarkerDir 90;
           [_marker, _performance] call _fnc_applyMarkerText;
+          _mapMarker pushBack _marker;
         } else {
           [_mapMarker select _id, _performance] call _fnc_applyMarkerText;
         };
     } forEach _currentPerformance;
+    GVAR(performanceMapMarker) = _mapMarker;
   },
   20,
   _fnc_applyMarkerText
