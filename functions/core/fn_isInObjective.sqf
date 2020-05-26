@@ -9,7 +9,7 @@ if(_pos isEqualType objNull) then {
 private _objectiveList = GVAR(objectiveList);
 
 private _id = _objectiveList findIf {
-                      ((_x select 2) distance2d _pos) < (_x select 3)
+                      ((_x select 1) distance2d _pos) < (_x select 2)
                      };
 if(_id != -1) exitWith {true};
 
