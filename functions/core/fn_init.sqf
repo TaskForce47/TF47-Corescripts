@@ -24,6 +24,6 @@ if(hasInterface && {!isDedicated}) then {
 	}] call CBA_fnc_waitUntilAndExecute;
 };
 
-if(hasInterface && {isDedicated}) then {
+if(!hasInterface && {!isServer}) then {
 	call FUNC(initHc);
 };
