@@ -1,6 +1,8 @@
 #include "script_component.hpp"
 if(! EGVAR(core,useLogging)) exitWith {};
 
+LOG("STARTING LOGGING PLAYER INIT");
+
 private _namespace = EGVAR(core,playerNamespace);
 _namespace setVariable [QGVAR(killsInf), 0];
 _namespace setVariable [QGVAR(killsVehSmall), 0];

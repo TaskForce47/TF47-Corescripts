@@ -1,5 +1,8 @@
 #include "script_component.hpp"
+
 if(! EGVAR(core,useLogging)) exitWith {};
+
+LOG("STARTING LOGGING SERVER INIT");
 
 [
   QGVAR(updatePerformance),
@@ -17,3 +20,6 @@ if(EGVAR(core,usePerformanceTracking)) then {
     _timeout
   ] call CBA_fnc_addPerFrameHandler;
 };
+
+call FUNC(addPerformanceMapMarker);
+LOG("SERVER INIT COMPLETED");

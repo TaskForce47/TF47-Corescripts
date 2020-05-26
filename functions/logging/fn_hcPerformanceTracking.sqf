@@ -1,3 +1,4 @@
+#include "script_component.hpp"
 params ["_time"];
 
 private _fps = diag_fps;
@@ -7,7 +8,7 @@ private _objectCount = count allMissionObjects "";
 private _unitCount = count (allUnits select {local _x});
 
 [
-  QEGVAR(database,insertHcPerformance),
+  QEGVAR(database,hcPerformance),
   [
     clientOwner,
     _time,

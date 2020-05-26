@@ -2,7 +2,7 @@
 
 if(! EGVAR(core,usePerformanceMapMarker)) exitWith {};
 
-private _initalMarkerPos = [worldSize + 200, worldSize - 800, 0];
+private _initalMarkerPos = [worldSize + 300, worldSize - 800, 0];
 private _initalMarker = createMarker [QGVAR(initalMarker), _initalMarkerPos];
 _initalMarker setMarkerText "Server and headless client performance:";
 _initalMarker setMarkerType "mil_box";
@@ -28,20 +28,20 @@ GVAR(performanceMapMarker) = [];
 //quick function to set the data to the map marker
 private _fnc_applyMarkerText = {
   params ["_marker", "_performance"];
-  if(_performance select 0 == 0) then {
+  if(_performance select 0 == 2) then {
     _marker setMarkerText format [
-      "Server: %1-FPS %2-units, last update %3 seconds ago",
+      "Server: %1 FPS, %2 units, last update %3 seconds ago",
       _performance select 1,
       _performance select 2,
-      (CBA_missionTime - _performance select 2)
+      (CBA_missionTime - (_performance select 3))
     ];
   } else {
     _marker setMarkerText format [
-      "HC%1: %2-FPS %3-units, last update %4 seconds ago",
+      "HC%1: %2 FPS, %3 units, last update %4 seconds ago",
       _performance select 0,
       _performance select 1,
       _performance select 2,
-      (CBA_missionTime - _performance select 2)
+      (CBA_missionTime - (_performance select 3))
     ];
   };
 };
@@ -49,17 +49,17 @@ private _fnc_applyMarkerText = {
 //iterate over all performance data and add or update the map marker
 [
   {
+    params ["_fnc_applyMarkerText"];
     private _mapMarker = GVAR(performanceMapMarker);
     private _currentPerformance = GVAR(currentPerformance);
-    private _fnc_applyMarkerText = _args select 0;
     {
         private _performance = _x;
-        private _id = _mapMarker findif {_x == QGVAR(format["performanceMarker_%1", _x select 0])};
+        private _id = _mapMarker findif { _x == format ["TF47_logging_performanceMarker_%1", _x select 0]; };
         if(_id == -1) then {
           private _marker = createMarker
                             [
-                              QGVAR(format["performanceMarker_%1", _x select 0]),
-                              [worldSize + 250, worldSize - 900 - 100 * _forEachIndex, 0]
+                              format ["TF47_logging_performanceMarker_%1", _x select 0],
+                              [worldSize + 450, worldSize - 900 - (100 * _forEachIndex), 0]
                             ];
           _marker setMarkerType "mil_triangle";
           _marker setMarkerDir 90;
@@ -69,6 +69,6 @@ private _fnc_applyMarkerText = {
         };
     } forEach _currentPerformance;
   },
-  60,
+  20,
   _fnc_applyMarkerText
 ] call CBA_fnc_addPerFrameHandler;
