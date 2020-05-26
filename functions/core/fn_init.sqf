@@ -23,3 +23,7 @@ if(hasInterface && {!isDedicated}) then {
 		[{call FUNC(initPlayer)}] call CBA_fnc_directCall;
 	}] call CBA_fnc_waitUntilAndExecute;
 };
+
+if(hasInterface && {isDedicated}) then {
+	call FUNC(initHc);
+};
