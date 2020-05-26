@@ -10,6 +10,7 @@ class TF47_ticket
 		class addTicketDisplayLoop {};
 		class addVehicleClassEventhandler {};
 		class clientTicketChangeReceived {};
+		class getTicketCostFromList {};
 		class handlePlayerDisconnect {};
 		class handlePlayerKilled {};
 		class handleVehicleDestroyed {};
