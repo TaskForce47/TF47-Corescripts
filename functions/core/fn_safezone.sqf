@@ -29,16 +29,14 @@ if(! GVAR(useBaseShootingProtection)) exitWith {};
       deleteVehicle (_this select 6);
       hint "Shooting inside the base is not allowed!";
     }];
-    player setVariable [QGVAR(baseFiredId), _id, false];
+    player setVariable [QGVAR(baseFiredId), _id];
   }
 ] call CBA_fnc_addEventHandler;
 
 [
   QGVAR(playerLeftBase),
   {
-    player removeEventHandler ["Fired",{
-      player getVariable [QGVAR(baseFiredId), -1]
-    }];
-    player setVariable [QGVAR(baseFiredId), -1, false];
+    player removeEventHandler ["Fired", player getVariable [QGVAR(baseFiredId), -1]];
+    player setVariable [QGVAR(baseFiredId), -1];
   }
 ] call CBA_fnc_addEventHandler;
