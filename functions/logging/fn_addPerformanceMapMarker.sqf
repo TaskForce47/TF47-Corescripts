@@ -54,11 +54,11 @@ private _fnc_applyMarkerText = {
     private _currentPerformance = GVAR(currentPerformance);
     {
         private _performance = _x;
-        private _id = _mapMarker findif { _x == format ["TF47_logging_performanceMarker_%1", _x select 0]; };
+        private _id = _mapMarker findif { _x == format ["TF47_logging_performanceMarker_%1", _performance select 0]; };
         if(_id == -1) then {
           private _marker = createMarker
                             [
-                              format ["TF47_logging_performanceMarker_%1", _x select 0],
+                              format ["TF47_logging_performanceMarker_%1", _performance select 0],
                               [worldSize + 450, worldSize - 900 - (100 * _forEachIndex), 0]
                             ];
           _marker setMarkerType "mil_triangle";
