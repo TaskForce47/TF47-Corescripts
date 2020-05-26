@@ -27,6 +27,7 @@ private _unitCount = count (allUnits select {local _x});
     clientOwner,
     _fps,
     _unitCount,
-    _time
+    _time,
+    _objectCount
   ]
 ] call CBA_fnc_serverEvent;

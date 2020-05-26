@@ -13,13 +13,13 @@ GVAR(performanceMapMarker) = [];
 [
   QGVAR(updatePerformanceMapMarker),
   {
-    params ["_owner", "_fps", "_units", "_time"];
+    params ["_owner", "_fps", "_units", "_time", "_objectCount"];
     private _currentPerformance = GVAR(currentPerformance);
     private _id = _currentPerformance findif {_x select 0 == _owner};
     if(_id == -1) then { //if this owner id doesn't exist in storage
-      _currentPerformance pushBack [_owner, _fps, _units, _time];
+      _currentPerformance pushBack [_owner, _fps, _units, _time, _objectCount];
     } else {
-      _currentPerformance set [_id, [_owner, _fps, _units, _time]];
+      _currentPerformance set [_id, [_owner, _fps, _units, _time, _objectCount]];
     };
     GVAR(currentPerformance) = _currentPerformance;
   }
@@ -30,18 +30,20 @@ private _fnc_applyMarkerText = {
   params ["_marker", "_performance"];
   if(_performance select 0 == 2) then {
     _marker setMarkerText format [
-      "Server: %1 FPS, %2 units, last update %3 seconds ago",
+      "Server: %1 FPS, %2 units, %4 objects and last update %3 seconds ago",
       _performance select 1,
       _performance select 2,
-      (CBA_missionTime - (_performance select 3))
+      (CBA_missionTime - (_performance select 3)),
+      _performance select 4
     ];
   } else {
     _marker setMarkerText format [
-      "HC%1: %2 FPS, %3 units, last update %4 seconds ago",
+      "HC%1: %2 FPS, %3 units, %5 last update %4 seconds ago",
       _performance select 0,
       _performance select 1,
       _performance select 2,
-      (CBA_missionTime - (_performance select 3))
+      (CBA_missionTime - (_performance select 3)),
+      _performance select 4
     ];
   };
 };
