@@ -54,7 +54,10 @@ private _fnc_applyMarkerText = {
     private _fnc_applyMarkerText = _args select 0;
     {
         private _performance = _x;
-        private _id = _mapMarker findif {_x == QGVAR(format["performanceMarker_%1", _x select 0])};
+        private _id = _mapMarker findif {
+          private _markerName = format["performanceMarker_%1", _x select 0];
+          _x == QGVAR(_markerName);
+        };
         if(_id == -1) then {
           private _marker = createMarker
                             [
