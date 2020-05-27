@@ -15,15 +15,15 @@ private _restrictedSlots = [
 
 	[JP1,  ["Plane","AttackAir"]],	[JP2,  ["Plane","AttackAir"]],	[JP3,  ["Plane","AttackAir"]],
 
-	[T11,  ["Tank"]],	[T12,  ["Tank"]],	[T13,  [Tank]], [T14,  ["Tank"]],
-	[T21,  ["Tank"]],	[T22,  ["Tank"]],	[T23,  [Tank]], [T24,  ["Tank"]]
+	[T11,  ["Tank"]],	[T12,  ["Tank"]],	[T13,  ["Tank"]], [T14,  ["Tank"]],
+	[T21,  ["Tank"]],	[T22,  ["Tank"]],	[T23,  ["Tank"]], [T24,  ["Tank"]]
 ];
 
 private _variableCheck = false;
 {
     if(isNil {x select 0}) exitWith {_variableCheck = true;};
 } forEach _restrictedSlots + _whitelistSlots;
-if(_variableCheck) exitWith { LOG("Cannot add tickets to Infantry. One or more slots does not exist") };
+if(_variableCheck) exitWith { LOG("Cannot add restrictions to Infantry. One or more slots does not exist") };
 
 {
 	_x call EFUNC(whitelist,addSlotWhitelist);
