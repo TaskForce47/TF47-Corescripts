@@ -1,10 +1,10 @@
-switch (/*add tf47 mission id variable*/) do {
-	case 1: 
+switch (TF47_core_missionId) do {
+	case 2: 
 		{
 			#include "lib_inf_tickets.sqf"
 			#include "lib_slot_whitelist.sqf"
 		}:
-	case 2:
+	case 3:
 		{
 			#include "domi_inf_tickets.sqf"
 			#include "domi_slot_whitelist.sqf"
