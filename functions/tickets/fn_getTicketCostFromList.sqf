@@ -9,7 +9,7 @@ if(_vehicle isEqualType objNull) then {
   _vehicle = typeOf _vehicle;
 };
 
-private _vehilceList = GVAR(vehicleTicketcost);
+private _vehilceList = EGVAR(core,vehicleTicketcost);
 private _id = _vehilceList findIf {_x select 0 == _vehicle};
 
 if(_id == -1) exitWith {0};
