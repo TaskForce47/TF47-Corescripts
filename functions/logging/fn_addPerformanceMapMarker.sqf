@@ -30,7 +30,7 @@ private _fnc_applyMarkerText = {
   params ["_marker", "_performance"];
   if(_performance select 0 == 2) then {
     _marker setMarkerText format [
-      "Server: %1 FPS, %2 units, %4 objects and last update %3 seconds ago",
+      "Server: %1 FPS, %2 units, %4 objects, last update %3 seconds ago",
       _performance select 1,
       _performance select 2,
       (CBA_missionTime - (_performance select 3)),
@@ -38,7 +38,7 @@ private _fnc_applyMarkerText = {
     ];
   } else {
     _marker setMarkerText format [
-      "HC%1: %2 FPS, %3 units, %5 last update %4 seconds ago",
+      "HC%1: %2 FPS, %3 units, %5 objects, last update %4 seconds ago",
       _performance select 0,
       _performance select 1,
       _performance select 2,
