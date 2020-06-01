@@ -15,11 +15,13 @@ _vehicle setVariable [QGVAR(lasttimeUsed), CBA_missionTime];
 
 //_vehicle setVariable [QGVAR(lastUsed), CBA_missionTime];
 
-_vehicle addMPEventHandler ["MPKilled", {
+private _id = _vehicle addMPEventHandler ["MPKilled", {
   params ["_unit"];
   if(!isServer) exitWith {};
   [_unit] call FUNC(handleVehicleDestroyed);
 }];
+
+_vehicle setVariable [QGVAR(killedEventhandlerId), _id];
 
 //now we need to keep track of the last commanding user
 /*

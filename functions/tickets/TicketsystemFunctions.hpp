@@ -19,5 +19,7 @@ class TF47_ticket
 		class initServer {};
 		class registerSlot {};
 		class registerVehicle {};
+		class unregisterSlot {};
+		class unregisterVehicle {};
 	};
 };
