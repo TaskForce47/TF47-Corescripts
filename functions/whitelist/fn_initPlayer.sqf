@@ -35,6 +35,6 @@ LOG("STARTING PLAYER WHITELIST INIT!");
   },true] call CBA_fnc_addPlayerEventHandler;*/
 
   [QGVAR(doSlotWhitelistCheck),nil] call CBA_fnc_localEvent;
+  [QGVAR(doVehicleWhitelistCheck), vehicle player] call CBA_fnc_localEvent;
 }] call CBA_fnc_waitUntilAndExecute;
-
 LOG("WHITELISTED PLAYER INIT COMPLETED!");
