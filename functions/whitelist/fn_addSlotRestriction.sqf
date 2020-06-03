@@ -26,6 +26,6 @@ private _result = [];
     };
 } forEach _permissions;
 
-_unit setVariable [QGVAR(slotRestrictions), _permissions];
+_unit setVariable [QGVAR(slotRestrictions), _result];
 
 true
