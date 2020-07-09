@@ -18,3 +18,6 @@ call EFUNC(marker,initServer);
 call EFUNC(ace,initServer);
 call EFUNC(whitelist,initServer);
 call EFUNC(util,initServer);
+
+addMissionEventHandler ["PlayerConnected", { _this call FUNC(handlePlayerConnected) }];
+addMissionEventHandler ["PlayerDisconnected", { _this call FUNC(handlePlayerDisconnected) }];
