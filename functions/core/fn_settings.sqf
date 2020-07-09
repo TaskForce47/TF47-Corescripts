@@ -16,7 +16,6 @@
  */
 
 //core
-//whitelist
 [
 	QGVAR(useSafezone),
 	"CHECKBOX",
@@ -39,6 +38,38 @@
 	true
 ] call CBA_fnc_addSetting;
 
+[
+	QGVAR(addWorldBorder),
+	"CHECKBOX",
+	["Punish player for leaving the map", "If a player is outside the world border for a timeout passed he will be punished!"],
+	["TF47 Corescripts", "Core"],
+	false,
+	1,
+	nil,
+	true
+] call CBA_fnc_addSetting;
+
+[
+	QGVAR(worldBorderTimeout),
+	"CHECKBOX",
+	["Worldborder return time", "Time a player can stay outside the worldborder before beeing punished"],
+	["TF47 Corescripts", "Core"],
+	[[10, 20, 30, 60, 120], [], 3],
+	1,
+	nil,
+	true
+] call CBA_fnc_addSetting;
+
+[
+	QGVAR(worldBorderDestroyVehicle),
+	"CHECKBOX",
+	["Worldborder destroy vehicle", "Also destroy the vehicle of a player who has been outside of the world border for too long"],
+	["TF47 Corescripts", "Core"],
+	false,
+	1,
+	nil,
+	true
+] call CBA_fnc_addSetting;
 //whitelist
 [
 	QGVAR(useWhitelist),
@@ -68,173 +99,6 @@
 	["Restrict vehicles to whitelisted slots", "Only whitelisted slots will be able to get in certain vehicles"],
 	["TF47 Corescripts", "Whitelist"],
 	false,
-	1,
-	nil,
-	true
-] call CBA_fnc_addSetting;
-//logging
-[
-	QGVAR(useLogging),
-	"CHECKBOX",
-	["Enable Logging", "Enable or disable the logging system"],
-	["TF47 Corescripts", "Logging"],
-	false,
-	1,
-	nil,
-	true
-] call CBA_fnc_addSetting;
-
-[
-	QGVAR(usePerformanceTracking),
-	"CHECKBOX",
-	["Enable performance tracking", "Enable or disable the performance tracking for server and clients"],
-	["TF47 Corescripts", "Logging"],
-	false,
-	1,
-	nil,
-	true
-] call CBA_fnc_addSetting;
-
-[
-	QGVAR(usePerformanceMapMarker),
-	"CHECKBOX",
-	["Enable HC/Server performance mapmarker", "Shows current server and hc performance on the map"],
-	["TF47 Corescripts", "Logging"],
-	false,
-	1,
-	nil,
-	true
-] call CBA_fnc_addSetting;
-
-[
-	QGVAR(performanceTrackerUpdateRate),
-	"LIST",
-	["Update rate", "Interval in sec the performance will be tracked"],
-	["TF47 Corescripts", "Logging"],
-	[[10, 20, 30, 60, 120], [], 3],
-	1,
-	nil,
-	true
-] call CBA_fnc_addSetting;
-
-[
-	QGVAR(useChatTracker),
-	"CHECKBOX",
-	["Enable chat tracker ", "Enable or disable the chat tracker"],
-	["TF47 Corescripts", "Logging"],
-	false,
-	1,
-	nil,
-	true
-] call CBA_fnc_addSetting;
-
-[
-	QGVAR(useKillTracker),
-	"CHECKBOX",
-	["Enable kill tracker ", "Enable or disable the kill tracker"],
-	["TF47 Corescripts", "Logging"],
-	false,
-	1,
-	nil,
-	true
-] call CBA_fnc_addSetting;
-
-//ticketsystem
-[
-	QGVAR(useTicketsystem),
-	"CHECKBOX",
-	["Use TicketSystem", "Enables or disables the ticketsystem"],
-	["TF47 Corescripts", "Ticketsystem"],
-	false,
-	1,
-	nil,
-	true
-] call CBA_fnc_addSetting;
-
-[
-	QGVAR(startingTickets),
-	"LIST",
-	["Starting Tickets", "Amount of tickets the server starts after a new round"],
-	["TF47 Corescripts", "Ticketsystem"],
-	[[50, 100, 120, 150, 200, 250, 300], [], 1],
-	1,
-	nil,
-	true
-] call CBA_fnc_addSetting;
-
-
-[
-	QGVAR(maxTickets),
-	"LIST",
-	["Maximum Tickets", "Maximum ticketcount any further increase will be capped"],
-	["TF47 Corescripts", "Ticketsystem"],
-	[[50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600], [], 1],
-	1,
-	nil,
-	true
-] call CBA_fnc_addSetting;
-
-[
-	QGVAR(loseOnZeroTickets),
-	"CHECKBOX",
-	["Lose on zero tickets", "The game is lost as soon the ticket count reaches zero"],
-	["TF47 Corescripts", "Ticketsystem"],
-	false,
-	1,
-	nil,
-	true
-] call CBA_fnc_addSetting;
-
-[
-	QGVAR(timeoutBeforeLose),
-	"LIST",
-	["Timeout before lose", "Allows you to control timeout after reaching zero tickets the mission will terminate"],
-	["TF47 Corescripts", "Ticketsystem"],
-	[[10,30,60,90,120,150,180,210,240], [], 1],
-	1,
-	nil,
-	true
-] call CBA_fnc_addSetting;
-
-[
-	QGVAR(autoSetTicketsOnVehicles),
-	"CHECKBOX",
-	["Enable automaticly setting ticket cost on vehicles", "If enabled this will automaticly add ticket cost to all present vehicles and those that are spawned later"],
-	["TF47 Corescripts", "Ticketsystem"],
-	true,
-	1,
-	nil,
-	true
-] call CBA_fnc_addSetting;
-
-[
-	QGVAR(defaultSlotCost),
-	"LIST",
-	["Default slot ticket cost", "Default cost for a slot if no value is found"],
-	["TF47 Corescripts", "Ticketsystem"],
-	[[0, 2, 5, 10, 15], [], 1],
-	1,
-	nil,
-	true
-] call CBA_fnc_addSetting;
-
-[
-	QGVAR(enableVehicleDeserting),
-	"CHECKBOX",
-	["Enable vehicle deserting", "If a vehicle is neither used in a while nor in a base area it will be counted as a loss and will be removed from the game"],
-	["TF47 Corescripts", "Ticketsystem"],
-	false,
-	1,
-	nil,
-	true
-] call CBA_fnc_addSetting;
-
-[
-	QGVAR(vehicleDesertingTimeout),
-	"LIST",
-	["Time in min before a vehicle will count as deserted", "Will be reseted on each time the vehicle is either in a base area or a unit enters the vehicle"],
-	["TF47 Corescripts", "Ticketsystem"],
-	[[10,30,60,90,120,150,180,210,240], [], 3],
 	1,
 	nil,
 	true
