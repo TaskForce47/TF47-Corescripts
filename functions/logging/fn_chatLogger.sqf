@@ -1,9 +1,9 @@
 #include "script_component.hpp"
 ["cba_events_chatMessageSent", {
-  params ["_message"];
-  if (_message select [0,1] == "#") exitWith {};
+	params ["_message"];
+  	if (_message select [0,1] == "#" ||count _message < 1) exitWith {};
 
-	private _channel = "unkown";
+	private _channel = "unknown";
 	switch (currentChannel) do {
 		case 0: { _channel = "Global" };
 		case 1: { _channel = "Side" };
