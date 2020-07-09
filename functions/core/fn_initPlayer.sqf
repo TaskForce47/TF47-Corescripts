@@ -8,3 +8,4 @@ call EFUNC(logging,initPlayer);
 
 call FUNC(handlePlayerMovement);
 call FUNC(safezone);
+call FUNC(restrictBorder);
