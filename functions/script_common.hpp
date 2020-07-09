@@ -35,3 +35,14 @@
 #define EVENT_OBJECTIVE_COMPLETED 22
 
 #include "..\script_macros_common.hpp"
+
+#define TF47_IS_TANKER "TF47_whitelist_crew_tank"
+#define TF47_IS_PILOT_HELICOPTER "TF47_whitelist_crew_helicopter"
+#define TF47_IS_PILOT_PLANE "TF47_whitelist_crew_plane"
+#define TF47_IS_UAV "TF47_whitelist_crew_uav"
+
+
+#define IS_SERVER isServer
+#define IS_HEADLESS !hasInterface && !isServer
+#define IS_CLIENT hasInterface && !isDedicated
+#define IS_SINGLEPLAYER hasInterface && isServer
