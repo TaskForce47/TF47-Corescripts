@@ -1,3 +1,3 @@
 #include "script_component.hpp"
 
-GVAR(slotWhitelist) = [];
+private _slotName = str player;
