@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if(! EGVAR(core,useLogging)) exitWith {};
+if(! GVAR(useLogging)) exitWith {};
 
 LOG("STARTING LOGGING SERVER INIT");
 
@@ -11,8 +11,8 @@ LOG("STARTING LOGGING SERVER INIT");
   }
 ] call CBA_fnc_addEventHandler;
 
-if(EGVAR(core,usePerformanceTracking)) then {
-  private _timeout = EGVAR(core,performanceTrackerUpdateRate);
+if(GVAR(usePerformanceTracking)) then {
+  private _timeout = GVAR(performanceTrackerUpdateRate);
   [
     {
       [QGVAR(updatePerformance), [CBA_missionTime]] call CBA_fnc_globalEvent;
