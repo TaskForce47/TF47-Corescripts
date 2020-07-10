@@ -3,7 +3,7 @@ class TF47_whitelist
 	class whitelist
 	{
 		file = "TF47Core\functions\whitelist";
-		class addSlotTrait {};
+		class addSlotTraits {};
 		class addSlotWhitelist {};
 		class checkSlotTrait {};
 		class checkSlotWhitelist {};
@@ -11,9 +11,8 @@ class TF47_whitelist
 		class checkWhitelistStrict {};
 		class initClient {};
 		class initServer {};
-		class isAllowedBySlot {};
-		class isAllowedByTrait {};
-		class kickOutPlayer {};
+		class kickPlayerslot {};
+		class kickPlayerVehicle {};
 		class onVehicleEnter {};
 		class refreshUserWhitelist {};
 		class settings {preInit =1;};

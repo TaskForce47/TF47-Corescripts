@@ -4,6 +4,7 @@ params [
 	["_message", "", [""]]
 ];
 
+if(isNull _unit) exitWith {};
 if(! local _unit) exitWith {
 	[_unit, _message] remoteExec [QFUNC(kickOutPlayer), _unit];
 };
