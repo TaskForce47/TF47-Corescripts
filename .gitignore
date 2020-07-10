@@ -1,1 +1,16 @@
 description.ext
+.github/sqfvm/SQF-VM - Win64 - x64/libsqfvm.dll
+
+.github/sqfvm/SQF-VM - Win64 - x64/libsqfvm.lib
+
+.github/sqfvm/SQF-VM - Win64 - x64/libsqfvm.pdb
+
+.github/sqfvm/SQF-VM - Win64 - x64/slibsqfvm_nc.lib
+
+.github/sqfvm/SQF-VM - Win64 - x64/slibsqfvm.lib
+
+.github/sqfvm/SQF-VM - Win64 - x64/sqfvm.exe
+
+.github/sqfvm/SQF-VM - Win64 - x64/sqfvm.lib
+
+.github/sqfvm/SQF-VM - Win64 - x64/sqfvm.pdb
