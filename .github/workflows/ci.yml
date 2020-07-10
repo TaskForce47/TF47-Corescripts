@@ -24,4 +24,4 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Validate SQF
-      run: ./.github/sqfValidate.ps1
+      run: ./.github/sqfValidate.ps1 ./
