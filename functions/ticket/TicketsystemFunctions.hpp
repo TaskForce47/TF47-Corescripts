@@ -2,7 +2,7 @@ class TF47_ticket
 {
 	class ticketsystem
 	{
-		file = "TF47Core\functions\tickets";
+		file = "TF47Core\functions\ticket";
 		class addDisconnectHandler {};
 		class addTicketDisplay {};
 		class addVehicleRegistering {};
