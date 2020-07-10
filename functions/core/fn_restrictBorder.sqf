@@ -20,14 +20,14 @@ player setVariable [QGVAR(outOfBorder), false];
 				private _timeLeft = (_hackTime + GVAR(worldBorderTimeout)) - CBA_missionTime;
 				if(_timeLeft < 0) then {
 					hint "You have been outside of the battlefield for too long!";
-					if(worldBorderDestroyVehicle) then {
+					if(GVAR(worldBorderDestroyVehicle)) then {
 						vehicle player setDamage 1;
 					};
 					player setVariable [QGVAR(outOfBorder), false];
 				} else {
 					private _message = format ["Return to battlefield or you will be punished!<br/><t color='#ff4c33'>Time left: %1 seconds </t>", round _timeLeft];
 					cutText [_message, "PLAIN DOWN", -1, true, true];
-					if((_timeLeft % 2) == 0) then {
+					if(((round_timeLeft) % 2) == 0) then {
 						playSound "Alarm";
 					};
 				};
