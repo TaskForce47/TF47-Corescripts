@@ -51,7 +51,7 @@
 
 [
 	QGVAR(worldBorderTimeout),
-	"CHECKBOX",
+	"LIST",
 	["Worldborder return time", "Time a player can stay outside the worldborder before beeing punished"],
 	["TF47 Corescripts", "Core"],
 	[[10, 20, 30, 60, 120], [], 3],
@@ -122,41 +122,6 @@
 	["Gadget Mission ID", "e.g. 1 for tf47 liberation"],
 	["TF47 Corescripts", "Tech"],
 	[0, 100, 1, 0],
-	1,
-	nil,
-	true
-] call CBA_fnc_addSetting;
-
-//marker
-
-[
-	QGVAR(markerSystem),
-	"CHECKBOX",
-	["Use Markersystem", "Enables or disables all marker related features"],
-	["TF47 Corescripts", "Markersystem"],
-	false,
-	1,
-	nil,
-	true
-] call CBA_fnc_addSetting;
-
-[
-	QGVAR(markerRestriction),
-	"CHECKBOX",
-	["Prevent side and global markers", "Moves all side and global markers created by players to group chat"],
-	["TF47 Corescripts", "Markersystem"],
-	false,
-	1,
-	nil,
-	true
-] call CBA_fnc_addSetting;
-
-[
-	QGVAR(markerRestrictionWhitelist),
-	"CHECKBOX",
-	["Allow side and global for TF users", "Use the whitelist to determine TF47 members and allow those people to draw on the map"],
-	["TF47 Corescripts", "Markersystem"],
-	false,
 	1,
 	nil,
 	true
