@@ -1,7 +1,12 @@
 #include "script_component.hpp"
 
-params ["", "_uid", "_name", "", "_owner", ""];
-
+params [
+	["_id", 0, [0]],
+	["_uid", str random 100000, [""]],
+	["_name", "Singleplayerman", [""]],
+	["_jip", true, [false]],
+	["_owner", player call BIS_fnc_netId, [""]]
+];
 if(_name isEqualTo "__SERVER__") exitWith {};
 if(["HC", _uid] call BIS_fnc_inString) exitWith {
 	_owner call FUNC(handleConnectionHC);
