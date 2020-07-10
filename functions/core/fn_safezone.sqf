@@ -12,7 +12,7 @@ if(! GVAR(useSafezone)) exitWith {};
       format ["You have entered FOB %1", mapGridPosition player],
       format ["Time: %1%2", date select 3, date select 4],
       "You are now invulnerable!"
-    ] call BIS_fnc_infoText;
+    ] spawn BIS_fnc_infoText;
   }
 ] call CBA_fnc_addEventHandler;
 
@@ -25,7 +25,7 @@ if(! GVAR(useSafezone)) exitWith {};
       format ["You have left FOB %1", mapGridPosition player],
       format ["Time: %1%2", date select 3, date select 4],
       "You are now vulnerable!"
-    ] call BIS_fnc_infoText;
+    ] spawn BIS_fnc_infoText;
   }
 ] call CBA_fnc_addEventHandler;
 
