@@ -7,6 +7,8 @@ class TF47_util
       class getVehicleName {};
       class initPlayer {};
       class initServer {};
+      class isAttackAircraft {};
+      class isFlying {};
       class isHelicopter {};
       class isInCircle {};
       class isInWorldBorder {};
