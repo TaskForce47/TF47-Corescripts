@@ -18,7 +18,7 @@ player setVariable [QGVAR(outOfBorder), false];
 			while {! (player call EFUNC(util,isInWorldBorder)) && alive player} do {
 				private _hackTime = player getVariable [QGVAR(outOfBorderHack), CBA_missionTime];
 				private _timeLeft = (_hackTime + GVAR(worldBorderTimeout)) - CBA_missionTime;
-				if(_timeLeft < 0) exitWith {
+				if(_timeLeft < 0) then {
 					hint "You have been outside of the battlefield for too long!";
 					if(worldBorderDestroyVehicle) then {
 						vehicle player setDamage 1;
