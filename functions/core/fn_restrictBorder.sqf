@@ -15,7 +15,7 @@ player setVariable [QGVAR(outOfBorder), false];
 		player setVariable [QGVAR(outOfBorder), true];
 		player setVariable [QGVAR(outOfBorderHack), CBA_missionTime];
 		[] spawn {
-			while {! player call EFUNC(util,isInWorldBorder) && alive player} do {
+			while {! (player call EFUNC(util,isInWorldBorder)) && alive player} do {
 				private _hackTime = player getVariable [QGVAR(outOfBorderHack), CBA_missionTime];
 				private _timeLeft = (_hackTime + GVAR(worldBorderTimeout)) - CBA_missionTime;
 				if(_timeLeft < 0) exitWith {
