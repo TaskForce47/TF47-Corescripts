@@ -6,5 +6,6 @@ class TF47_marker
 		class addMapmarkerRestriction {};
 		class initPlayer {};
 		class initServer {};
+		class settings {};
 	};
 };

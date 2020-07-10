@@ -14,5 +14,6 @@ class TF47_logging
 		class medicalTracker {};
 		class positionTracking {};
 		class serverPerformanceTracking {};
+		class settings {preInit = 1;};
 	};
 };

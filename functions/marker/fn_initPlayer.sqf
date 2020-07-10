@@ -1,5 +1,5 @@
 #include "script_component.hpp"
-if(! EGVAR(core,markerSystem)) exitWith {};
-if(EGVAR(core,markerRestriction)) then {
+if(! GVAR(markerSystem)) exitWith {};
+if(GVAR(markerRestriction)) then {
 	call FUNC(addMapmarkerRestriction);
 };

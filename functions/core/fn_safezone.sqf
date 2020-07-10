@@ -1,4 +1,4 @@
-#include "script_component.hpp";
+#include "script_component.hpp"
 
 if(! GVAR(useSafezone)) exitWith {};
 
@@ -7,7 +7,12 @@ if(! GVAR(useSafezone)) exitWith {};
   {
     player allowDamage false;
     playSound "Alarm";
-    hint "You entered the base you are now invulnerable!";
+    playSound "Alarm";
+    [
+      format ["You have entered FOB %1", mapGridPosition player],
+      format ["Time: %1%2", date select 3, date select 4],
+      "You are now invulnerable!"
+    ] spawn BIS_fnc_infoText;
   }
 ] call CBA_fnc_addEventHandler;
 
@@ -16,7 +21,11 @@ if(! GVAR(useSafezone)) exitWith {};
   {
     player allowDamage true;
     playSound "Alarm";
-    hint "You left the base you are now vulnerable!";
+    [
+      format ["You have left FOB %1", mapGridPosition player],
+      format ["Time: %1%2", date select 3, date select 4],
+      "You are now vulnerable!"
+    ] spawn BIS_fnc_infoText;
   }
 ] call CBA_fnc_addEventHandler;
 
@@ -27,7 +36,8 @@ if(! GVAR(useBaseShootingProtection)) exitWith {};
   {
     private _id = player addEventHandler ["Fired", {
       deleteVehicle (_this select 6);
-      hint "Shooting inside the base is not allowed!";
+      private _message = format ["<t color='#ff4c33'>Shooting inside the base is not allowed!</t>"];
+			cutText [_message, "PLAIN DOWN", -1, true, true];
     }];
     player setVariable [QGVAR(baseFiredId), _id];
   }
