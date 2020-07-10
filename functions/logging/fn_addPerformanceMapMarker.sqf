@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-if(! EGVAR(core,usePerformanceMapMarker)) exitWith {};
+if(! GVAR(usePerformanceMapMarker)) exitWith {};
 
 private _initalMarkerPos = [worldSize + 300, worldSize - 800, 0];
 private _initalMarker = createMarker [QGVAR(initalMarker), _initalMarkerPos];

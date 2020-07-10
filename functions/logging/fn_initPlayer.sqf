@@ -1,5 +1,5 @@
 #include "script_component.hpp"
-if(! EGVAR(core,useLogging)) exitWith {};
+if(! GVAR(useLogging)) exitWith {};
 
 LOG("STARTING LOGGING PLAYER INIT");
 

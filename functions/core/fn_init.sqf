@@ -9,21 +9,17 @@
  * Public: NO
  */
 
-if(isServer && hasInterface && !isDedicated) exitWith {
-	ERROR("YOU CANNOT USE THE CORESCRIPTS WHILE IN EDITOR! DISABLED FOR YOUR TESTING!");
-};
-
-if(isServer) then {
+if(IS_SERVER) then {
 	call FUNC(initServer);
 };
 
-
-if(hasInterface && {!isDedicated}) then {
-	[{ (! (isNil QGVAR(playerNamespace))) && (!isnull (finddisplay 46))}, {
-		[{call FUNC(initPlayer)}] call CBA_fnc_directCall;
-	}] call CBA_fnc_waitUntilAndExecute;
+if(IS_CLIENT) then {
+	[
+		{ !(isNil QGVAR(playerNamespace)) && !isnull (finddisplay 46)}, 
+		{ [{call FUNC(initPlayer)}] call CBA_fnc_directCall;}
+	] call CBA_fnc_waitUntilAndExecute;
 };
 
-if(!hasInterface && {!isServer}) then {
+if(IS_HEADLESS) then {
 	call FUNC(initHc);
 };

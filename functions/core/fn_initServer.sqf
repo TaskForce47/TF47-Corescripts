@@ -10,11 +10,14 @@ publicVariable QGVAR(objectiveList);
 [GVAR(maxConnections), GVAR(missionId)] call EFUNC(database,init);
 
 //DO NOT CHANGE ORDER!
-call FUNC(handlePlayerConnected);
-call FUNC(handlePlayerDisconnected);
 call EFUNC(ticket,initServer);
 call EFUNC(logging,initServer);
 call EFUNC(marker,initServer);
 call EFUNC(ace,initServer);
 call EFUNC(whitelist,initServer);
 call EFUNC(util,initServer);
+
+addMissionEventHandler ["PlayerConnected", { _this call FUNC(handlePlayerConnected) }];
+addMissionEventHandler ["PlayerDisconnected", { _this call FUNC(handlePlayerDisconnected) }];
+
+
