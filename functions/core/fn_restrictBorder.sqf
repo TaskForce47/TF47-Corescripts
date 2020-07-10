@@ -27,8 +27,11 @@ player setVariable [QGVAR(outOfBorder), false];
 				} else {
 					private _message = format ["Return to battlefield or you will be punished!<br/><t color='#ff4c33'>Time left: %1 seconds </t>", round _timeLeft];
 					cutText [_message, "PLAIN DOWN", -1, true, true];
-					playSound "Alarm";
+					if((_timeLeft % 2) == 0) then {
+						playSound "Alarm";
+					};
 				};
+				sleep 1;
 			};
 			player setVariable [QGVAR(outOfBorder), true];
 		};
