@@ -5,5 +5,5 @@ private _tickets = _vehicle call FUNC(getTicketCost);
 [
 	"Entered a vehicle!",
 	format ["Type: %1", _vehicle call EFUNC(util,getVehicleName)],
-	format ["This vehicle costs %1 tickets.", _tickets];
+	format ["This vehicle costs %1 tickets.", _tickets]
 ] spawn BIS_fnc_infoText;
