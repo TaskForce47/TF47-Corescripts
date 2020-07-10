@@ -14,8 +14,8 @@ if(! (Test-Path ($sqfVm))) {
     $url = "https://github.com/SQFvm/vm/releases/download/1.3.2-RC1/1.3.2.RC1-Win64-x64.zip"
     $temp = "$PSScriptRoot\sqfvm.zip"
     Invoke-WebRequest -Uri $url -OutFile $temp
-    Expand-Archive -LiteralPath $output -DestinationPath "$PSScriptRoot\sqfvm"
-    Remove-Item -path $output
+    Expand-Archive -LiteralPath $temp -DestinationPath "$PSScriptRoot\sqfvm"
+    Remove-Item -path $temp
     Write-Output "Extracted to $sqfvm"
 }
 else
