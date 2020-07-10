@@ -10,4 +10,4 @@ if(_pos isEqualType objNull) then {
 
 if((_pos select 0) < 0 || (_pos select 1) < 0) exitWith {false};
 
-(_pos select 0) > worldSize || (_pos select 1) > worldSize
+! ((_pos select 0) > worldSize || (_pos select 1) > worldSize)
