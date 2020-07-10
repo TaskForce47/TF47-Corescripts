@@ -5,4 +5,3 @@
 #define DEBUG_MODE_FULL
 
 #include "..\..\script_macros_common.hpp"
-
