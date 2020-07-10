@@ -30,3 +30,5 @@ GVAR(tickets) addPublicVariableEventHandler {
 };
 
 GVAR(slotCost) = [];
+
+call FUNC(addVehicleRegistering);
