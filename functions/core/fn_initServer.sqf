@@ -19,13 +19,13 @@ call EFUNC(ace,initServer);
 call EFUNC(whitelist,initServer);
 call EFUNC(util,initServer);
 
-if(IS_SINGLEPLAYER)) {
+if(IS_SINGLEPLAYER) then {
 	private _namespace = true call CBA_fnc_createNamespace;
-	_namespace setVariable [QGVAR(playerUid), getPlayerUID];
+	_namespace setVariable [QGVAR(playerUid), getPlayerUID player];
 	_namespace setVariable [QEGVAR(db,playerName), name player];
 
 
-	private _playerId = getPlayerUID call EFUNC(database,getPlayerId);
+	private _playerId = (getPlayerUID player) call EFUNC(database,getPlayerId);
 	if(_playerId < 1) then { //if user doesn't exist we need to create a new player
 		_playerId = [_uid, _name] call EFUNC(database,createNewPlayer);
 	};
