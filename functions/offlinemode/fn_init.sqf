@@ -36,7 +36,7 @@ DB_FUNC(getLastSessionTickets) = {
 		["_missionId", 0, [0]]
 	];
 	TRACE_1("DATABASE GETLASTSESSIONTICKETS HAS BEEN EXECUTED!", _missionId);
-	0
+	[]
 };
 
 DB_FUNC(getPlayerId) = {
@@ -49,7 +49,7 @@ DB_FUNC(getPlayerId) = {
 	private _playerId = 0;
 
 	if(_id == -1) then {
-		_playerId = random 1000;
+		_playerId = round random 1000;
 		DB_GVAR(players) pushBack [_playerUid, _playerId];
 	} else {
 		_playerId = DB_GVAR(players) select _id select 1;
@@ -69,7 +69,7 @@ DB_FUNC(createNewPlayer) = {
 	private _playerId = 0;
 
 	if(_id == -1) then {
-		_playerId = random 1000;
+		_playerId = round random 1000;
 		DB_GVAR(players) pushBack [_playerUid, _playerId];
 	} else {
 		_playerId = DB_GVAR(players) select _id select 1;
