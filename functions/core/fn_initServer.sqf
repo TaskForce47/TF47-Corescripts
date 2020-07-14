@@ -20,4 +20,15 @@ call EFUNC(util,initServer);
 addMissionEventHandler ["PlayerConnected", { _this call FUNC(handlePlayerConnected) }];
 addMissionEventHandler ["PlayerDisconnected", { _this call FUNC(handlePlayerDisconnected) }];
 
-
+//sp compatiblity
+if(!isMultiplayer) then {
+	LOG("CORE INIT RUNNING SP COMPATIBLITY");
+	[
+		0,
+		getPlayerUID player,
+		name player,
+		false,
+		0,
+		"sp_idstr"
+	] call FUNC(handlePlayerConnected);
+};

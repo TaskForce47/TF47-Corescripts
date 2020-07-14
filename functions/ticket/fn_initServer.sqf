@@ -3,10 +3,10 @@
 if(! GVAR(enableTicketsystem)) exitWith {};
 
 call FUNC(getTicketLastSession);
-
+GVAR(slotCost) = [];
 GVAR(suddenDeath) = false;
 //add trigger to tickets triggering on reaching 0 tickets
-GVAR(tickets) addPublicVariableEventHandler {
+QGVAR(tickets) addPublicVariableEventHandler {
 	params ["_varName", "_value", "_target"];
 
 	if(_value < 0) exitWith {};
@@ -29,6 +29,6 @@ GVAR(tickets) addPublicVariableEventHandler {
 	};
 };
 
-GVAR(slotCost) = [];
+
 
 call FUNC(addVehicleRegistering);

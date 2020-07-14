@@ -6,7 +6,7 @@ private _lastRoundData = [EGVAR(core,missionId)] call EFUNC(database,getLastSess
 LOG_1("Last round data:", _lastRoundData);
 
 private _fnc_startNewRound = {
-	GVAR(tickets) = EGVAR(core,startingTickets);
+	GVAR(tickets) = GVAR(startingTickets);
 	LOG(format ["Started new session with %1 tickets.", GVAR(tickets)]);
 	[QEGVAR(database,insertTicketSession), GVAR(tickets)] call CBA_fnc_serverEvent;
 };

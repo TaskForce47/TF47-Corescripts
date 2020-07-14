@@ -19,3 +19,5 @@ private _whitelist = _playerId call EFUNC(database,getPlayerWhitelist);
 
 _playerNamespace setVariable [QGVAR(whitelist), _whitelist, true];
 TRACE_2("UPDATED WHITELIST FOR PLAYER:", _playerId, _whitelist);
+
+true
