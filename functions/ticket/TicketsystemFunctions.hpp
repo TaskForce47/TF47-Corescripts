@@ -11,7 +11,7 @@ class TF47_ticket
 		class getTicketLastSession {};
 		class handlePlayerKilled {};
 		class handleVehicleKilled {};
-		class initClient {};
+		class initPlayer {};
 		class initServer {};
 		class onVehicleEnterLocal {};
 		class registerSlot {};
