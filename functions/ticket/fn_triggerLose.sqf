@@ -1,8 +1,8 @@
 #include "script_component.hpp"
 [
-	{"EveryoneWon" call BIS_fnc_endMissionServer;},
+	{"EveryoneLost" call BIS_fnc_endMissionServer;},
 	nil,
 	30
 ] call CBA_fnc_waitAndExecute;
-["Mission will end in 30 seconds"] remoteExec ["hint", 0];
+["TF47_core_notification_outOfTickets", "We have run out of tickets, mission failed!"] remoteExec [QEFUNC(util,sendNotification), 0];
 [EGVAR(database,finishSession), nil] call CBA_fnc_serverEvent;

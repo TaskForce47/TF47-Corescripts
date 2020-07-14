@@ -9,7 +9,7 @@ GVAR(suddenDeath) = false;
 QGVAR(tickets) addPublicVariableEventHandler {
 	params ["_varName", "_value", "_target"];
 
-	if(_value < 0) exitWith {};
+	if(_value > 0) exitWith {};
 
 	[QGVAR(outOfTickets), nil] call CBA_fnc_globalEvent;
 
@@ -18,17 +18,24 @@ QGVAR(tickets) addPublicVariableEventHandler {
 	if(GVAR(allowComback) && !GVAR(suddenDeath)) then {
 		GVAR(suddenDeath) = true;
 		[
+			[format ["We have run out of tickets, you have %1 seconds before the mission is lost!", GVAR(timeoutBeforeLose)], 2, 0, 6]
+		] remoteExec ["BIS_fnc_EXP_camp_SITREP", 0];
+		[
 			{GVAR(tickets) > 0},
 			{
 				GVAR(suddenDeath) = false;
-				["Crysis averted! Tickets are positive again"] remoteExec ["hint", 0];
+				[
+					["Success! We got a few tickets back and are back in business!", 2, 0, 6]
+				] remoteExec ["BIS_fnc_EXP_camp_SITREP", 0];
 			},
+			nil,
 			GVAR(timeoutBeforeLose),
 			{call FUNC(triggerLose)}
 		] call CBA_fnc_waitUntilAndExecute;
 	};
+	if(! GVAR(allowComback)) then {
+		call FUNC(triggerLose);
+	};
 };
-
-
 
 call FUNC(addVehicleRegistering);

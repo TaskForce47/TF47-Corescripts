@@ -17,3 +17,14 @@ if(_id == -1 && {GVAR(defaultSlotCost) != 0}) then {
 };
 
 call FUNC(addTicketDisplay);
+
+[
+	QGVAR(ticketChange), {
+		params ["_oldTickets", "_tickets", "_amount", "_message"];
+		if(_amount < 0) then {
+			["TF47_core_notification_ticketLoss",_message] call EFUNC(util,sendNotification);
+		} else {
+			["TF47_core_notification_ticketGain", _message] call EFUNC(util,sendNotification);
+		};
+ 	}
+] call CBA_fnc_addEventhandler;
