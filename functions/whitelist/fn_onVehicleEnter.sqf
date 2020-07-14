@@ -3,40 +3,40 @@ params [
 	["_vehicle", objNull, [objNull]]
 ];
 
-if(_vehicle call FUNC(isWhitelistTestAllowed)) exitWith {};
+if(! (_vehicle call FUNC(isWhitelistTestAllowed))) exitWith {};
 if(GVAR(enableSlotTraits)) then {
-	[player,_vehicle] call FUNC(checkslotTrait);
+	[player, _vehicle] call FUNC(checkslotTrait);
 };
 
 switch true do {
 	case (_vehicle call EFUNC(util,isHelicopter)): {
-		private _isAllowd = false;
+		private _isAllowed = false;
 		if(GVAR(enableWhitelistAttack) && {_vehicle call EFUNC(util,isAttackAircraft)}) then {
-			_isAllowed = [WHITELIST_HELO, WHITELIST_ATTACK_AIR] call FUNC(checkWhitelistStrict);
+			_isAllowed = [[WHITELIST_HELO, WHITELIST_ATTACK_AIR]] call FUNC(checkWhitelistStrict);
 		} else {
-			_isAllowed = [WHITELIST_HELO] call FUNC(checkWhitelistSimple);
+			_isAllowed = [[WHITELIST_HELO]] call FUNC(checkWhitelistSimple);
 		};
 
-		if(! _isAllowed) then {
+		if(! _isAllowed) exitWith {
 			[player, "You are not whitelisted for this type of helicopter"] call FUNC(kickPlayerVehicle);
 		};
 	};
 	case (_vehicle call EFUNC(util,isTank)): {
-		private _isAllowd = [WHITELIST_TANK] call FUNC(checkWhitelistSimple);
+		private _isAllowed = [[WHITELIST_TANK]] call FUNC(checkWhitelistSimple);
 
-		if(! _isAllowed) then {
+		if(! _isAllowed) exitWith {
 			[player, "You are not whitelisted for this type of tank"] call FUNC(kickPlayerVehicle);
 		};
 	};
 	case (_vehicle call EFUNC(util,isPlane)): {
-		private _isAllowd = false;
+		private _isAllowed = false;
 		if(GVAR(enableWhitelistAttack) && {_vehicle call EFUNC(util,isAttackAircraft)}) then {
-			_isAllowed = [WHITELIST_PLANE, WHITELIST_ATTACK_AIR] call FUNC(checkWhitelistStrict);
+			_isAllowed = [[WHITELIST_PLANE, WHITELIST_ATTACK_AIR]] call FUNC(checkWhitelistStrict);
 		} else {
-			_isAllowed = [WHITELIST_PLANE] call FUNC(checkWhitelistSimple);
+			_isAllowed = [[WHITELIST_PLANE]] call FUNC(checkWhitelistSimple);
 		};
 
-		if(! _isAllowed) then {
+		if(! _isAllowed) exitWith {
 			[player, "You are not whitelisted for this type of plane"] call FUNC(kickPlayerVehicle);
 		};
 	};

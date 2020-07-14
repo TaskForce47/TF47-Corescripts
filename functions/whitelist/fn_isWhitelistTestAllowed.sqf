@@ -3,8 +3,7 @@ params ["_vehicle"];
 
 if(isNull _vehicle) exitWith {};
 
-(_vehicle isKindOf "Man" || 
+! (_vehicle isKindOf "Man" || 
 {_vehicle getVariable [QGVAR(checkDisabled),false]} || 
 {((assignedVehicleRole player) select 0) isEqualTo "cargo"} ||
-{ _vehicle call FUNC(isFlying)})
-
+{ _vehicle call EFUNC(util,isFlying)})
