@@ -9,5 +9,5 @@ if(! local _unit) exitWith {
 	[_unit, _message] remoteExec [QFUNC(kickOutPlayer), _unit];
 };
 
-_unit action ["Eject", _unit];
+_unit action ["GetOut", vehicle _unit];
 ["TF47_core_notification_notWhitelisted", _message] call EFUNC(util,sendNotification);
