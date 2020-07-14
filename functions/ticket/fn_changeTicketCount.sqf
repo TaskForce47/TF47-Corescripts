@@ -25,6 +25,10 @@ if(GVAR(tickets) < 0) then {
 	GVAR(tickets) = 0;
 };
 publicVariable QGVAR(tickets);
+publicVariableServer QGVAR(tickets);
+
 [QGVAR(ticketChange), [_oldTickets, QGVAR(tickets), _amount, _message]] call CBA_fnc_globalEvent;
+[QEGVAR(database,insertTicketLog), [GVAR(tickets), _amount, _message]] call CBA_fnc_serverEvent;
+[QEGVAR(database,updateTicketSession), [GVAR(tickets)]] call CBA_fnc_serverEvent;
 
 true
