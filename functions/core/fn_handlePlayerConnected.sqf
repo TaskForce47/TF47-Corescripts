@@ -3,6 +3,9 @@
 params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
 
 if(_name isEqualTo "__SERVER__") exitWith {};
+
+TRACE_1("PLAYER CONNECTED!", _this);
+
 if(["HC", _uid] call BIS_fnc_inString) exitWith {
 	_owner call FUNC(handleConnectionHC);
 };

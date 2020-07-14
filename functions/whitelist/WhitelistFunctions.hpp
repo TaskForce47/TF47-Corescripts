@@ -9,8 +9,10 @@ class TF47_whitelist
 		class checkSlotWhitelist {};
 		class checkWhitelistSimple {};
 		class checkWhitelistStrict {};
-		class initClient {};
+		class initPlayer {};
 		class initServer {};
+		class initSlotTrait {};
+		class isWhitelistTestAllowed {};
 		class kickPlayerslot {};
 		class kickPlayerVehicle {};
 		class onVehicleEnter {};
