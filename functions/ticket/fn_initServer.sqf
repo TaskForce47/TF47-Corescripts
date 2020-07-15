@@ -3,6 +3,7 @@
 if(! GVAR(enableTicketsystem)) exitWith {};
 
 call FUNC(getTicketLastSession);
+call FUNC(addVehicleRegistering);
 GVAR(slotCost) = [];
 GVAR(suddenDeath) = false;
 //add trigger to tickets triggering on reaching 0 tickets
@@ -38,4 +39,8 @@ QGVAR(tickets) addPublicVariableEventHandler {
 	};
 };
 
-call FUNC(addVehicleRegistering);
+addMissionEventHandler ["HandleDisconnect", {
+	params ["_unit"];
+
+  	_unit call FUNC(onPlayerDisconnect);
+}];

@@ -8,6 +8,7 @@ class TF47_util
       class initPlayer {};
       class initServer {};
       class isAttackAircraft {};
+      class isCar {};
       class isFlying {};
       class isHelicopter {};
       class isInCircle {};
