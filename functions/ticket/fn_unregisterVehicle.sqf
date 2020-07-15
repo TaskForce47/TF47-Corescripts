@@ -11,5 +11,6 @@ if(_eh != -1) then {
 	_vehicle removeMPEventHandler ["Killed", _ehId];
 };
 _vehicle setVariable [QGVAR(cost), nil, true];
+_vehicle setVariable [QGVAR(registered), false, true];
 
 true

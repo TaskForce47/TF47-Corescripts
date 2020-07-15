@@ -78,6 +78,61 @@
 ] call CBA_fnc_addSetting;
 
 [
+	QGVAR(defaultCostVehicles),
+	"LIST",
+	["Default cost vehicles", "Default cost for vehicles if it is not defined in the vehicle cost list"],
+	["TF47 Corescripts", "Ticketsystem"],
+	[[0, 5, 10, 20, 50], [], 1],
+	1,
+	nil,
+	true
+] call CBA_fnc_addSetting;
+
+[
+	QGVAR(defaultCostTanks),
+	"LIST",
+	["Default cost tanks", "Default cost for tanks if it is not defined in the vehicle cost list"],
+	["TF47 Corescripts", "Ticketsystem"],
+	[[0, 5, 10, 20, 50], [], 1],
+	1,
+	nil,
+	true
+] call CBA_fnc_addSetting;
+
+[
+	QGVAR(defaultCostHelicopters),
+	"LIST",
+	["Default cost helicopters", "Default cost for helicopters if it is not defined in the vehicle cost list"],
+	["TF47 Corescripts", "Ticketsystem"],
+	[[0, 5, 10, 20, 50], [], 1],
+	1,
+	nil,
+	true
+] call CBA_fnc_addSetting;
+
+[
+	QGVAR(defaultCostAttackHelicopters),
+	"LIST",
+	["Default cost attack helicopters", "Default cost for  attack helicopters if it is not defined in the vehicle cost list"],
+	["TF47 Corescripts", "Ticketsystem"],
+	[[0, 5, 10, 20, 50], [], 1],
+	1,
+	nil,
+	true
+] call CBA_fnc_addSetting;
+
+[
+	QGVAR(defaultCostPlanes),
+	"LIST",
+	["Default cost for planes", "Default cost for planes if it is not defined in the vehicle cost list"],
+	["TF47 Corescripts", "Ticketsystem"],
+	[[0, 5, 10, 20, 50], [], 1],
+	1,
+	nil,
+	true
+] call CBA_fnc_addSetting;
+
+[
 	QGVAR(defaultSlotCost),
 	"LIST",
 	["Default slot ticket cost", "Default cost for a slot if no value is found"],
