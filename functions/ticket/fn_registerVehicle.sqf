@@ -7,19 +7,18 @@ params [
 ];
 
 //check if the vehicle has allready been registered
-if(! isNil {_vehicle getVariable QGVAR(cost)}) exitWith {};
+if(_vehicle getVariable [QGVAR(registered), false]) exitWith {};
 
 private _vehicleName = typeOf _vehicle;
 
 if(_setCustomCost) then {
 	_vehicle setVariable [QGVAR(cost), _tickets, true];
 } else {
-	private _vehicleList = EGVAR(core,vehicleTicketcost);
-	private _id = _vehicleList findif {(_x select 0) isEqualTo _vehicleName};
-	if(_id != -1) then {
-		_vehicle setVariable [QGVAR(cost), _vehicleList select _id select 1];
-	};
+	private _cost = _vehicle call FUNC(getTicketCostFromList);
+	_vehicle setVariable [QGVAR(cost), _cost, true];
 };
+
+_vehicle setVariable [QGVAR(registered), true, true];
 
 private _id = _vehicle addMPEventHandler ["MPKilled", {
   params ["_vehicle"];

@@ -9,13 +9,17 @@ class TF47_ticket
 		class changeTicketCount {};
 		class getTicketCost {};
 		class getTicketLastSession {};
+		class getTicketCostFromList {};
 		class handlePlayerKilled {};
 		class handleVehicleKilled {};
 		class initPlayer {};
 		class initServer {};
+		class isVehicleRegistered {};
+		class onPlayerDisconnect {};
 		class onVehicleEnterLocal {};
 		class registerSlot {};
 		class registerVehicle {};
+		class registerVehicleFallback {};
 		class settings {preInit = 1;};
 		class triggerLose {};
 		class triggerWin {};
