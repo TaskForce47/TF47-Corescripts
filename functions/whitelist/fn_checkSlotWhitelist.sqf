@@ -14,7 +14,7 @@ if(_index == -1)  exitWith {
 };
 
 private _slotWhitelist = GVAR(slotWhitelist) select _index;
-private _isAllowed = [[_slotWhitelist select 1]] call FUNC(checkWhitelistStrict) && {[[_slotWhitelist select 2]] call FUNC(checkWhitelistSimple)};
+private _isAllowed = [_slotWhitelist select 1] call FUNC(checkWhitelistStrict) && {[_slotWhitelist select 2] call FUNC(checkWhitelistSimple)};
 
 if(! _isAllowed) then {
 	[player, "WhitelistedSlot"] call FUNC(kickPlayerSlot);
