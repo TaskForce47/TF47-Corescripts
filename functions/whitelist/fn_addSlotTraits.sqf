@@ -6,8 +6,8 @@ params [
 
 if(_slotName isEqualTo "") exitWith {};
 private _id = GVAR(slotTraits) findIf {(_x select 0) isEqualTo _slotName};
-if(_id == -1) exitWith {
-	LOG_1("Slot has allready been registered!", _slotName);
+if(_id != -1) exitWith {
+	LOG_1("Slot trait has allready been registered!", _slotName);
 };
 
 
