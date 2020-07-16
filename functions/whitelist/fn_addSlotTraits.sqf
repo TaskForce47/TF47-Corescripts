@@ -22,6 +22,9 @@ _traits = _traits apply {
 		case WHTIELIST_PLANE: {
 			TF47_IS_PILOT_PLANE
 		};
+		default {
+			nil
+		};:
 	};
 };
 
