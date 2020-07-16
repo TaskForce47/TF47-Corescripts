@@ -5,7 +5,7 @@ params [
 ];
 
 if(isNull _unit) exitWith {};
-if(local _unit) exitWith {
+if(! local _unit) exitWith {
 	[_unit, _endName] remoteExec [QFUNC(kickPlayerSlot), _unit];
 };
 
