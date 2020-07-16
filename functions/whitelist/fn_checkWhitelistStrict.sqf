@@ -10,7 +10,7 @@ private _isWhitelisted = true;
 private _playerWhitelist = EGVAR(core,playerNamespace) getVariable [QGVAR(whitelist), []];
 
 {
-    if(! _x in _playerWhitelist) exitWith {
+    if(! (_x in _playerWhitelist)) exitWith {
       _isWhitelisted = false;
     };
 } forEach _whitelist;
