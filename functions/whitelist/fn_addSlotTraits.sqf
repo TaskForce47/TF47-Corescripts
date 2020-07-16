@@ -24,7 +24,7 @@ _traits = _traits apply {
 		};
 		default {
 			nil
-		};:
+		};
 	};
 };
 
