@@ -9,7 +9,9 @@ if(! local _unit) exitWith {
 
 private _slotName = str _unit;
 private _index = GVAR(slotWhitelist) findIf {(_x select 0) isEqualTo _slotName};
-if(_index == -1)  exitWith {};
+if(_index == -1)  exitWith {
+	LOG("This slot is not whitelisted");
+};
 
 private _slotWhitelist = GVAR(slotWhitelist) select _index;
 private _isAllowed = [[_slotWhitelist select 1]] call FUNC(checkWhitelistSimple) && {[[_slotWhitelist select 2]] call FUNC(checkWhitelistStrict)};
