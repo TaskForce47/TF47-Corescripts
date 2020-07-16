@@ -11,7 +11,7 @@ if(_id == -1) exitWith {
 };
 
 
-_traits apply {
+_traits = _traits apply {
 	switch _x do {
 		case WHITELIST_TANK: {
 			TF47_IS_TANKER
@@ -22,13 +22,10 @@ _traits apply {
 		case WHTIELIST_PLANE: {
 			TF47_IS_PILOT_PLANE
 		};
-		default {
-			nil
-		};
 	};
 };
 
-_traits = _traits  - [nil];
+_traits = _traits select {! isNil "_x"};
 GVAR(slotTraits) pushBack [_slotName, _traits];
 publicVariable QGVAR(slotTraits);
 
