@@ -12,5 +12,5 @@ if(GVAR(slotCost) findIf {(_x select 0) isEqualTo _slotName} != -1) exitWith {
 
 GVAR(slotCost) pushBack [_slotName, _tickets, _slotType];
 LOG_3("Slot registered!", _slotName, _tickets,_slotType);
-
+publicVariable QGVAR(slotCost);
 true
