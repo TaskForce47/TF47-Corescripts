@@ -6,4 +6,4 @@ params [
 
 if(isNull _vehicle) exitWith {false};
 
-_vehicle isKindOf "Helicopter"
+_vehicle isKindOf "Helicopter" && !(_vehicle isKindOf "ParachuteBase")
