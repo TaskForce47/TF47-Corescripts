@@ -19,7 +19,7 @@ _traits = _traits apply {
 		case WHITELIST_HELO: {
 			TF47_IS_PILOT_HELICOPTER
 		};
-		case WHTIELIST_PLANE: {
+		case WHITELIST_PLANE: {
 			TF47_IS_PILOT_PLANE
 		};
 		default {
