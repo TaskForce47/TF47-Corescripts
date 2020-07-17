@@ -7,4 +7,4 @@ if(isNull _object) exitWith {false};
 
 private _posAGL = getPosATL _object;
 
-(_posAGL select 2) > 2.5 && !([_object] remoteExecCall ["isTouchingGround", _object])
+(_posAGL select 2) > 2.5 && !(isTouchingGround _object)
