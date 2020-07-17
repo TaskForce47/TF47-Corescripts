@@ -7,7 +7,7 @@ params [
 ];
 
 //check if the vehicle has allready been registered
-if(_vehicle getVariable [QGVAR(registered), false] || {! (_vehicle getVariable [QGVAR(disabled), false] )}) exitWith {};
+if(_vehicle getVariable [QGVAR(registered), false] || {_vehicle getVariable [QGVAR(disabled), false]}) exitWith {};
 
 private _vehicleName = typeOf _vehicle;
 
