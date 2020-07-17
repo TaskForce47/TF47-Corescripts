@@ -15,7 +15,13 @@ if(! GVAR(autoSetTicketsOnVehicles)) exitWith {};
 				//check if vehicle has crew and it is not a player
 				if((count crew _vehicle) > 0 && {(count (crew _vehicle select {isPlayer _x})) == 0}) exitWith {};
 
-				_vehicle call FUNC(registerVehicleFallback);
+				private _typeVehicle = typeOf _vehicle;
+				private _id = GVAR(vehicleTicketcost) findIf { (_x select 0) isEqualTo _typeVehicle };
+				if(_id == -1) then {
+					_vehicle call FUNC(registerVehicleFallback);
+				} else {
+					_vehicle call FUNC(registerVehicle);
+				};
 			},
 			_vehicle,
 			10
