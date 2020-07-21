@@ -3,7 +3,7 @@
  * if the vehicle is not found in this list it will get treated as any other transport vehicle.
  */
 
-GVAR(attackPlanes) = [
+EGVAR(whitelist,attackPlanes) = [
 	"FIR_F22",
 	"FIR_F15SE",
 	"FIR_F15E",
@@ -20,7 +20,7 @@ GVAR(attackPlanes) = [
 	"rhsusf_f22"
 ];
 
-GVAR(attackHelicopter) = [
+EGVAR(whitelist,attackHelicopter) = [
 	"CUP_B_MH60L_DAP_4x_US",
 	"CUP_B_MH60L_DAP_4x_USN",
 	"RHS_UH1Y_d_GS",
@@ -33,4 +33,37 @@ GVAR(attackHelicopter) = [
 	"UK3CB_BAF_Wildcat_AH1_CAS_6A",
 	"UK3CB_BAF_Wildcat_AH1_CAS_6B",
 	"UK3CB_BAF_Wildcat_AH1_HEL_6A"
+];
+
+
+EGVAR(whitelist,disabledVehicles) = [
+	"rhsusf_m113d_usarmy_M240",
+	"rhsusf_m113d_usarmy_MK19",
+	"rhsusf_m113d_usarmy",
+	"CUP_B_M163_USA",
+	"rhsusf_stryker_m1134_wd",
+	"rhsusf_stryker_m1132_m2_wd",
+	"rhsusf_stryker_m1127_m2_wd",
+	"rhsusf_stryker_m1126_mk19_wd",
+	"rhsusf_stryker_m1126_m2_wd",
+	"rhsusf_M1117_D",
+	"itc_land_rhsusf_m109_usarmy",
+	"rhsusf_M1230a1_usarmy_wd",
+	"rhsusf_m113d_usarmy_medical",
+	"CUP_B_M1133_MEV_Woodland",
+	
+	"rhsusf_m113_usarmy_M240",
+	"rhsusf_m113_usarmy_MK19",
+	"rhsusf_m113_usarmy",
+	"CUP_B_M163_USA",
+	"rhsusf_stryker_m1134_d",
+	"rhsusf_stryker_m1132_m2_d",
+	"rhsusf_stryker_m1127_m2_d",
+	"rhsusf_stryker_m1126_mk19_d",
+	"rhsusf_stryker_m1126_m2_d",
+	"rhsusf_M1117_D",
+	"itc_land_rhsusf_m109d_usarmy",
+	"rhsusf_M1230a1_usarmy_d",
+	"rhsusf_m113_usarmy_medical",
+	"CUP_B_M1133_MEV_Desert"
 ];
