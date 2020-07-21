@@ -3,7 +3,7 @@
  * ["class name", vehicle value]
  *
 */
-GVAR(vehicleTicketcost) = [
+EGVAR(ticket,vehicleTicketcost) = [
 
 	//3
 	["CUP_B_LR_Transport_CZ_D",3],
