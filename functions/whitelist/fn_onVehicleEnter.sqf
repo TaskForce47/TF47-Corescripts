@@ -8,7 +8,7 @@ if(GVAR(enableSlotTraits)) then {
 	[player, _vehicle] call FUNC(checkslotTrait);
 };
 
-if(! isNil {QGVAR(disabledVehicles)} && { _vehicle in GVAR(disabledVehicles)}) exitWith {};
+if(! isNil {QGVAR(disabledVehicles)} && { typeof _vehicle in GVAR(disabledVehicles)}) exitWith {};
 
 switch true do {
 	case (_vehicle call EFUNC(util,isHelicopter)): {
