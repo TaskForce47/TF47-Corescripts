@@ -3,7 +3,7 @@ params [
 	["_vehicle", objNull, [objNull]]
 ];
 
-if(isNull _vehicle) exitWith {};
+if(isNull _vehicle || (! GVAR(enableFallback))) exitWith {};
 
 switch true do {
 	case ((_vehicle call EFUNC(util,isHelicopter) && (! (_vehicle call EFUNC(util,isAttackAircraft))))): {
