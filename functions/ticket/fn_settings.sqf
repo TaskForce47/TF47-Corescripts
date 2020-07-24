@@ -78,6 +78,17 @@
 ] call CBA_fnc_addSetting;
 
 [
+	QGVAR(enableFallback),
+	"CHECKBOX",
+	["Enable ticket fallback", "If a vehicle is not found in the ticket list it will registered with default ticket cost"],
+	["TF47 Corescripts", "Ticketsystem"],
+	true,
+	1,
+	nil,
+	true
+] call CBA_fnc_addSetting;
+
+[
 	QGVAR(defaultCostVehicles),
 	"LIST",
 	["Default cost vehicles", "Default cost for vehicles if it is not defined in the vehicle cost list"],
