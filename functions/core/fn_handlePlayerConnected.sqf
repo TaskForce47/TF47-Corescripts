@@ -20,12 +20,13 @@ if(_playerId < 1) then { //if user doesn't exist we need to create a new player
 	_playerId = [_uid, _name] call EFUNC(database,createNewPlayer);
 };
 
-[QEGVAR(database,updatePlayerConnections), _namespace] call CBA_fnc_serverEvent;
-[QEGVAR(database,updatePlayerName), _namespace] call CBA_fnc_serverEvent;
-
 //save player database id, we need to reference this on each database call
 _namespace setVariable [QGVAR(playerId), _playerId, true];
 _namespace setVariable [QEGVAR(db,playerId), _playerId, true]; //still needed for backwards compability to server mod...
+
+[QEGVAR(database,updatePlayerConnections), _namespace] call CBA_fnc_serverEvent;
+[QEGVAR(database,updatePlayerName), _namespace] call CBA_fnc_serverEvent;
+
 
 //update player connections and name
 [QEGVAR(database,updatePlayerConnections),_namespace] call CBA_fnc_serverEvent;
