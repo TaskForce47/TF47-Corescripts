@@ -175,3 +175,14 @@
 	nil,
 	true
 ] call CBA_fnc_addSetting;
+
+[
+	QGVAR(enableZeroTicketNotification),
+	"CHECKBOX",
+	["Enable zero ticket notification", "If disabled ticket change notification will not be displayed if the amount of changing tickets is 0"],
+	["TF47 Corescripts", "Ticketsystem"],
+	true,
+	1,
+	nil,
+	true
+] call CBA_fnc_addSetting;
