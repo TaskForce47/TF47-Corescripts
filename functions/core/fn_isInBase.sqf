@@ -9,8 +9,31 @@ if(_pos isEqualType objNull) then {
 private _baseList = GVAR(baseList);
 
 private _id = _baseList findIf {
-  ((_x select 1) distance2d _pos) < (_x select 2)
+  private _base = _x;
+  private _result = false;
+  switch (_base select 3) do {
+    case "rectangular": {
+      _result = _pos inArea [
+        _base select 0, 
+        _base select 1 select 0, 
+        _base select 1 select 1, 
+        _base select 2,
+        true
+      ];
+    };
+    case "ellipse": {
+      _result = _pos inArea [
+        _base select 0,
+        _base select 1 select 0,
+        _base select 1 select 1,
+        _base select 2,
+        false
+      ];
+    };
+    _result
+  };
 };
+
 if(_id != -1) exitWith {true};
 
 false
