@@ -16,5 +16,9 @@
 
 params ["_owner"];
 
-GVAR(hcList) - _owner;
+private _id = GVAR(hcList) findIf { _x isEqualTo _owner };
+if(_id == -1) exitWith {};
+
+GVAR(hcList) deleteAt _id;
+
 [QGVAR(hcDisconnected), _owner] call CBA_fnc_serverEvent;
