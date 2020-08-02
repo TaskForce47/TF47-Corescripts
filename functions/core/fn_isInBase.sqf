@@ -11,7 +11,7 @@ private _baseList = GVAR(baseList);
 private _id = _baseList findIf {
   private _base = _x;
   private _result = false;
-  switch (_base select 3) do {
+  switch (_base select 4) do {
     case "rectangular": {
       _result = _pos inArea [
         _base select 0, 
@@ -34,6 +34,6 @@ private _id = _baseList findIf {
   };
 };
 
-if(_id != -1) exitWith {true};
+if(_id == -1) exitWith {false};
 
-false
+true
