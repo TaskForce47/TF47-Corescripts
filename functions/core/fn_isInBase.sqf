@@ -30,8 +30,8 @@ private _id = _baseList findIf {
         false
       ];
     };
-    _result
   };
+  _result
 };
 
 if(_id == -1) exitWith {false};
