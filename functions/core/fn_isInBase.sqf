@@ -14,19 +14,19 @@ private _id = _baseList findIf {
   switch (_base select 4) do {
     case "rectangular": {
       _result = _pos inArea [
-        _base select 0, 
-        _base select 1 select 0, 
-        _base select 1 select 1, 
-        _base select 2,
+        _base select 1, 
+        _base select 2 select 0, 
+        _base select 2 select 1, 
+        _base select 3,
         true
       ];
     };
     case "ellipse": {
       _result = _pos inArea [
-        _base select 0,
-        _base select 1 select 0,
-        _base select 1 select 1,
-        _base select 2,
+        _base select 1,
+        _base select 2 select 0,
+        _base select 2 select 1,
+        _base select 3,
         false
       ];
     };
