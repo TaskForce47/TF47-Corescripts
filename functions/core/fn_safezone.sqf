@@ -38,6 +38,21 @@ if(! GVAR(useBaseShootingProtection)) exitWith {};
       deleteVehicle (_this select 6);
       private _message = format ["<t color='#ff4c33'>Shooting inside the base is not allowed!</t>"];
 			cutText [_message, "PLAIN DOWN", -1, true, true];
+     
+      if (GVAR(kickOnBaseShooting)) then {
+        hint "Stop shooting immediately or you will be kicked!";
+        private _lastTimeShot = player getVariable [QGVAR(lastTimeShot), CBA_missionTime];
+
+        if ((CBA_missionTime - _lastTimeShot) > 10) then {
+          player setVariable [QGVAR(shotsInBase), 1];
+        } else {
+          private _shotsInBase = (player getVariable [QGVAR(shotsInBase), 0]) + 1;
+          player setVariable [QGVAR(lastTimeShot), CBA_missionTime];
+          if (_shotsInBase >= GVAR(maxShotCount)) then {
+            ["BaseShooting", false] call BIS_fnc_endMission;
+          };
+        };
+      };
     }];
     player setVariable [QGVAR(baseFiredId), _id];
   }
