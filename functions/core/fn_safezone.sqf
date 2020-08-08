@@ -51,6 +51,7 @@ if(! GVAR(useBaseShootingProtection)) exitWith {};
           if (_shotsInBase >= GVAR(maxShotCount)) then {
             ["BaseShooting", false] call BIS_fnc_endMission;
           };
+          player setVariable [QGVAR(shotsInBase), _shotsInBase];
         };
       };
     }];
