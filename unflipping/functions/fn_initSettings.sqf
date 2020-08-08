@@ -12,7 +12,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-    "TF47_unflipping_unit_mass_limit",
+    "vet_unflipping_unit_mass_limit",
     "SLIDER",
     [localize "STR_TF47_unflipping_unit_mass_limit", localize "STR_TF47_unflipping_unit_mass_limit_desc"],
     SETTINGS_CAT,
@@ -22,7 +22,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-    "TF47_unflipping_unit_man_limit",
+    "vet_unflipping_unit_man_limit",
     "SLIDER",
     [localize "STR_TF47_unflipping_unit_man_limit", localize "STR_TF47_unflipping_unit_man_limit_desc"],
     SETTINGS_CAT,
@@ -32,7 +32,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-    "TF47_unflipping_time",
+    "vet_unflipping_time",
     "SLIDER",
     [localize "STR_TF47_unflipping_time", localize "STR_TF47_unflipping_time_desc"],
     SETTINGS_CAT,
@@ -42,7 +42,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-    "TF47_unflipping_vehicle_mass_limit",
+    "vet_unflipping_vehicle_mass_limit",
     "SLIDER",
     [localize "STR_TF47_unflipping_vehicle_mass_limit", localize "STR_TF47_unflipping_vehicle_mass_limit"],
     SETTINGS_CAT,
@@ -52,7 +52,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-    "TF47_unflipping_require_toolkit",
+    "vet_unflipping_require_toolkit",
     "CHECKBOX",
     [localize "STR_TF47_unflipping_require_toolkit", localize "STR_TF47_unflipping_require_toolkit"],
     SETTINGS_CAT,
@@ -62,7 +62,7 @@
 ] call CBA_fnc_addSetting;
 
 [
-    "TF47_unflipping_require_serviceVehicle",
+    "vet_unflipping_require_serviceVehicle",
     "CHECKBOX",
     [localize "STR_TF47_unflipping_require_serviceVehicle", localize "STR_TF47_unflipping_require_serviceVehicle"],
     SETTINGS_CAT,
