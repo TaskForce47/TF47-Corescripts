@@ -15,7 +15,7 @@ if(_id != -1) then {
 };
 private _message = format["%1 died! <br/> %2 %3", _slotType, "<t color='#ff4c33'>Ticket Verlust: </t>", _cost];
 
-[_cost, true, _message] call FUNC(changeTicketCount);
+[_cost, true, _message, GVAR(playerId)] call FUNC(changeTicketCount);
 
 TRACE_2("Player died!", _unit, _cost);
 

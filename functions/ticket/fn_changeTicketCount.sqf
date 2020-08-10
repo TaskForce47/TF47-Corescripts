@@ -2,8 +2,10 @@
 params [
 	["_amount", 0, [0]],
 	["_isNegative", true, [true]],
-	["_message", "unknown reason", [""]],
-	["_isSilent", false, [false]]
+	["_displayMessage", "unknown reason", [""]],
+	["_databaseMessage", "unknown reason", [""]],
+	["_isSilent", false, [false]],
+	["_playerId", nil, [0]]
 ];
 
 if(! GVAR(enableTicketsystem)) exitWith {};
@@ -27,8 +29,8 @@ if(GVAR(tickets) < 0) then {
 publicVariable QGVAR(tickets);
 publicVariableServer QGVAR(tickets);
 
-[QGVAR(ticketChange), [_oldTickets, QGVAR(tickets), _amount, _message]] call CBA_fnc_globalEvent;
-[QEGVAR(database,insertTicketLog), [GVAR(tickets), _amount, _message]] call CBA_fnc_serverEvent;
+[QGVAR(ticketChange), [_oldTickets, QGVAR(tickets), _amount, _displayMessage]] call CBA_fnc_globalEvent;
+[QEGVAR(database,insertTicketLog), [GVAR(tickets), _amount, _databaseMessage, _playerId]] call CBA_fnc_serverEvent;
 [QEGVAR(database,updateTicketSession), [GVAR(tickets)]] call CBA_fnc_serverEvent;
 
 true
