@@ -1,5 +1,5 @@
 /*
-    vet_unflipping_fnc_unflipVehicle
+    TF47_unflipping_fnc_unflipVehicle
 
     File: fn_unflipVehicle.sqf
     Date: 2019-03-13
@@ -38,15 +38,15 @@ if (!_upsideDown && 55 > abs _bank) exitWith {false};
 private _bbr = boundingBoxReal _vehicle;
 private _vehicleWidth = abs (_bbr#0#0 * 2);
 
-// force factor is set in vet_unflipping_unflip_start event
-private _lastUnflipAttempt = _vehicle getVariable ["vet_lastUnflipAttempt", CBA_missionTime];
+// force factor is set in TF47_unflipping_unflip_start event
+private _lastUnflipAttempt = _vehicle getVariable ["TF47_lastUnflipAttempt", CBA_missionTime];
 private _forceFactor = if ((CBA_missionTime - _lastUnflipAttempt) < UNFLIP_FORCEFACTOR_EXPIRATIONTIME) then {
-    _vehicle getVariable ["vet_forceFactor", 1]
+    _vehicle getVariable ["TF47_forceFactor", 1]
 } else {
-    _vehicle setVariable ["vet_forceFactor", nil];
+    _vehicle setVariable ["TF47_forceFactor", nil];
     1
 };
-_vehicle setVariable ["vet_lastUnflipAttempt", CBA_missionTime];
+_vehicle setVariable ["TF47_lastUnflipAttempt", CBA_missionTime];
 
 private _force = getMass _vehicle * ([1 + (_vehicleWidth/10), _vehicleWidth] select _upsideDown) * _forceFactor;
 

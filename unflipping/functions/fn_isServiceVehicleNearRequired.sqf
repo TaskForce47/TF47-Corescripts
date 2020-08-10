@@ -1,5 +1,5 @@
 /*
-    vet_unflipping_fnc_isServiceVehicleNearRequired
+    TF47_unflipping_fnc_isServiceVehicleNearRequired
 
     File: fn_isServiceVehicleNearRequired..sqf
     Date: 2019-06-18
@@ -21,9 +21,9 @@ params [
     ["_target", objNull, [objNull]]
 ];
 
-if !(vet_unflipping_require_serviceVehicle) exitWith {true};
+if !(TF47_unflipping_require_serviceVehicle) exitWith {true};
 
 private _nearObjects = nearestObjects [_target, ["Air", "LandVehicle", "Slingload_base_F"], 5 + sizeOf typeOf _target];
 
 // return
-_nearObjects findIf {alive _x && {_x call vet_unflipping_fnc_isRepairVehicle}} != -1
+_nearObjects findIf {alive _x && {_x call TF47_unflipping_fnc_isRepairVehicle}} != -1
