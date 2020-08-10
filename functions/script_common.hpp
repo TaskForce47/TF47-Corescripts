@@ -40,7 +40,7 @@
 #define TF47_IS_PILOT_HELICOPTER "TF47_whitelist_crew_helicopter"
 #define TF47_IS_PILOT_PLANE "TF47_whitelist_crew_plane"
 #define TF47_IS_UAV "TF47_whitelist_crew_uav"
-
+#define TF47_IS_CCT "TF47_whitelist_slot_cct"
 
 #define IS_SERVER isServer
 #define IS_HEADLESS !hasInterface && !isServer

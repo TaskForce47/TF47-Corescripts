@@ -1,5 +1,5 @@
 /*
-    vet_unflipping_fnc_unflipAction
+    TF47_unflipping_fnc_unflipAction
 
     File: fn_unflipAction.sqf
     Date: 2019-03-14
@@ -19,35 +19,35 @@ params [
     ["_vehicle", objNull, [objNull]]
 ];
 
-if (vet_unflipping_vehicle_mass_limit < getMass _vehicle) exitWith {
+if (TF47_unflipping_vehicle_mass_limit < getMass _vehicle) exitWith {
     [
         ["a3\3den\data\controlsgroups\tutorial\close_ca.paa", 1, [1,0,0]],
-        [localize "STR_vet_unflipping_to_heavy"]
+        [localize "STR_TF47_unflipping_to_heavy"]
     ] call CBA_fnc_notify;
 };
 
-#define UNFLIPPING_UNITS        (_vehicle getVariable ["vet_unflippingUnits", []])
+#define UNFLIPPING_UNITS        (_vehicle getVariable ["TF47_unflippingUnits", []])
 #define PLAYER                  ([] call CBA_fnc_currentUnit)
 
 PLAYER playActionNow "PlayerStand";
 
-private _neededUnits = _vehicle call vet_unflipping_fnc_unflipRequiredAmount;
+private _neededUnits = _vehicle call TF47_unflipping_fnc_unflipRequiredAmount;
 
 // Inform server about unflipping start
 if !(PLAYER in UNFLIPPING_UNITS) exitWith {
-    ["vet_unflipping_unflip_start", [_vehicle, PLAYER]] call CBA_fnc_serverEvent;
+    ["TF47_unflipping_unflip_start", [_vehicle, PLAYER]] call CBA_fnc_serverEvent;
 };
 
 // Notify
 [
     ["\a3\3den\data\attributes\loiterdirection\cw_ca.paa"],
-    [format [localize "STR_vet_unflipping_required", _neededUnits]]
+    [format [localize "STR_TF47_unflipping_required", _neededUnits]]
 ] call CBA_fnc_notify;
 
 // Exec next frame, othwerwise we will crash the client
 [{
     [
-        localize "STR_vet_unflipping_waiting",
+        localize "STR_TF47_unflipping_waiting",
         15,
         {
             _this#0 params ["_vehicle"];
@@ -57,11 +57,11 @@ if !(PLAYER in UNFLIPPING_UNITS) exitWith {
         // onSuccess
         {
             _this#0 params ["_vehicle"];
-            ["vet_unflipping_unflip_stop", [_vehicle, PLAYER]] call CBA_fnc_serverEvent;
+            ["TF47_unflipping_unflip_stop", [_vehicle, PLAYER]] call CBA_fnc_serverEvent;
             // Notify
             [
                 ["\a3\3den\data\attributes\loiterdirection\cw_ca.paa"],
-                [localize "STR_vet_unflipping_need_more"]
+                [localize "STR_TF47_unflipping_need_more"]
             ] call CBA_fnc_notify;
         },
         // onFailure
@@ -71,7 +71,7 @@ if !(PLAYER in UNFLIPPING_UNITS) exitWith {
 
             // don't stop unflipping if waiting progressBar was closed by new progressBar
             if (_failureCode != 3) then {
-                ["vet_unflipping_unflip_stop", [_vehicle, PLAYER]] call CBA_fnc_serverEvent;
+                ["TF47_unflipping_unflip_stop", [_vehicle, PLAYER]] call CBA_fnc_serverEvent;
             };
         },
         _this

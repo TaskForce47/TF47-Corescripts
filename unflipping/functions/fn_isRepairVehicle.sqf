@@ -1,5 +1,5 @@
 /*
-    vet_unflipping_fnc_isRepairVehicle
+    TF47_unflipping_fnc_isRepairVehicle
 
     File: fn_isRepairVehicle.sqf
     Date: 2019-06-18

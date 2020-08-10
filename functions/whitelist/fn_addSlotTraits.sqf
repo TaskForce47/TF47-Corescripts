@@ -22,6 +22,9 @@ _traits = _traits apply {
 		case WHITELIST_PLANE: {
 			TF47_IS_PILOT_PLANE
 		};
+		case WHITELIST_CCT: {
+			TF47_IS_CCT
+		};
 		default {
 			nil
 		};

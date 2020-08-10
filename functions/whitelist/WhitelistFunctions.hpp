@@ -9,11 +9,13 @@ class TF47_whitelist
 		class checkSlotWhitelist {};
 		class checkWhitelistSimple {};
 		class checkWhitelistStrict {};
+		class handleUavCheck {};
 		class initPlayer {};
 		class initServer {};
 		class initSlotTrait {};
 		class isWhitelistTestAllowed {};
 		class kickPlayerslot {};
+		class kickPlayerUAV {};
 		class kickPlayerVehicle {};
 		class onVehicleEnter {};
 		class refreshUserWhitelist {};
