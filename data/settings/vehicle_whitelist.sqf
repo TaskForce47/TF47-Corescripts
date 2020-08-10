@@ -65,5 +65,19 @@ EGVAR(whitelist,disabledVehicles) = [
 	"itc_land_rhsusf_m109d_usarmy",
 	"rhsusf_M1230a1_usarmy_d",
 	"rhsusf_m113_usarmy_medical",
-	"CUP_B_M1133_MEV_Desert"
+	"CUP_B_M1133_MEV_Desert",
+	
+	//REDFOR
+	"rhsgref_BRDM2_HQ_vdv",
+	"rhsgref_BRDM2UM_vdv",
+	"rhsgref_BRDM2_vdv",
+	"rhsgref_BRDM2_ATGM_vdv",
+	"CFP_O_RUMVD_GAZ_Vodnik_AGS_30_PKM_01",
+	"CFP_O_RUMVD_GAZ_Vodnik_BPPU_01",
+	"RHS_BM21_VDV_01",
+	"itc_land_rhsafrf_2s3_tv",
+	"itc_land_rhsafrf_2s1_tv",
+	"rhs_btr80_vdv",
+	"rhs_btr80a_vdv",
+	"CFP_O_RUMVD_BTR_90_01"
 ];
