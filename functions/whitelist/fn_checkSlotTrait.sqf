@@ -16,7 +16,7 @@ switch true do {
   };
   case (_vehicle call EFUNC(util,isUav)): {
     if(! (_unit getUnitTrait TF47_IS_UAV)) exitWith {
-      [_unit, _vehicle, "You do not have not the correct slot to use this vehicle"] call FUNC(kickPlayerUAV);
+      [_unit, _vehicle, "You do not have the correct slot to use this vehicle"] call FUNC(kickPlayerUAV);
     };
   };
   case (_vehicle call EFUNC(util,isHelicopter)): {
