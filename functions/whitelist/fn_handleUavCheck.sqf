@@ -2,7 +2,7 @@
 
 params ["_unit", "_vehicle"];
 
-if !(isNull _vehicle) exitWith {};
+if (isNull _vehicle) exitWith {};
 
 if(GVAR(enableSlotTraits)) then {
 	[_unit, _vehicle] call FUNC(checkslotTrait);
