@@ -13,4 +13,10 @@ if(_ehId != -1) then {
 _vehicle setVariable [QGVAR(cost), nil, true];
 _vehicle setVariable [QGVAR(registered), false, true];
 
+private _id = GVAR(registeredVehicles) findif { _x isEqualTo _vehicle };
+if(_id != -1) then {
+	GVAR(registeredVehicles) deleteAt _id;
+};
+
+
 true

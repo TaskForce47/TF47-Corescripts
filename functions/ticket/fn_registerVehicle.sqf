@@ -27,4 +27,18 @@ private _id = _vehicle addMPEventHandler ["MPKilled", {
 }];
 _vehicle setVariable [QGVAR(killedEhId), _id];
 
+_vehicle addEventHandler ["Get", {
+	params ["_unit", "_role", "_vehicle", "_turret"];
+	_vehicle setVariable [QGVAR(lastCommander), effectiveCommander _vehicle];
+	_vehicle setVariable [QGVAR(lastTimeUsed), CBA_missionTime];
+}];
+
+_vehicle addEventHandler ["GetOut", {
+	params ["_vehicle", "_role", "_unit", "_turret"];
+	_vehicle setVariable [QGVAR(lastCommander), effectiveCommander _vehicle];
+	_vehicle setVariable [QGVAR(lastTimeUsed), CBA_missionTime];
+}];
+
+GVAR(registeredVehicles) pushBack _vehicle;
+
 true
