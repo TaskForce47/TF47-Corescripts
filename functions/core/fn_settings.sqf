@@ -39,6 +39,29 @@
 ] call CBA_fnc_addSetting;
 
 [
+	QGVAR(kickOnBaseShooting),
+	"CHECKBOX",
+	["Kick player on shooting", "If a player fires inside the base he will get kicked to lobby screen"],
+	["TF47 Corescripts", "Core"],
+	false,
+	1,
+	nil,
+	true
+] call CBA_fnc_addSetting;
+
+[
+	QGVAR(maxShotCount),
+	"LIST",
+	["Shots before kick", "Projectiles fired before a player will be kicked for shooting inside a base"],
+	["TF47 Corescripts", "Core"],
+	[[2, 5, 10, 15, 20], [], 2],
+	1,
+	nil,
+	true
+] call CBA_fnc_addSetting;
+
+
+[
 	QGVAR(addWorldBorder),
 	"CHECKBOX",
 	["Punish player for leaving the map", "If a player is outside the world border for a timeout passed he will be punished!"],
