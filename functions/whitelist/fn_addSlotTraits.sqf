@@ -13,19 +13,19 @@ if(_id != -1) exitWith {
 
 _traits = _traits apply {
 	switch _x do {
-		case WHITELIST_TANK: {
+		case TF47_IS_TANKER: {
 			TF47_IS_TANKER
 		};
-		case WHITELIST_HELO: {
+		case TF47_IS_HELICOPTER_PILOT: {
 			TF47_IS_PILOT_HELICOPTER
 		};
-		case WHITELIST_PLANE: {
+		case TF47_IS_PILOT_PLANE: {
 			TF47_IS_PILOT_PLANE
 		};
-		case WHITELIST_CCT: {
+		case TF47_IS_CCT: {
 			TF47_IS_CCT
 		};
-		case WHITELIST_UAV: {
+		case TF47_IS_UAV: {
 			TF47_IS_UAV
 		};
 		case TF47_IS_PLANE_CREW: {
