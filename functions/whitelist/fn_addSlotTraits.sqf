@@ -25,6 +25,15 @@ _traits = _traits apply {
 		case WHITELIST_CCT: {
 			TF47_IS_CCT
 		};
+		case WHITELIST_UAV: {
+			TF47_IS_UAV
+		};
+		case TF47_IS_PLANE_CREW: {
+			TF47_IS_PLANE_CREW
+		};
+		case TF47_IS_HELICOPTER_CREW: {
+			TF47_IS_HELICOPTER_CREW
+		};
 		default {
 			nil
 		};
@@ -34,6 +43,5 @@ _traits = _traits apply {
 _traits = _traits select {! isNil "_x"};
 GVAR(slotTraits) pushBack [_slotName, _traits];
 publicVariable QGVAR(slotTraits);
-
 
 true

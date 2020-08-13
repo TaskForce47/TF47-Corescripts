@@ -36,11 +36,13 @@
 
 #include "..\script_macros_common.hpp"
 
-#define TF47_IS_TANKER "TF47_whitelist_crew_tank"
-#define TF47_IS_PILOT_HELICOPTER "TF47_whitelist_crew_helicopter"
-#define TF47_IS_PILOT_PLANE "TF47_whitelist_crew_plane"
-#define TF47_IS_UAV "TF47_whitelist_crew_uav"
+#define TF47_IS_TANKER "TF47_whitelist_tank_crew"
+#define TF47_IS_HELICOPTER_PILOT "TF47_whitelist_helicopter_pilot"
+#define TF47_IS_PLANE_PILOT "TF47_whitelist_plane_pilot"
+#define TF47_IS_UAV "TF47_whitelist_uav_pilot"
 #define TF47_IS_CCT "TF47_whitelist_slot_cct"
+#define TF47_IS_HELICOPTER_CREW "TF47_whitelist_helicopter_crew"
+#define TF47_IS_PLANE_CREW "TF47_whitelist_plane_crew"
 
 #define IS_SERVER isServer
 #define IS_HEADLESS !hasInterface && !isServer
