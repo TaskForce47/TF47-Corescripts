@@ -7,7 +7,7 @@ params [
 if(_slotName isEqualTo "") exitWith {};
 private _id = GVAR(slotTraits) findIf {(_x select 0) isEqualTo _slotName};
 if(_id != -1) exitWith {
-	LOG_1("Slot trait has allready been registered!", _slotName);
+	LOG_1("Slot trait has already been registered!", _slotName);
 };
 
 
@@ -19,8 +19,8 @@ _traits = _traits apply {
 		case TF47_IS_HELICOPTER_PILOT: {
 			TF47_IS_HELICOPTER_PILOT
 		};
-		case TF47_IS_PILOT_PLANE: {
-			TF47_IS_PILOT_PLANE
+		case TF47_IS_PLANE_PILOT: {
+			TF47_IS_PLANE_PILOT
 		};
 		case TF47_IS_CCT: {
 			TF47_IS_CCT
