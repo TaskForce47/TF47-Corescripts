@@ -15,7 +15,7 @@ Medic / crows + add. armor
 
 //Light utility vehicle
 	//1 Ticket
-	["B_Quadbike_01_F",1],
+	["B_Quadbike_01_F",0],
 	
 	//3 Tickets
     ["CUP_B_LR_Transport_CZ_D",3],							//Land Rover 110 (covered) - Desert
@@ -149,7 +149,7 @@ Medic / crows + add. armor
 	["rhsusf_m1240a1_m2_usarmy_d",7],						//M1240 (M2 / closed) - Desert
 	["rhsusf_m1240a1_m2_usarmy_wd",7],						//M1240 (M2 / closed) - Desert
     ["rhsusf_m1240a1_mk19_usarmy_d",7],						//M1240 (MK19 / closed) - Desert
-    ["rhsusf_m1240a1_mk19_usarmy_wd",7]						//M1240 (MK19 / closed) - Wood
+    ["rhsusf_m1240a1_mk19_usarmy_wd",7],					//M1240 (MK19 / closed) - Wood
     ["rhsusf_m1240a1_m240_usarmy_d",7],						//M1240 (MMG / closed) - Desert
     ["rhsusf_m1240a1_m240_usarmy_wd",7],					//M1240 (MMG / closed) - Wood
     ["CUP_B_RG31E_M2_USA",7],								//RG-31 Mk5E (M2 / closed) - Desert
