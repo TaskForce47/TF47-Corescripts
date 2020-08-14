@@ -3,7 +3,7 @@
  * ["class name", vehicle value]
  *
 */
-EGVAR(ticket,vehicleTicketcost) = [
+GVAR(vehicleTicketcost) = [
 
 /* Tier-system for vehicle.
 unarmed / flatbed
