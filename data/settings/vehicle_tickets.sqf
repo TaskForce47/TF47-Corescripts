@@ -339,6 +339,7 @@ Medic / crows + add. armor
 	["RHS_M2A3",18],										//M2A3 Bradley
     ["RHS_M2A3_BUSKI",18],									//M2A3 Bradley
     ["UK3CB_BAF_Warrior_A3_D_Cage_Camo",18],				//Warrior
+    ["I_APC_tracked_03_cannon_F",18],						//Warrior
 	["CUP_B_FV510_GB_D_SLAT",18],							//Warrior
 	["rhsusf_stryker_m1134_d",18],							//Stryker TOW
     ["CUP_B_LAV25M240_desert_USMC",18],						//LAV25
