@@ -22,9 +22,9 @@
 	params ["_unit", "_state"];
 
 	if (_state) then {
-		SIDE_CHAT enableChannel [false, false];	
+		SIDE_CHAT enableChannel [true, false];	
 	} else {
-		SIDE_CHAT enableChannel [true, false];
+		SIDE_CHAT enableChannel [false, false];
 	};
 }] call CBA_fnc_addEventhandler;
 
