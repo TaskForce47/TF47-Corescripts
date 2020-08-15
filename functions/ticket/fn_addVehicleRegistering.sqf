@@ -16,7 +16,7 @@ if(! GVAR(autoSetTicketsOnVehicles)) exitWith {};
 				if((count crew _vehicle) > 0 && {(count (crew _vehicle select {isPlayer _x})) == 0}) exitWith {};
 
 				private _typeVehicle = typeOf _vehicle;
-				private _id = GVAR(vehicleTicketcost) findIf { (_x select 0) isEqualTo _typeVehicle };
+				private _id = EGVAR(core,vehicleTicketcost) findIf { (_x select 0) isEqualTo _typeVehicle };
 				if(_id == -1) then {
 					_vehicle call FUNC(registerVehicleFallback);
 				} else {
