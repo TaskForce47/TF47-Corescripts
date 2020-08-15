@@ -16,7 +16,7 @@ Medic / crows + add. armor
 //Light utility vehicle
 	//1 Ticket
 	["B_Quadbike_01_F",0],
-	
+	["CUP_B_M1030_USMC",0],
 	//3 Tickets
     ["CUP_B_LR_Transport_CZ_D",3],							//Land Rover 110 (covered) - Desert
     ["CUP_B_LR_Transport_CZ_W",3],							//Land Rover 110 (covered) - Wood
@@ -66,6 +66,7 @@ Medic / crows + add. armor
     ["CUP_B_HMMWV_DSHKM_GPK_ACR",5],						//HMMWV M1114 (DSHKM / closed) - Desert
     ["CUP_B_HMMWV_M2_GPK_USA",5],							//HMMWV M1151 (M2 / closed) - Desert
     ["CUP_B_HMMWV_MK19_USA",5],								//HMMWV (MK19 / closed) - Desert
+    ["CUP_B_M1151_Mk19_DSRT_USMC",5],						//HMMWV MK19 Desert
     ["CUP_B_HMMWV_SOV_M2_USA",5],							//HMMWV SOV (MMG, M2 / open) - Desert
     ["CUP_B_HMMWV_SOV_USA",5],								//HMMWV SOV (MMG, MK19 / open) - Desert
     ["CUP_B_LR_Special_Des_CZ_D",5],						//Land Rover 110 (MMG, AGS / open) - Desert
@@ -126,6 +127,7 @@ Medic / crows + add. armor
     ["UK3CB_BAF_Jackal2_L134A1_W",7],						//Jackal 2 GMG (MMG, GMG / open top) - Wood
     ["UK3CB_BAF_Panther_GPMG_Sand_A",7],					//Panther CLV GPMG (Crows MMG / closed) - Desert
     ["UK3CB_BAF_Panther_GPMG_Green_A",7],					//Panther CLV GPMG (Crows MMG / closed) - Wood
+    ["CUP_B_HMMWV_Avenger_USA",7],							//M1151 Avenger
 	
 	//15 Tickets
 	["UK3CB_BAF_Coyote_Logistics_L111A1_D",15],				//Coyote .50cal Logistics
@@ -329,6 +331,7 @@ Medic / crows + add. armor
 	["rhsusf_stryker_m1127_m2_d",13],						//Stryker Recon
 	["rhsusf_stryker_m1126_mk19_d",13],						//Stryker Mk 19
 	["rhsusf_stryker_m1126_m2_d",13],						//Stryker .50cal
+	["CUP_B_M1129_MC_MK19_Desert",13],						//Stryker Mortar
 	
 	//15 Tickets
 	["I_LT_01_AT_F",15],									//Wiesel TOW
@@ -349,7 +352,7 @@ Medic / crows + add. armor
 	["RHS_M2A3_BUSKIII",20],								//M2A3 Bradley
 	["B_AFV_Wheeled_01_up_cannon_F",20],					//Rooikat UP
 	["B_AFV_Wheeled_01_cannon_F",20],						//Rooikat
-	["CUP_B_M1128_MGS_Desert_Slat",20],						//Stryker MGS
+	["CUP_B_M1128_MGS_Desert",20],							//Stryker MGS
 	
 	
 //AA
@@ -403,6 +406,8 @@ Medic / crows + add. armor
 	
 	//18 Tickets
 	["RHS_CH_47F_light",18],
+	["TF47_MH47E_USA",18],
+	["rhsusf_CH53E_USMC_GAU21",18],
 	["rhsusf_CH53E_USMC_GAU21_D",18],
 	["CUP_B_CH53E_VIV_USMC",18],
 	["UK3CB_BAF_Merlin_HC3_Cargo",18],   
@@ -425,6 +430,7 @@ Medic / crows + add. armor
 	["rhs_uh1h_hidf_gunship",15],							//Loadouts
 	["RHS_UH1Y",15],										//Loadouts
 	["RHS_UH60M_ESSS",15],									//Loadouts
+	["RHS_UH60M_ESSS_d",15],								//Loadouts
 	["CUP_B_UH1Y_Gunship_Dynamic_USMC",15],
 	
 	//18 Tickets
@@ -445,9 +451,12 @@ Medic / crows + add. armor
 	//25 Tickets
 	["RHS_AH1Z",25],										//Loadouts
 	["RHS_AH64D_noradar",25],								//Loadouts
+	["RHS_AH64D_noradar_wd",25],							//Loadouts
 	
 	//30 Tickets
 	["RHS_AH64D",30],										//Loadouts
+	["RHS_AH64DGrey",30],									//Loadouts
+	["RHS_AH64D_wd",30],									//Loadouts
 	["UK3CB_BAF_Apache_AH1_DynamicLoadoutUnlimited",30],	//Loadouts
 	["UK3CB_BAF_Apache_AH1_JS",30],
 	["UK3CB_CW_US_B_LATE_AH64",30],
