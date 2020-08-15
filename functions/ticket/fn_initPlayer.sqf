@@ -29,3 +29,10 @@ call FUNC(addTicketDisplay);
 		};
  	}
 ] call CBA_fnc_addEventhandler;
+
+[
+	QGVAR(ticketChange), {
+		params ["_oldTickets", "_tickets", "_amount", "_message"];
+		hint format ["Old Tickets: %1\nNew Tickets:%2", _oldTickets, _tickets];
+ 	}
+] call CBA_fnc_addEventhandler;
