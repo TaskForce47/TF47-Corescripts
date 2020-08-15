@@ -386,7 +386,6 @@ Medic / crows + add. armor
 	["rhsusf_m1a2sep1tuskiid_usarmy",28],
 	["rhsusf_m1a2sep1tuskid_usarmy",30],
 	
-
 //Rotary
 	//10 Tickets
 	["RHS_UH60M_MEV2",10],
@@ -394,10 +393,12 @@ Medic / crows + add. armor
 	["RHS_MELB_MH6M",10],									//MH-6M (Obvserver / Skids) - Black
 	["RHS_UH60M_d",10],
 	["RHS_UH60M_MEV_d",10],
+	["RHS_UH60M_MEV",10],
 	["RHS_UH1Y_UNARMED",10],
 	
 	//15 Tickets
 	["RHS_UH60M_ESSS2_d",15],
+	["RHS_UH60M_ESSS2",15],
 	["CUP_B_UH60M_Unarmed_FFV_MEV_US",15],
 	["CUP_B_UH60M_FFV_US",15],
 	["CUP_B_UH60S_USN",15],
@@ -429,6 +430,7 @@ Medic / crows + add. armor
 	["RHS_MELB_AH6M",15],									//Loadouts
 	["rhs_uh1h_hidf_gunship",15],							//Loadouts
 	["RHS_UH1Y",15],										//Loadouts
+	["RHS_UH1Y_d",15],										//Loadouts
 	["RHS_UH60M_ESSS",15],									//Loadouts
 	["RHS_UH60M_ESSS_d",15],								//Loadouts
 	["CUP_B_UH1Y_Gunship_Dynamic_USMC",15],
@@ -442,8 +444,13 @@ Medic / crows + add. armor
     ["UK3CB_BAF_Wildcat_AH1_HEL_8A",18],
     ["UK3CB_BAF_Wildcat_AH1_TRN_8A",18],
     ["UK3CB_BAF_Wildcat_HMA2_TRN_8A",18],
-	["CUP_B_MH60L_DAP_4x_US",18],
+	["CUP_B_MH60L_DAP_4x_US",18],							//Loadouts
+	["CFP_B_USSEALS_MH_60L_DAP_4Pylons_DES_01",18],			//Loadouts
+	["CFP_B_USRANGERS_MH_60L_DAP_4Pylons_WDL_01",18],		//Loadouts
+	["CFP_B_USARMY_MH60L_DAP_4x_US",18],					//Loadouts
+	["CFP_B_USSEALS_MH_60L_DAP_4Pylons_WDL_01",18],			//Loadouts
 	["CUP_B_MH60L_DAP_4x_USN",18],							//Loadouts
+	["CFP_B_USMC_MH_60S_Knighthawk_ESSS_x4_DES_01",18],		//Loadouts
 	
 	//20 Tickets
 	["rhsgref_mi24g_CAS",20],
