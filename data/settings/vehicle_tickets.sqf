@@ -457,6 +457,7 @@ Medic / crows + add. armor
 	
 	//25 Tickets
 	["RHS_AH1Z",25],										//Loadouts
+	["RHS_AH1Z_wd",25],
 	["RHS_AH64D_noradar",25],								//Loadouts
 	["RHS_AH64D_noradar_wd",25],							//Loadouts
 	
