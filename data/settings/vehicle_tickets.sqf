@@ -493,6 +493,7 @@ Medic / crows + add. armor
 	["JS_JC_FA18F",30],										//Loadouts
 	["USAF_A10",30],										//Loadouts
 	["USAF_F35A",30],										//Loadouts
+	["TF47_F35A",30],										//Loadouts
 	["USAF_F22",30],										//Loadouts
 	["TF47_F15E",30],
 	["FIR_A10A",30],
