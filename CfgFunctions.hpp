@@ -6,4 +6,5 @@
 #include "functions\whitelist\WhitelistFunctions.hpp"
 #include "functions\util\UtilFunctions.hpp"
 #include "functions\offlinemode\OfflinemodeFunctions.hpp"
+#include "functions\relay\RelayFunctions.hpp"
 #include "unflipping\UnflippingFunctions.hpp"
