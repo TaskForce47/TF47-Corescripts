@@ -5,4 +5,4 @@
 	30
 ] call CBA_fnc_waitAndExecute;
 ["TF47_core_notification_outOfTickets", "We have run out of tickets, mission failed!"] remoteExec [QEFUNC(util,sendNotification), 0];
-[EGVAR(database,finishSession), nil] call CBA_fnc_serverEvent;
+[QEGVAR(database,finishSession), nil] call CBA_fnc_serverEvent;

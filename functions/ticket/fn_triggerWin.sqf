@@ -5,4 +5,4 @@
 	nil,
 	30
 ] call CBA_fnc_waitAndExecute;
-[EGVAR(database,finishSession), nil] call CBA_fnc_serverEvent;
+[QEGVAR(database,finishSession), nil] call CBA_fnc_serverEvent;
