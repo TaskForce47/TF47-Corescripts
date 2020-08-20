@@ -482,6 +482,7 @@ Medic / crows + add. armor
 	
 	//20 Tickets
 	["I_Plane_Fighter_04_F",20],							//Loadouts
+	["TF47_JAS_39",20],
 	
 	//25 Tickets
 	["CUP_B_AV8B_DYN_USMC",25],								//Loadouts
@@ -501,6 +502,8 @@ Medic / crows + add. armor
     ["FIR_A10C",30],
     ["TF47_A10C",30],
     ["UK3CB_CW_US_B_LATE_A10",30],
+	["TF47_F18E",30],
+	["TF47_F18F",30],
 
 //UAV
 	//10 Tickets
