@@ -14,6 +14,12 @@ EGVAR(whitelist,attackPlanes) = [
 	"TF47_A10C",
 	"FIR_A10C",
 	"RHS_A10",
+	"TF47_F35A",
+	"USAF_F22",
+	"TF47_JAS_39",
+	"TF47_F18F",
+	"USAF_F35A_STEALTH",
+	"TF47_F18E",
 	"TF47_F15C",
 	"TF47_F15E",
 	"CUP_B_AV8B_DYN_USMC",
@@ -29,9 +35,13 @@ EGVAR(whitelist,attackHelicopter) = [
 	"RHS_AH64D_noradar_wd",
 	"RHS_AH64D_d",
 	"RHS_AH64D_wd",
+	"RHS_AH64DGrey",
 	"UK3CB_BAF_Apache_AH1_JS",
 	"UK3CB_BAF_Wildcat_AH1_CAS_6A",
 	"UK3CB_BAF_Wildcat_AH1_CAS_6B",
+	"UK3CB_BAF_Wildcat_AH1_CAS_8A",
+	"UK3CB_BAF_Wildcat_AH1_CAS_8B",
+	"UK3CB_BAF_Apache_AH1_DynamicLoadoutUnlimited",
 	"UK3CB_BAF_Wildcat_AH1_HEL_6A"
 ];
 
