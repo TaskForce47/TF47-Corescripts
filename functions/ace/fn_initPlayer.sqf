@@ -18,15 +18,15 @@
 	};
 }] call CBA_fnc_addEventHandler;
 
-["ace_unconscious", {
-	params ["_unit", "_state"];
-
-	if (_state) then {
-		SIDE_CHAT enableChannel [true, false];	
-	} else {
-		SIDE_CHAT enableChannel [false, false];
-	};
-}] call CBA_fnc_addEventhandler;
+//["ace_unconscious", {
+//	params ["_unit", "_state"];
+//
+//	if (_state) then {
+//		SIDE_CHAT enableChannel [true, false];	
+//	} else {
+//		SIDE_CHAT enableChannel [false, false];
+//	};
+//}] call CBA_fnc_addEventhandler;
 
 call FUNC(preventPlayerBleedout);
 
