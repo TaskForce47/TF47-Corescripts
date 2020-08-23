@@ -1,9 +1,7 @@
 #include "script_component.hpp"
 
 params [
-	["_vehicle", objNull, [objNull]],
-	["_isHelicopter", true, [true]],
-	["_isPlane", false, [false]]
+	["_vehicle", objNull, [objNull]]
 ];
 
 if(isNull _vehicle) exitWith {false};
@@ -11,19 +9,16 @@ if(isNull _vehicle) exitWith {false};
 private _isAttack = false;
 private _vehicleName = typeOf _vehicle;
 
-if(_isHelicoter) then {
-	private _attackHelicopters = EGVAR(whitelist,attackHelicopter);
-	private _id = _attackHelicopters findIf {_x isEqualTo _vehicleName};
-	if(_id != -1) exitWith {
-		_isAttack = true;
+switch true do {
+	case (_vehicle call FUNC(isHelicopter)): {
+		if (_vehicleName in EGVAR(whitelist,attackHelicopter)) exitWith {
+			_isAttack = true;
+		};
 	};
-};
-
-if(_isPlane) then {
-	private _attackPlanes = EGVAR(whitelist,attackHelicopter);
-	private _id = _attackPlanes findIf {_x isEqualTo _vehicleName};
-	if(_id != -1) exitWith {
-		_isAttack = true;
+	case (_vehicle call FUNC(isPlane)): {
+		if (_vehicleName in EGVAR(whitelist,attackPlanes)) exitWith {
+			_isAttack = true;
+		};
 	};
 };
 
