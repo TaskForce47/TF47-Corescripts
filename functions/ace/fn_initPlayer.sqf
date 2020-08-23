@@ -11,6 +11,8 @@
 ["ace_unconscious", {
 	params ["_unit", "_state"];
 
+	if !(local _unit) exitWith {};
+
 	if(_state) then {
 		_unit setUnitTrait ["audibleCoef", 0];
 	} else {
@@ -20,11 +22,13 @@
 
 //["ace_unconscious", {
 //	params ["_unit", "_state"];
+//	
+//  if !(local _unit) exitWith {};
 //
 //	if (_state) then {
-//		SIDE_CHAT enableChannel [true, false];	
+//		SIDE_CHAT enableChannel [false, false];	
 //	} else {
-//		SIDE_CHAT enableChannel [false, false];
+//		SIDE_CHAT enableChannel [true, false];
 //	};
 //}] call CBA_fnc_addEventhandler;
 
