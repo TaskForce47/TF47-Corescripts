@@ -20,7 +20,7 @@ switch true do {
     };
   };
   case (_vehicle call EFUNC(util,isHelicopter)): {
-    if (_vehicle call EFUNC(util,isAttackAircraft) then {
+    if (_vehicle call EFUNC(util,isAttackAircraft)) then {
       if (_unit isEqualTo driver _vehicle && {! (_unit getUnitTrait TF47_IS_ATTACK_HELICOPTER_PILOT) }) exitWith {
         [_unit, "You must be on the pilot slot to fly this vehicle"] call FUNC(kickPlayerVehicle);
       };
