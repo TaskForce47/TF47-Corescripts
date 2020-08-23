@@ -20,11 +20,20 @@ switch true do {
     };
   };
   case (_vehicle call EFUNC(util,isHelicopter)): {
-    if (_unit isEqualTo driver _vehicle && {! (_unit getUnitTrait TF47_IS_HELICOPTER_PILOT) }) exitWith {
-      [_unit, "You must be on the pilot slot to fly this vehicle"] call FUNC(kickPlayerVehicle);
-    };
-    if(! (_unit getUnitTrait TF47_IS_HELICOPTER_CREW || { _unit getUnitTrait TF47_IS_HELICOPTER_PILOT })) exitWith {
-      [_unit, "You do not have the correct slot to use this vehicle"] call FUNC(kickPlayerVehicle);
+    if (_vehicle call EFUNC(util,isAttackAircraft)) then {
+      if (_unit isEqualTo driver _vehicle && {! (_unit getUnitTrait TF47_IS_ATTACK_HELICOPTER_PILOT) }) exitWith {
+        [_unit, "You must be on the pilot slot to fly this vehicle"] call FUNC(kickPlayerVehicle);
+      };
+      if(! (_unit getUnitTrait TF47_IS_ATTACK_HELICOPTER_CREW || { _unit getUnitTrait TF47_IS_ATTACK_HELICOPTER_PILOT })) exitWith {
+        [_unit, "You do not have the correct slot to use this vehicle"] call FUNC(kickPlayerVehicle);
+      };
+    } else {
+      if (_unit isEqualTo driver _vehicle && {! (_unit getUnitTrait TF47_IS_HELICOPTER_PILOT) }) exitWith {
+        [_unit, "You must be on the pilot slot to fly this vehicle"] call FUNC(kickPlayerVehicle);
+      };
+      if(! (_unit getUnitTrait TF47_IS_HELICOPTER_CREW || { _unit getUnitTrait TF47_IS_HELICOPTER_PILOT })) exitWith {
+        [_unit, "You do not have the correct slot to use this vehicle"] call FUNC(kickPlayerVehicle);
+      };
     };
   };
   case (_vehicle call EFUNC(util,isPlane)): {
