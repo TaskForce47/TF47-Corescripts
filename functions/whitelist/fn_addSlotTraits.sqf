@@ -19,6 +19,9 @@ _traits = _traits apply {
 		case TF47_IS_HELICOPTER_PILOT: {
 			TF47_IS_HELICOPTER_PILOT
 		};
+		case TF47_IS_ATTACK_HELICOPTER_PILOT: {
+			TF47_IS_ATTACK_HELICOPTER_PILOT
+		};
 		case TF47_IS_PLANE_PILOT: {
 			TF47_IS_PLANE_PILOT
 		};
@@ -33,6 +36,9 @@ _traits = _traits apply {
 		};
 		case TF47_IS_HELICOPTER_CREW: {
 			TF47_IS_HELICOPTER_CREW
+		};
+		case TF47_IS_ATTACK_HELICOPTER_CREW: {
+			TF47_IS_ATTACK_HELICOPTER_CREW
 		};
 		default {
 			nil
