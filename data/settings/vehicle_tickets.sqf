@@ -507,7 +507,7 @@ Medic / crows + add. armor
 
 //UAV
 	//10 Tickets
-	["USAF_MQ9",10],
+	["USAF_MQ9",30],
 	["USAF_RQ4A",10]
 	
     /*["B_T_VTOL_01_armed_F",30],
