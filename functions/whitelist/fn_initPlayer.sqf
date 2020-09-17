@@ -33,5 +33,10 @@ LOG("STARTING WHITELIST PLAYER INIT");
 	systemChat "whitelist updated!";
 }] call CBA_fnc_registerChatCommand;
 
+addMissionEventHandler ["PlayerViewChanged", {
+	params ["", "_newUnit", "", "", "", "_uav"];
+	[_newUnit, _uav] call FUNC(handleUavCheck);
+}];
+
 
 LOG("FINISHED WHITELIST PLAYER INIT");
